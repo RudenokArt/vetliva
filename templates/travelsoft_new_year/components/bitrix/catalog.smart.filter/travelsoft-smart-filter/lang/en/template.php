@@ -1,0 +1,39 @@
+<?php
+$MESS['select2-placeholder'] = "Enter the title";
+$MESS['choose'] = "Choose";
+
+// перевод названий свойств
+$MESS["REGION"] = "Region";
+$MESS["TOWN"] = "City";
+$MESS["CITY"] = "City";
+$MESS["CAT_ID"] = "Сategory";
+$MESS["TYPE_ID"] = "Type of allocation";
+$MESS["TYPE"] = "Type or profile";
+$MESS["SERVICES"] = "Services in the resort";
+$MESS["MED_PROFILES"] = "Medical profiles";
+$MESS["MED_SERVICES"] = "Medical services";
+$MESS["MED_CONSULT"] = "Doctor consultations";
+$MESS["DAYS"] = "Number of nights";
+$MESS["FOOD"] = "Food";
+$MESS["TOURTYPE"] = "Type guided tour";
+$MESS["TRANSPORT"] = "Vehicle type";
+$MESS["THEME_TOURS"] = "Subject excursion tour";
+$MESS["DATE_FROM"] = "Dates";
+$MESS["LANG"] = "Language";
+$MESS["NEWYEAR"] = "Рopularly";
+$MESS["PROPERTY_LIST_VALUE_ID_152"] = "New Year";
+$MESS["PROPERTY_LIST_VALUE_ID_153"] = "New Year";
+$MESS["PROPERTY_LIST_VALUE_ID_154"] = "New Year";
+$MESS["PROPERTY_LIST_VALUE_ID_156"] = "New";
+$MESS["PROPERTY_LIST_VALUE_ID_157"] = "Bestseller";
+$MESS["PROPERTY_LIST_VALUE_ID_158"] = "We advise";
+$MESS["PROPERTY_LIST_VALUE_ID_160"] = "Swimming pool";
+$MESS["PROPERTY_LIST_VALUE_ID_161"] = "We advise";
+$MESS["PROPERTY_LIST_VALUE_ID_162"] = "Bestseller";
+$MESS["PROPERTY_LIST_VALUE_ID_163"] = "New";
+$MESS["PROPERTY_LIST_VALUE_ID_164"] = "Bestseller";
+$MESS["PROPERTY_LIST_VALUE_ID_165"] = "We advise";
+$MESS["AVAIL"] = "Availability";
+$MESS["PROPERTY_LIST_VALUE_ID_159"] = "Exclude sold out properties";
+$MESS["SPOSOB_PROVEDENIA"] = "Method of conducting";
+$MESS["AVAILABILITY"] = "Availability";

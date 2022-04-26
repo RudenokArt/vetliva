@@ -1,0 +1,33 @@
+li.root-item ul.root-item {display: none;}
+a.root-item-selected, a.item-selected {font-weight: 600;}
+
+
+[data='collapse']{
+    display: none;
+}
+[data="collapse"].active{
+    display: block;
+}
+[data='toogle-menu']{
+    text-align: center;
+    color: #264B87;
+    font-size: 24px;
+    padding-left: 25px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid;
+    padding: 10px 5px;
+    display: none;
+}
+@media screen and(min-width: 768px) {
+    .sidebar-cn .widget_categories{
+        
+    }
+}
+@media screen and (max-width:768px) {
+[data='toogle-menu']{
+    display: block;
+}
+
+}

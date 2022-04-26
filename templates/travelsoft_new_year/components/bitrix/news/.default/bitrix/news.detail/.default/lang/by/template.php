@@ -1,0 +1,23 @@
+<?
+$MESS["MAP"] = "Карта месцазнаходжаньня";
+$MESS["VIDEO"] = "Відэа";
+$MESS["SERVICES"] = "Паслугі";
+$MESS["ADDRESS"] = "Адрас";
+$MESS["ADDRESS_BY"] = "Адрас на беларускай мове";
+$MESS["SITE"] = "Сайт";
+$MESS["PRICES_TITLE"] = "Калі ласка, увядзіце даты, каб паглядзець цэны і наяўнасць свабодных нумароў";
+$MESS["SERVICES_DESC"] = "Апісанне паслуг";
+$MESS["REVIEWS_CLIENTS"] = "Водгукі турыстаў";
+$MESS["YEAR"] = "Год заснавання";
+$MESS["TIME_FROM"] = "Час заезду";
+$MESS["TIME_TO"] = "Час выезду";
+$MESS["YEAR_RE"] = "Год рэканструкцыі";
+$MESS["SERVICE_PAID"] = "За дадатковую плату";
+$MESS["SERVICES_TITLE"] = "Паслугі";
+$MESS["MED_SERVICES_TITLE"] = "Медыцынскія паслугі";
+$MESS["MAP_DETAIL_TITLE"] = "Карта";
+$MESS["MED_PROFILES"] = "Медыцынскія профілі";
+$MESS["LANG"] = "Персанал гаворыць на мовах";
+$MESS["DISTANCE_CENTER"] = "Адлегласць да цэнтра";
+$MESS["DISTANCE_MINSK"] = "Адлегласць да Мінска";
+$MESS["DISTANCE_AIRPORT"] = "Адлегласць да аэрапорта";

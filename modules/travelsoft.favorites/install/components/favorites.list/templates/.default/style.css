@@ -1,0 +1,19 @@
+.favorites__item {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.favorite-item__img {
+    height: 200px;
+    overflow: hidden;
+}
+.favorite-item__img img{
+    width: 100%;
+}
+.favorite-item__title {
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+}
+

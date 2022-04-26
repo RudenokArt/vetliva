@@ -1,0 +1,220 @@
+/* 
+    Created on : 12.10.2016, 9:45:46
+    Author     : dimabresky by travelsoft
+*/
+
+#preloader { display: none !important; }
+
+#cnt__elements { display: none; } 
+
+.detail-slider .slide-room-lg #slide-room-lg .prev-next-room {
+  display: block;
+  width: 28px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 35%;
+  bottom: 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+}
+.detail-slider .slide-room-lg #slide-room-lg .prev-next-room.prev-room {
+  left: 10px;
+  background: url('../images/photo-gall-but.png') no-repeat -113px -113px;
+}
+/*.detail-slider .slide-room-lg #slide-room-lg .prev-next-room.prev-room:hover {
+  background-position: -113px -113px;
+}*/
+.detail-slider .slide-room-lg #slide-room-lg .prev-next-room.next-room {
+  right: 10px;
+  background: url('../images/photo-gall-but.png') no-repeat -35px -113px;
+}
+/*.detail-slider .slide-room-lg #slide-room-lg .prev-next-room.next-room:hover {
+  background-position: -35px -113px;
+}*/
+.scroll-heading .customer-like {
+	margin-bottom: 80px;
+}
+.scroll-heading .cs-like-label {
+	float: left;
+    display: block;
+    color: #333333;
+    font-family: 'Open sans';
+    font-weight: 400;
+    clear: both;
+}
+.scroll-heading .cs-like-label a {
+	font-size: 16px;
+    line-height: 8px;
+    clear: both;
+}
+.wifi {
+    background: url('../images/icon-service-9.png') no-repeat center;
+}
+.breakfast {
+    background: url('../images/icon-service-1.png') no-repeat center;
+}
+.spa {
+    background: url('../images/icon-service-2.png') no-repeat center;
+}
+.parking {
+    background: url('../images/icon-service-3.png') no-repeat center;
+}
+.sauna {
+    background: url('../images/icon-service-4.png') no-repeat center;
+}
+.restaurant {
+    background: url('../images/icon-service-5.png') no-repeat center;
+}
+.casino {
+    background: url('../images/icon-service-6.png') no-repeat center;
+}
+.pool {
+    background: url('../images/icon-service-7.png') no-repeat center;
+}
+.transfer {
+    background: url('../images/icon-service-8.png') no-repeat center;
+}
+.smoking {
+    background: url('../images/icon-service-10.png') no-repeat center;
+}
+.laundry {
+    background: url('../images/icon-service-11.png') no-repeat center;
+}
+.business_center {
+    background: url('../images/icon-service-12.png') no-repeat center;
+}
+.hairdryer {
+    background: url('../images/icon-service-13.png') no-repeat center;
+}
+.non-stop_service {
+    background: url('../images/icon-service-14.png') no-repeat center;
+}
+.featured-service .service-list li {
+    margin-top: 0;
+}
+ul.icon-list {
+    display: table;
+    min-height: 73px;
+    width: 100%;
+}
+ul.icon-list li {
+    display: table-cell;
+    min-width: 40px;
+    min-height: 40px;
+    vertical-align: middle;
+    width: auto;
+}
+li .first {
+    width: 15% !important;
+}
+li .last {
+    width: 80% !important;
+    word-break: break-all;
+}
+.icon-service {
+    width: 40px;
+    min-height: 40px;
+    border: 1px solid #f1f1f1;
+
+}
+ul.icon-list li figcaption {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.border_icon {
+    width: 25px;
+    height: 25px;
+}
+a.color {
+    color: #111111;
+}
+a.color:hover {
+    text-decoration: none;
+}
+.ui-autocomplete  {
+background-color: rgb(255, 255, 255); border: 1px solid rgb(222, 222, 222); padding: 3px; }
+.ui-autocomplete::after {margin-left:-11px;}
+.ui-autocomplete .ui-state-focus {
+background-color:#CBDAF2
+}
+ul#city_menu{
+    padding-left: 0;
+    margin-top: 10px;
+}
+ul#city_menu a {
+    margin-top: 0px;
+    clear: none !important;
+    display: inline-block !important;
+}
+.detail-sidebar .scroll-heading h2 {
+    font-size: 17px;
+}
+.detail-sidebar .scroll-heading .hr {
+    margin-top: 12px;
+}
+.detail-sidebar .scroll-heading a {
+    font-size: 17px;
+}
+.table td {border: 1px solid #dedede;
+    padding: 10px;}
+.info-form {
+    margin: 30px 30px 0 30px;
+}
+.info-form > .row {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.info-form > .row > [class*="col-"] {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.info-form .form-field {
+    margin-top: 10px;
+}
+.info-form .form-field .field-input {
+    border: 1px solid #dedede;
+    padding: 14px 20px;
+    color: #333333;
+    width: 100%;
+    font-family: 'Open sans';
+    outline: none;
+}
+
+.sidebar-cn .facilities-sidebar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #f6f9fd;
+    border-bottom: 1px solid #fff;
+    margin-top: 0px;
+}
+.smartfilter {margin-top: 20px;}
+.smartfilter .title-sidebar {margin-top: 1px;}
+.sidebar-cn .narrow-results {
+    margin-top: 20px;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.payment-form .form:before {
+    background: none !important;
+}
+/*Switch settings*/
+  .switch {padding:0px 10px !important; }
+  .nav-desktop ul li.menu-parent > a::after {display:none;}
+  .flow-switches .switch:hover {background:none;}
+  .flow-switches .switch a {text-transform:none;}
+  .flow-switches .switch a:hover {color: #264b87 !important;}
+  .flow-switches .sub-menu span {text-transform:none;}
+  .flow-switches ul > li:hover > a {color:#264b87 }
+  .flow-switches .sub-menu li a:hover, 
+  .flow-switches .sub-menu li span:hover {color:#fff !important;}
+  .flow-switches .sub-menu li:hover span {color:#fff !important;}
+  .flow-switches .lang {width:160px}
+  .flow-switches .currency {width:220px}

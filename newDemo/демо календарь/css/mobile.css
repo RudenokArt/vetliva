@@ -1,0 +1,177 @@
+.mobile_boxItem{
+    box-sizing: border-box;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: lighter;
+    padding: 1rem;
+    background: rgba(211, 211, 211, 0.09);
+    border: 1px solid lavender;
+    max-width: 768px;
+    position: relative;
+}
+.rowItem{
+    display: flex;
+}
+.mobile_colItem{
+    display: block;
+    margin:0.25rem;
+    padding: 0.5rem 0.1rem;
+    /* width: 25%; */
+    min-width: 48px;
+    flex-basis: 25%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.mobile_block_rooms_name{width: 100%;border-bottom: 1px solid lightgrey;margin: 0 0 .5rem;}
+.mobile_block_rooms_name p{
+    padding: 0;
+    margin: 0;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    font-weight: bold;
+}
+.mobile_block_rooms_days{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.block_rooms_name__first{
+    padding: 56px 0 0 0;
+}
+.block_rooms_name__first .colItem{
+    margin: 26px 0.25rem 0;
+}
+
+.block_rooms_name .colItem{
+    text-align: left;
+}
+
+.mobile_block_rooms__room{
+    background: #264b87;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.mobile_block_rooms__room:hover{
+    transition: all 0.3s;
+    background: #3262af;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.mobile_block_rooms__room_active{
+    background: #679227;
+    color: white;
+    transition: all 0.3s;
+}
+.mobile_block_rooms__room_active:hover{
+    background: #7caf31;
+    transition: all 0.3s;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.mobile_block_rooms_month{
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-bottom: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.mobile_block_rooms_month span {
+    background: #aaa;
+    color: white;
+    display: inline-block;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 0 .25rem;
+    margin: 0 0.25rem;
+    transition: all 0.3s;
+}
+.mobile_block_rooms_month span:hover {
+    background: #c3c2c2;
+    transition: all 0.3s;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+span.mobile_block_rooms_month_active{
+    background: #264b87;
+}
+span.mobile_block_rooms_month_active:hover{
+    background: #3262af;
+}
+.mobile_block_rooms_month:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: calc(50%);
+    background: #264b87;
+    z-index: -1;
+
+}
+.mobile_block_rooms__room_disable{
+    background: #aaa;
+    color: white;
+    transition: all 0.3s;
+}
+.mobile_block_rooms__room_disable:hover{
+    background: #aaa;
+    transition: all 0.3s;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.block_rooms_info{
+    display: flex;
+}
+.mobile_heading_rooms_date{
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+}
+.mobile_block_rooms_day{
+    padding-bottom: 0;
+    font-size: 16px;
+}
+.mobile_block_rooms_day small{
+    display: block;
+    font-size: 14px;
+    color: #9a9a9a;
+}
+.mobile_block_rooms_day.weekend, .mobile_block_rooms_day.weekend small{
+    color:red
+}
+
+.mobile_rooms_info{
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    z-index: 0;
+}
+.open-tooltip{}
+
+.mobile_active_tooltip{
+    z-index: 1;
+}
+.mobile_rooms_info svg{
+    fill:#264b87;
+
+}
+
+
+.mobile_rooms_info_content{
+    opacity: 0;
+    z-index: -100;
+    background: white;
+    z-index: -100;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translate(26px, -20px);
+    padding: 0.25rem;
+    transition:all 0.3s;
+}
+.mobile_active_tooltip .mobile_rooms_info_content{
+    opacity: 1;
+    z-index: 100;
+}

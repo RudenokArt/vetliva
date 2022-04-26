@@ -1,0 +1,25 @@
+#destination-filter-form {
+	background: #F6F9FD;
+	border: 1px dashed #666666;
+	padding: 20px 30px 30px;
+	margin-right: 20px;
+	margin-bottom: 20px
+}
+
+#destination-filter-form  h3 {
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.popular-destinations-item {
+	border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.chouse label {
+	color: #555555;
+    font-size: 14px;
+    font-weight: normal;
+}

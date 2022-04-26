@@ -1,0 +1,21 @@
+<?php
+$MESS["PRICES"] = "Цены";
+$MESS["FEATURES"] = "Особенности";
+$MESS["SERVICES"] = "Услуги";
+$MESS["HD_DESCSERVICE"] = "Описание услуг";
+$MESS["HD_DESCCHILD"] = "Услуги для детей";
+$MESS["LANG"] = "Разговорный язык";
+$MESS["HD_DESC"] = "Описание";
+$MESS["HD_DESCROOM"] = "Номера";
+$MESS["HD_DESCMEAL"] = "Питание";
+$MESS["HD_DESCSPORT"] = "Спорт и отдых";
+$MESS["RECOVERY"] = "Оздоровление";
+$MESS["MEDICAL_TREATMENT"] = "Лечебная база";
+$MESS["HD_ADDINFORMATION"] = "Дополнительная информация";
+$MESS["YOUTUBE"] = "Видео";
+$MESS["VIMEO"] = "Видео";
+$MESS["MAP"] = "Карта проезда";
+$MESS["PROEZD"] = "Как добраться";
+$MESS["REVIEWS"] = "Отзывы";
+$MESS["MED_SERVICES"] = "Медицинские услуги";
+$MESS["TREATMENT"] = "Лечебная база";

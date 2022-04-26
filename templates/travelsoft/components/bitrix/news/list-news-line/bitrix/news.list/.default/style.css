@@ -1,0 +1,22 @@
+.banners-slider-list .owl-buttons .owl-prev, .banners-slider-list .owl-buttons .owl-next {
+    bottom: 40px;
+}
+.banners-slider-list .owl-buttons .owl-prev {
+    position: absolute;
+    left: 0;
+    bottom: 36.8%;
+}
+.banners-slider-list .owl-buttons .owl-next {
+    position: absolute;
+    right: 0;
+	bottom: 36.8%;
+}
+.banners-slider-list .owl-buttons .owl-next, .banners-slider-list .owl-buttons .owl-prev {
+    height: 51px;
+    width: 24px;
+    line-height: 51px;
+    text-align: center;
+    background-color: rgba(74, 99, 106, 0.52);
+    color: #fff;
+}
+.banners-slider-list {overflow-y: hidden; height: 185px;}

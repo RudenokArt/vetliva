@@ -1,0 +1,26 @@
+<?php
+$MESS['exception_message'] = 'Access closed.';
+$MESS['exception_db_message'] = "User fields error";
+$MESS['tab1_name'] = "Company data";
+$MESS['tab2_name'] = "Requisites";
+$MESS['WORK_COMPANY'] = "Company name";
+$MESS["WORK_COUNTRY"] = "Country";
+$MESS['WORK_CITY'] = "City";
+$MESS['WORK_PHONE'] =  "Phone";
+$MESS['WORK_MAILBOX'] = "Email";
+$MESS['UF_LEGAL_NAME'] = "Legal name";
+$MESS['UF_LEGAL_ADDRESS'] = "Legal address";
+$MESS['UF_BANK_NAME'] = "Bank name";
+$MESS['UF_BANK_ADDRESS'] = "Bank address";
+$MESS['UF_BANK_CODE'] = "Bank code";
+$MESS['UF_CHECKING_ACCOUNT'] = "Cheking account";
+$MESS['UF_UNP'] = "UNP";
+$MESS['UF_OKPO'] = "OKPO";
+$MESS['empty_field_error_text'] = "#messPart#Field #fieldName# must be not empty";
+$MESS['wrong_format_field_error_text'] = "#messPart#Field #fieldName# have wrong format";
+$MESS['wrong_field_error_text'] = "#messPart#Field #fieldName# is not correct";
+$MESS['default_field_error_text'] = "#messPart#Field #fieldName# unknown";
+$MESS['MESSOK'] = "Fields successfully updated";
+$MESS['CHOOSE_THE_COUNTRY'] = "Choose the country";
+$MESS['tab3_name'] = "Company description";
+$MESS['WORK_NOTES'] = "Company descrioption (2000 symbols max)";

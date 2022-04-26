@@ -1,0 +1,36 @@
+.captcha-img {
+    width:  180px;
+    height: 35px;
+   /* float: right;*/
+}
+
+.reg__error {
+    color: red;
+    margin-top: 15px;
+}
+.icon-eye.text-muted, .icon-eye-blocked.text-muted {cursor: pointer; pointer-events: all;}
+
+
+.passerror-container ul {margin-top: 10px; padding: 10px 25px; border-radius: 8px; border: 2px solid #EFEFEF; position: relative; }
+.passerror-container ul:after{
+	content: '';
+    position: absolute;
+    background: url(/local/templates/travelsoft/images/tail.png) no-repeat;
+    top: 0;
+    margin-top: -10px;
+    z-index: 99999;
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    width: 19px;
+    height: 15px;
+}
+
+.form-control-psw .icon-user-lock {display: none;}
+
+
+
+
+
+
+

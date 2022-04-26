@@ -1,0 +1,61 @@
+/*     
+
+service table description styles 
+
+Created on : 12.12.2016, 21:55:11  
+Author     : dimabresky 
+
+*/  
+div[id^='srv-popup-'], div[id^='rate-popup-'], div[id^='cancellation-policy-popup-'] {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto; 
+    max-width: 1117px; 
+    margin: 25px auto; 
+}  
+.service-short-description {    
+    margin: 5px 0; }  .w-33{  
+    width: 33%; } 
+.w-66{  
+    width: 66%;
+}  
+.w-100 {  
+    width: 100%;
+}  
+/*.service-table td{   
+    background: none !important;  
+    padding: 5px 0 !important;   
+    text-align: center; 
+    vertical-align: top !important;
+}*/ 
+.rate-table tr { 
+    border-bottom: 1px solid #000; }  
+.rate-table tr:last-child {  
+    border-bottom: none;
+}
+.gallery-wrapper {    
+    float: left;
+} 
+.mr-15 {  
+    margin-right: 15px; }
+.service-description ul{  
+    list-style-type: none; 
+}
+.service-description ul>li{  
+    margin: 10px;
+}
+.service-description .desc {
+    margin: 20px 0;
+}
+@media (max-width: 800px) {
+	.service-description {width:100% !important;}
+.service-short-description {    
+    margin: 5px 0; }  .w-33{  
+    width: 100%; } 
+.w-66{  
+    width: 100%;
+} 
+}
+    
+

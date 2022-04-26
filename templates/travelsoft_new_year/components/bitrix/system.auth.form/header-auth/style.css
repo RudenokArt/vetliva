@@ -1,0 +1,19 @@
+.header-auth-form .bx-authform-social ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.header-auth-form .modal-seperator {
+	margin-bottom: 15px !important;
+}
+.header-auth-form .btn {
+	margin-top: 0;
+}
+.header-auth-form .bx-authform-link-container {
+	margin-bottom: 5px !important;
+}
+.header-auth-form .bx-authform {
+	margin-bottom: 0 !important;
+}
+.header-auth-form .bx-authform-formgroup-container {
+	margin-bottom: 15px !important;
+}

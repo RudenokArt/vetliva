@@ -1,0 +1,88 @@
+.belavia-search-form {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.belavia-search-form-calendar {
+ background-color: #ecf1fa;
+ width: 300px;
+ display: flex;
+ flex-wrap: nowrap;
+}
+.belavia-search-form-calendar div {
+  padding-right: 25px
+}
+
+.belavia-search-form input[type="text"] {
+  border: 1px solid #d5dadc;
+  /*border-radius: 5px;*/
+  height: 50px;
+  padding-left: 10px;
+}
+
+.belavia-search-form-from_where {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  /*height: 75px;*/
+}
+.belavia-search-form-from_where-item {
+  width: 300px;
+  padding-right: 25px;
+  position: relative;
+}
+.belavia-search-form .locations_list {
+  display: none;
+  position: absolute;
+  height: 300px;
+  width: 275px;
+  overflow: auto;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 0px #000000;
+  z-index: 100;
+}
+.belavia-search-form .locations_list p {
+  cursor: pointer;
+  padding: 10px;
+}
+.belavia-search-form .locations_list p:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.belavia-search-form-passangers,
+.belavia-search-form-flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.belavia-search-form-passangers-item {
+  display: flex;
+  width: 90px;
+}
+.belavia-search-form-passangers-item button {
+  width: 25px;
+  border: none;
+  background: transparent;
+  font-weight: bold;
+}
+.belavia-search-form-passangers-item input {
+  width: 40px;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.belavia-search-form-submit-button {
+  padding-top: 20px;
+}
+
+.belavia-search-form-submit-button button {
+  height: 50px;
+  background-color: #264b87;
+  color: white;
+  border: none;
+  width: 100px;
+}
+
+.belavia-search-form iframe {
+  height: 800px;
+  width: 100%;
+  padding-top: 20px;
+}

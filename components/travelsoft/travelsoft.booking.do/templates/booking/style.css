@@ -1,0 +1,210 @@
+.input-description {
+    position: relative;
+    top: -3px;
+    color: #A9A9A9;
+}
+
+.blueborder {
+    border: 2px solid #264B87;
+}
+
+.basket-title {
+    padding: 10px 31px 0;
+    color: #264B87;
+	
+}
+
+.basket-title h3, .addittional-booking-links .title {
+	background: #E2E9F2;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #000000;
+	text-align: center;
+	padding: 14px 0 11px;
+	display: block;
+
+}
+
+.basket-title h3 img {margin-right: 12px; margin-top: -3px;}
+.payment-room-priceservice .delete-position span img {margin-top: -3px;}
+
+#booking {
+    position: relative;
+}
+
+#form-shading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #264B87;
+    opacity: .3;
+    display: none;
+}
+
+.promo {
+    /*margin-top: 50px !important;*/
+}
+
+.promo input[type="text"] {
+    width: 200px !important;
+}
+
+#total-cost-info {
+    margin-top: 20px;
+    font-size: 18px;
+	margin-right: 32px;
+}
+
+.popup-cart-item {
+    margin: 10px !important;
+    padding: 5px 0;
+}
+
+.popup-cart-item table td {
+    padding: 10px 0px;
+}
+
+.popup-cart-item table td:last-child {
+    padding-left: 10px;
+}
+
+.popup-cart-item table td select {
+    margin-bottom: 5px;
+}
+
+.text-block {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    line-height: 30px;
+}
+
+.popup-btn-area {
+    padding-right: 10px;
+}
+
+.popup-btn {
+    background-color: #264B87 !important;
+    color: #fff !important;
+}
+
+.popup-btn:hover {
+    background-color: #fff !important;
+    color: #264B87 !important;
+}
+
+.red {
+    color: red;
+}
+
+.red-border {
+    border: 1px solid red;
+}
+
+.green {
+    color: green;
+}
+
+@media (max-width: 768px) {
+    
+    .basket-title {
+        padding: 0 3px;
+    }
+    
+    .promo input[type="text"] {
+        width: 100% !important;
+    }
+    
+}
+@-webkit-keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.heartBeat {
+    -webkit-animation-name: heartBeat;
+    animation-name: heartBeat;
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+@media (max-width: 767px) {
+  #booking .info-form.alertbox {    margin: 20px 0px 0 0px;} 
+  
+}
+.delete-blocktourist {
+    font-size: 24px;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.main .back-link.desk-back-link {margin-left: 30px; margin-top: 0;}
+
+.promo-row  {margin: 0 30px;}
+
+.promo-row h4 {margin-top: 0px;}
+
+.form-field.col-md-3.male-field {clear: left;}
+
+button, input, optgroup, .payment-form select, textarea {line-height:1.15}
+
+

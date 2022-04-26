@@ -1,0 +1,21 @@
+{ "scripts": {
+  "dev": "parcel ./src/index.html",
+  "build": "parcel build ./src/index.html/"
+},
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "node-sass": "^4.11.0",
+    "parcel": "^1.12.3",
+    "react": "^16.8.6",
+    "react-day-picker": "^7.3.0",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "name": "main.tabs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}

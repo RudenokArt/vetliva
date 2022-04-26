@@ -1,0 +1,74 @@
+div.news-list
+{
+	word-wrap: break-word;
+}
+div.news-list img.preview_picture
+{
+	float:left;
+	margin:0 4px 6px 0;
+}
+.news-date-time {
+	color:#486DAA;
+}
+h4 {
+	margin-bottom: 30px !important;
+}
+h6.content-group {
+	color: #4c6a9c !important;
+}
+.timeline-icon {
+	height: 65px !important;
+	width: 65px !important;
+	font-size: 12px;
+	text-align: center;
+}
+.timeline-icon img {
+	height: 57px !important;
+	width: 57px !important;
+}
+.timeline-icon p {
+	padding-top: 10px;
+	margin: 0;
+}
+span.rating {
+	font-size: 18px;
+	font-weight: 700;
+	color: black;
+}
+.timeline-icon:after {
+	width: 7px !important;
+}
+.icons-list {
+	margin-bottom: 20px;
+	margin-left: 20px !important;
+}
+.icons-list>li:first-child {
+	margin-left: 5px !important;
+}
+.icons-list>li {
+	display: table !important;
+	padding-bottom: 5px;
+}
+.icons-list>li span {
+	padding-right: 10px;
+}
+.heading-elements-country {
+	background-color: inherit;
+    position: absolute;
+    top: 50%;
+    height: 36px;
+    margin-top: -18px;
+	color: #999;
+}
+.reviews-content-text {
+	padding-bottom: 15px
+}
+.review-item .review-text div.reviews-content-text {
+	padding: 2px;
+	height: 5.5em;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+.review-item .review-text div.reviews-content-button {
+	cursor: pointer;
+}

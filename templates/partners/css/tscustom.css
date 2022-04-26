@@ -1,0 +1,167 @@
+/* 
+    Created on : 12.10.2016, 9:45:46
+    Author     : dimabresky by travelsoft
+*/
+
+
+.black-color {
+    color: #000 !important;
+}
+
+.starrequired {
+    color: red;
+}
+
+.grey-color {
+    background-color: rgba(102, 102, 102, 0.48);
+}
+
+.lightblue-color {
+    background-color: #CAEEF9;
+}
+
+.lightgreen-color {
+    background-color: #e5f9fc;
+}
+
+.fx-min-width-150px{
+    width: 150px;
+}
+
+.fx-min-width-300px{
+    width: 300px;
+}
+
+.form-with-select {
+    padding: 20px;
+}
+
+.fs-22 {font-size: 22px;height:40px;}
+
+.input-width-30px { width: 55px; /*width: 100%;*/ border:1px solid gray; min-height: 25px;}
+
+.daterangepicker {
+    z-index: 1050 !important;
+}
+.table-bordered td {padding: 5px 1px !important; text-align: center; line-height: 1.14em !important;}
+.table-bordered th {padding: 5px 1px !important; text-align: center;}
+.table-bordered td input {text-align: center !important;}
+.table-responsive {margin: 20px 10px !important;}
+.form-group {margin-bottom: 0px;}
+.form-with-select .form-group label {width: 160px;  text-align: right;}
+.form-with-select {padding-bottom: 10px;}
+.navbar-header {background: #fff;}
+.navbar-header a.navbar-brand {margin-left: 10px; padding: 0;}
+.navbar-header a.navbar-brand img {height: 40px;}
+.panel-body .form-group {margin-top: 25px;}
+.panel-body .form-group label {width: 100%;}
+.navigation > li.active > a, .navigation > li.active > a:hover, .navigation > li.active > a:focus {background-color: #4c6a9c;}
+
+.mr-lr-20 {
+    margin: 0 20px;
+}
+
+.no-paddings {
+    padding: 0 !important;
+}
+
+.no-borders {
+    border: none !important;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+#add-select-points-area {
+    max-width: 303px;
+} 
+.media-list.content-group {display:flex; margin:0px; flex-flow:row wrap}
+.col-lg-6.stack-media-on-mobile {
+    margin-bottom: 20px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #000;
+}
+.vetliva__code-container {box-sizing: border-box;
+    font-size: 12px;
+    margin: 15px 0;
+    border: solid 1px #979797;
+    padding: 15px 15px 20px 20px;
+    color: #fff;
+    cursor: pointer!important;
+background: #000;}
+.form-control-checkbox {height: 20px;}
+
+#prices-table td, #price-table th{
+    height: 53px !important;
+
+}
+.unvisible-td {
+    background: #e5f9fc !important;
+    font-size: 12px;
+}
+.rate-title{
+    display: inline-block;
+}
+.first-th{
+    background: white;
+    border-right: 1px solid lightgrey;
+}
+#prices-table td.main-td, #price-table th.main-td{
+    display: table-caption;
+    width: 185px;
+    font-size: 12px;
+    background: rgb(229, 249, 252) ;
+}
+
+div.adm-fileinput-item div.adm-fileinput-item-preview{
+    width: 100%;
+}
+@media (min-width: 568px) {
+    .tour-date{
+        height: 50px;
+        display: block;
+    }
+}
+
+
+.passerror-container ul li {list-style-type: none;} 
+.passerror-container ul {margin-top: 10px; padding: 10px 15px; border-radius: 8px; border: 2px solid #EFEFEF; position: relative; }
+.passerror-container ul:after{
+	content: '';
+    position: absolute;
+    background: url(/local/templates/travelsoft/images/tail.png) no-repeat;
+    top: 0;
+    margin-top: -10px;
+    z-index: 99999;
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    width: 19px;
+    height: 15px;
+}
+
+.form-control-feedback {top: 28px;}
+
+.registration-form .form-control-feedback {top: 0;}
+
+.form-with-select .form-group label {width: auto;}
+
+.form-with-select .col-md-4 .form-with-select {padding: 20px 0;}
+
+
+.form-with-select .col-md-4 .form-group #s2id_selectRate {margin-bottom: 20px;}
+
+form[name='form_auth'] .form-control-feedback {top: 0;}
+
+body .form-with-select .form-group label {
+	width: 100%;
+    text-align: left;
+}
+
+
+
+#prices-table #unvisible-thead td.main-td, #price-table #unvisible-thead #first-unvisible-th {    width: 185px !important;}
+
+.navbar-inverse .navbar-nav>li.logout-link>a {color: #fff;}

@@ -1,0 +1,64 @@
+$padding: 15px;
+$margin:-15px;
+$sizeGrid: 24;
+$map: (xs: 320, sm: 568, md: 768, lg:968, xl: 1280, xxl:1440, retina: 1920);
+$maxWidth: 1135px;
+.wrap{
+
+  padding: 0 $padding;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+.box{
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 $margin;
+}
+@for $i from 0 through $sizeGrid{
+  @if $i == 0 {
+    .col-all__auto{
+      width: auto;
+      flex-basis: auto;
+      min-width: auto;
+      padding: 0 $padding;
+    }
+
+  }
+  @else{
+    .col-all__#{$i}{
+      width: (100 / ($sizeGrid / $i) ) * 1%;
+      flex-basis: (100 / ($sizeGrid / $i) ) * 1%;
+      padding: 0 $padding;
+      min-width: (100 / ($sizeGrid / $i) ) * 1%;
+    }
+  }
+
+}
+
+@each $key, $value in $map{
+  @media screen and(min-width: #{$value}px) {
+    @for $i from 0 through $sizeGrid{
+        @if $i == 0 {
+
+          .col-#{$key}__auto{
+            width: auto;
+            flex-basis: auto;
+            padding: 0 $padding;
+            min-width: auto;
+          }
+        }
+        @else {
+          .col-#{$key}__#{$i} {
+            width: (100 / ($sizeGrid / $i) ) * 1%;
+            flex-basis: (100 / ($sizeGrid / $i) ) * 1%;
+            padding: 0 $padding;
+            min-width: (100 / ($sizeGrid / $i) ) * 1%;
+          }
+        }
+      }
+    }
+
+  }
+

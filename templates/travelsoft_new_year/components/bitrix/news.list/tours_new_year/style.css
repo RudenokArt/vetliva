@@ -1,0 +1,71 @@
+.tour-list-cn {
+	margin-bottom: 25px;
+}
+figure {
+	background: #fff;
+	display:inline-block;
+	position:relative;
+}
+figure img.img-block {
+	margin-top: 7px;
+}
+.tour-list .tour-list-cn .tour-list-item:after {
+	background: none !important;
+}
+figure .tour-text {
+	display:inline-block !important;
+	position:absolute !important;
+	top:30px !important;
+	left:30px !important;
+	margin-left: 0px !important;
+	color:#FFF;
+	width: auto;
+	/*width: 100%;*/
+}
+figure .tour-name a {
+
+	font-size:20px;
+	color:#FFF !important;
+	/* Фон */
+	/*background-color:rgb*/
+}
+figure .tour-route span.label {
+	display: inline-block;
+	float: left;
+}
+figure .tour-route span.route {
+	display: inline-block;
+	width: 45%;
+	float: left;
+}
+figure .price-box {
+	display:inline-block !important;
+	position:absolute !important;
+	bottom: 30px;
+	right: 30px;
+	margin-top: 10px;
+	background-color: #264B87;
+	color: #fff !important;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-repeat: no-repeat;
+	border: 1px solid #fff !important;
+}
+figure .price-box a {
+	color: #fff !important;
+}
+.tour-list-item figure {
+	min-height: 350px;
+	background-size: cover;
+}
+@media screen and (max-width: 767px) {
+	figure .tour-name a {
+		font-size: 22px !important;
+		word-wrap: break-word;
+	}
+	.sub-banner {
+		padding-bottom: 400px !important;
+	}
+}

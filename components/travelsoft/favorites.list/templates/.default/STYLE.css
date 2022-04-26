@@ -1,0 +1,38 @@
+.favorites__item {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.favorite-item__img {
+    height: 200px;
+    overflow: hidden;
+}
+.favorite-item__img img{
+    width: 100%;
+}
+.favorite-item__title {
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.owl-carousel.wish-list {margin: 0 -1px;}
+.owl-carousel.wish-list .owl-wrapper-outer {padding: 0 1px}
+
+.owl-carousel.wish-list .destinations-item {border-left: 1px solid #e6e6e6; margin-left: -1px;}
+/*style from inline*/
+.wishitem_remove {
+    position: absolute;
+    right: .5rem;
+    top: 40px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.3s;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 100%;
+    box-shadow: 1px 3px 9px #b9b8b8;
+}

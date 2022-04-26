@@ -1,0 +1,467 @@
+<script>
+    
+    /**
+     * @param {jQuery} $
+     * @param {Window} window
+     */
+    (function ($, moment, window) {
+       
+       var 
+            /**
+             * кеш инфы
+             * @type Array
+             */
+            cacheData = {},
+            
+            /**
+             * @type Array
+             */
+            toDetailPage = <?= Json::encode($arParams['to_detail_page'])?> || [],
+            
+            /**
+             * @type Array
+             */
+            __request_id = <?= Json::encode($arResult['__get']["id"])?> || [],
+            
+            /**
+             * @type Object
+             */
+            curVals = {},
+            
+            /**
+             * @type Object
+             */
+            defAge = {},
+            
+            /**
+             * масиив инфы по табам
+             * @type Array
+             */
+            tabs = {
+                
+                <?if ($arParams['show_placement_tab'] == "Y"):?>
+                placement_tab: { 
+                    href: "#form-placements",
+                    method: function (tab) {
+                        
+                        __initAutocomplete({href: tab.href, cacheKeys: tab.cacheKeys, defPage: tab.defPage, type: tab.type, onlyDefPage: false});
+                        
+                        tab.done = true;
+                    },
+                    type: "placements",
+                    done: false,
+                    defPage: "<?= $arParams['placement_result_page']?>",
+                    cacheKeys: <?= Json::encode($arParams['placement_tab'])?>
+                },
+                <?endif?>
+                
+                <?if ($arParams['show_sanatorium_tab'] == "Y"):?>
+                sanatorium_tab: { 
+                    href: "#form-sanatorium",
+                    method: function (tab) {
+                        __initAutocomplete({href: tab.href, cacheKeys: tab.cacheKeys, defPage: tab.defPage, type: tab.type, onlyDefPage: false});
+                        tab.done = true;
+                    },
+                    type: "sanatorium",
+                    done: false,
+                    defPage: "<?= $arParams['sanatorium_result_page']?>",
+                    cacheKeys: <?= Json::encode($arParams['sanatorium_tab'])?> 
+                },
+                <?endif?>
+                
+                <?if ($arParams['show_tours_tab'] == "Y"):?>
+                tours_tab: { 
+                    href: "#form-tours", 
+                    method: function (tab) {
+                        __initAutocomplete({href: tab.href, cacheKeys: tab.cacheKeys, defPage: tab.defPage, type: tab.type, onlyDefPage: false});
+                        tab.done = true;
+                    },
+                    type: "excursions",
+                    done: false,
+                    defPage: "<?= $arParams['tours_result_page']?>",
+                    cacheKeys: <?= Json::encode($arParams['tours_tab'])?>
+                },
+                <?endif?>
+                
+                <?if ($arParams['show_transfer_tab'] == "Y"):?>
+                transfer_tab: { 
+                    href: "#form-transfer", 
+                    method: function (tab) {
+                        __initAutocomplete({href: tab.href, cacheKeys: tab.cacheKeys, defPage: tab.defPage, type: tab.type, onlyDefPage: true});
+                        $(tab.href + " input[name='autocomplete-field']").each(function () {
+                            var $this = $(this);
+                            $this.data("ui-autocomplete")._renderMenu = function (ul, items) {
+                                
+                                var _this = this, pointId = null;
+                                if ($this.has(".for-point-a")) {
+                                    pointId = $("input[name='booking[point_A]']").val();
+                                } else if ($this.has(".for-point-b")) {
+                                    pointId = $("input[name='booking[point_B]']").val();
+                                }
+                                
+                                $.each(items, function( index, item ) {
+                                    if (item.id != pointId) {
+                                        _this._renderItemData( ul, item );
+                                    }
+                                });
+                            }
+                        });
+                        tab.done = true;
+                    },
+                    type: "transfers",
+                    done: false,
+                    defPage: "<?= $arParams['transfer_result_page']?>",
+                    cacheKeys: <?= Json::encode($arParams['transfer_tab'])?> 
+                }
+                <?endif?>
+            },
+            
+            /**
+             * инициализируе tab
+             * @param {object} tab
+             */
+            __initTab = function (tab) {
+               
+               var notFound;
+
+                notFounded = __checkCache (tab.cacheKeys, tab.type);
+                if (!notFounded.length) {
+                    tab.method(tab);
+                } else {
+                    __complementCache(notFounded, tab.method, tab, tab.type);
+                }
+
+            },
+            
+            /**
+             * проверка наличия инфы в кеше
+             * @param {Array} keys
+             * @returns {Array}
+             */
+            __checkCache = function (keys, type) {
+                
+                var j, cnt = keys.length, resp = [];
+                
+                for (j = 0; j < cnt; j++) {
+                    if (typeof cacheData[type] === "undefined") {
+                        cacheData[type] = {};
+                    }
+                    if (typeof cacheData[type][keys[j]] === "undefined") {
+                        resp.push(keys[j]);
+                    }
+                }
+                return resp;
+                
+            },
+            
+            /**
+             * Дополняет инфу в кеше и выполняет callback
+             * @param {Array} keys
+             * @param {function} callback
+             * @param {object} callbackParams
+             */
+            __complementCache = function (keys, callback, callbackParams, type) {
+               
+               $.post("<?= $templateFolder?>/ajax.php", {sessid: "<?= bitrix_sessid()?>" , searchFor: keys, type: type}, function (data) {
+                   
+                   var key, keys, i, index;
+                   
+                   if (data) {
+                       
+                       for (key in data) {
+                           cacheData[type][key] = data[key]; keys = [];
+                           for (i = 0; i < __request_id.length; i++) {
+                               if (typeof data[key][__request_id[i]] !== "undefined") {
+                                   curVals[__request_id[i]] = {
+                                       name: data[key][__request_id[i]].name,
+                                       page: typeof data[key][__request_id[i]].page !== "undefined" ? data[key][__request_id[i]].page : null,
+                                       key: key
+                                   };
+                                   keys.push(__request_id[i]);
+                               }
+                           }
+                           for (i = 0; i < keys.length; i++) {
+                               index = $.inArray(keys[i], __request_id);
+                               if (index !== -1) {
+                                   delete(__request_id[index]);
+                               }
+                           }
+                       }
+                       
+                       if (typeof callback === "function") {
+                           callback(callbackParams);
+                       }
+                       
+                   }
+                   
+               }, "json");
+               
+            },
+           
+           /**
+            * @param {object} ul
+            * @param {object} it
+            */
+           __highlight = function (ul, it) {
+
+                var v = $(this.element[0]).val(), w = it.label;
+
+                if (v != '') {
+                    w = w.replace(new RegExp("("+$.ui.autocomplete.escapeRegex(v)+")", "ig" ), "<strong>$1</strong>");
+                    if (it.region) {
+                        w = w + ", " + it.region;
+                    }
+                    if (it.city) {
+                        w = w + ", " + it.city;
+                    }
+                }
+                
+                return $( "<li></li>" )
+                      .data( "ui-autocomplete-item", it)
+                      .append( w )
+                      .appendTo( ul );
+            },
+
+           /**
+            * инициализируем ui.autocomplete
+            * @param {object} options
+            */
+           __initAutocomplete = function (options) {
+               
+               var input = $(options.href + " input[name='autocomplete-field']"), source = [],
+                       cnt = options.cacheKeys.length, key, j, values;
+               
+               if (input.length) {
+                   
+                   for (j = 0; j < cnt; j++) {
+                       values = cacheData[options.type][options.cacheKeys[j]];
+                       for (key in values) {
+ 
+                           source.push({
+                               label: values[key].name,
+                               value: values[key].name,
+                               id: key,
+                               city: values[key].city,
+                               region: values[key].region,
+                               page: (typeof values[key].page !== "undefined" && !options.onlyDefPage) ? values[key].page : options.defPage
+                           });
+
+                       }
+                   }
+                   
+                   if (source) {
+                       
+                       input.each(function (i) {
+                           
+                            var $this = $(this), inputWithIdName = $this.parent().find("input[name^='booking[']"), defVal = inputWithIdName.val();
+                            
+                            $this.autocomplete({
+                                 source: source,
+                                 select: function ( event, ui ) {
+                                     $this.closest('form').attr("action", ui.item.page);
+                                     inputWithIdName.val(ui.item.id);
+                                 }
+                            }).on('focusin', function () { $(this).autocomplete('search'); }).data( "ui-autocomplete" )._renderItem = __highlight;
+                            
+                            // set default value
+                            if (typeof curVals[defVal] !== "undefined") {
+                                $this.val(curVals[defVal].name);
+                                $this.closest('form').attr("action", (curVals[defVal].page && !options.onlyDefPage) ? curVals[defVal].page : options.defPage);
+                                $this.attr("placeholder", "");
+                            }
+                           
+                       });
+
+                   } 
+               }
+   
+           },
+                   
+           /**
+            * @param {String} tk
+            */
+           __setInputFocusHandler = function (tk) {
+               $(tabs[tk].href).one("focusin", function ( e ) {
+               
+                    if (!tabs[tk].done) { __initTab(tabs[tk]); }
+
+                    e.preventDefault();
+
+                });
+           },
+           
+           dateFormat = "DD.MM.YYYY",
+           
+           /**
+            * @type {String}
+            */
+            tab_k;
+       
+       // обработчики фокуса поля ввода объекта
+       for (tab_k in tabs) {
+           __setInputFocusHandler(tab_k);
+       }
+
+       <?if ($arParams["active_tab"]) :?>
+            if (__request_id.length) {
+                __initTab(tabs["<?= $arParams["active_tab"]?>"]);
+            }
+       <?endif?>
+       
+       function initDatePicker ($this) {
+                    var parent = $this.parent(".field-date"),
+                    date_from = parent.find(".minDate"), date_to = parent.find(".maxDate"), options = {};
+                    
+                    options.minDate = moment.unix(<?= time()?>);
+                    
+                    if (date_from.length) {
+                        options.startDate = (function (date_from) {
+                            
+                            var val = date_from.val(), defVal;
+                            if (!val) {
+                                defVal = date_from.data("start-date");
+                                date_from.val(defVal);
+                                return moment.unix(defVal);
+                            }
+                            
+                            return moment.unix( val );
+                            
+                        })(date_from);
+                    }
+                    
+                    if (date_to.length) {
+                        options.endDate = (function (date_to) {
+                            
+                            var val = date_to.val(), defVal;
+                            if (!val) {
+                                defVal = date_to.data("end-date");
+                                date_to.val(defVal);
+                                return moment.unix( defVal );
+                            }
+                            
+                            return moment.unix( val );
+                            
+                        })(date_to);
+                    }
+                    
+                    options.singleDatePicker = $this.data("single-date-picker") == "Y";
+                    options.autoApply = true;
+                    options.locale = {                            
+                            format: dateFormat,
+                            separator: ' - ',
+                            daysOfWeek: moment.weekdaysMin(),
+                            monthNames: moment.monthsShort(),
+                            firstDay: moment.localeData().firstDayOfWeek()
+                        }
+                    
+                    $this.daterangepicker(options).on("apply.daterangepicker", function () {
+
+                        var arVals = $(this).val().split(" - ") || [], parent;
+
+                        if (arVals.length) {
+
+                            date_from.val(moment(arVals[0], dateFormat).unix());
+                            if (date_to.length) {
+                                date_to.val(moment(arVals[1], dateFormat).unix());
+                            }
+                            
+                        }
+
+
+                    });
+       }
+       moment.locale("<?= LANGUAGE_ID?>");
+       $('.banner-cn .calendar-input').each(function () { initDatePicker($(this)); });
+       
+       <?// устанавливаем дефолтные значения возраста
+       if ($arResult["__get"]["children_age"]):
+           for ($i = 0, $cnt = count($arResult["__get"]["children_age"]); $i < $cnt; $i++) {
+       ?>
+            defAge[<?= $i?>] = <?= $arResult["__get"]["children_age"][$i]?>;
+        <?} endif?>
+            
+       // инициируем область с вводом возраста детей
+       $("select[name='booking[children]']").on("click", function (e) {
+            var $this = $(this), val = Number($this.val()), parent = $this.parent(),
+            age_tpls = [], age_selector = "", i;
+            
+            age_tpls.push("<?= $age_tpls[0]?>");
+            age_tpls.push("<?= $age_tpls[1]?>");
+            
+            parent.next(".age-container").remove();
+            if (val > 0) {
+                for (i = 1; i <= val; i++) {
+                    age_selector += (age_tpls[1].replace("#N#", i)).replace("#N#", i);
+                }
+                parent.after(age_tpls[0].replace("#AGE_SELECTORS#", age_selector));
+                for (i in defAge) {
+                    $("#age_selector__" + (Number(i) + 1)).val(defAge[i]);
+                }
+            }
+       });
+       
+       // инициализируем запоминание введённого возраста из формы
+       $(document).on("change", "select[id^='age_selector__']", function (e) {
+           var $this = $(this), index = Number($this.attr("id").substr("age_selector__".length)) - 1;
+           defAge[index] = $this.val();
+       });
+       
+       // закрытие области с возрастом по клику на "крестик"
+        $(".form-search").on("click", ".age-closer", function (e) {
+            $(this).closest(".age-container").hide();
+        });
+        
+        // прекращаем всплытие событий по клику из области формы (.form-search)
+        $(".form-search").on("click" , function (e) {
+            e.stopPropagation();
+        })
+        
+        // скрытие области с возрастом при клике на любую другую область, кроме области фильтра (.form-search)
+        $("body").on("click", function () {
+            $(".age-container").hide();
+        });
+        
+       // выключаем вспомогательные поля для формы
+       $('.banner-cn form').submit(function (e) {
+            $(this).find("input[name='autocomplete-field']").prop('disabled', true);
+            $(this).find(".calendar-field").prop('disabled', true);
+       });
+       
+       $("input[name='booking[roundtrip]']").on("change", function () {
+           if ($(this).is(":checked")) {
+               var startDate = $("#transfers-date-from .calendar-input").val(),
+               date_to_html = "<div id=\"transfers-date-to\" class=\"form-field field-date\">";
+               date_to_html += "<input data-start-date=\""+moment(startDate, dateFormat).unix()+"\" type=\"hidden\" name=\"booking[date_to]\" class=\"field-input minDate\">";
+               date_to_html += "<input required type=\"text\" data-single-date-picker=\"Y\" class=\"field-input calendar-input\" placeholder=\"<?=GetMessage("DATE_TO")?>\"></div>";
+               $("#transfers-date-from").after(date_to_html);
+               initDatePicker($("#transfers-date-to .calendar-input"));
+            } else {
+               $("#transfers-date-to .calendar-input").data("daterangepicker").remove();
+               $("#transfers-date-to").remove();
+           }
+       })
+       
+        // форма fixed position;
+        $(window).on("scroll", function () {
+
+            var windown_top = $(window).scrollTop();
+
+            if (windown_top > 220) {
+
+                if ($('#searchformtab').hasClass('fixed-position-form') == false) {
+
+                    $('#searchformtab').addClass('fixed-position-form');
+
+                }
+
+            } else {
+
+                $('#searchformtab').removeClass('fixed-position-form');
+
+            }
+
+        });
+
+    })(jQuery, moment, window);
+
+</script>

@@ -1,0 +1,63 @@
+.daterangepicker .date::after {
+        content: "Туды";
+        display: block;
+        font-size: 9px;
+        margin: -2px 0 -5px;
+        color: #fff;
+    }
+    .daterangepicker .date::after {
+        content: "Назад";
+        display: block;
+        font-size: 9px;
+        margin: -2px -3px -5px;
+        color: #fff;
+    }
+    #transfers-date-to:before,.box_date_to:before{
+        content: "па:";
+        font-size: 13px;
+        position: absolute;
+        color:gray;
+    }
+
+    #transfers-date-from:before, .box_date_from:before{
+        content: "ад:";
+        font-size: 13px;
+        position: absolute;
+        color:gray;
+    }
+	.tab-pane#form-transfer  #transfers-date-to.withDate:before {
+        content: "назад:";
+        font-size: 12px;
+        position: absolute;
+        color:gray;
+		font-weight: 600;
+    }
+
+ .tab-pane#form-transfer #transfers-date-from:before {
+        content: "туды:";
+		font-size: 12px;
+        position: absolute;
+        color:gray;
+		font-weight: 600;
+    }
+	
+	
+	
+	.tab-pane#form-transfer  .field-from .select2-default .select2-chosen:before {
+		
+		content: "З:";
+		font-size: 15px;
+		position: absolute;
+		color: #264b87;
+		left: 0px;
+		top: 3px;
+	}
+
+	.tab-pane#form-transfer  .field-to .select2-default .select2-chosen:before {
+		content: "В:";
+		font-size: 15px;
+		position: absolute;
+		color: #264b87;
+		left: 0px;
+		top: 3px;
+	}

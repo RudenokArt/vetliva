@@ -1,0 +1,54 @@
+
+/* 
+    Author     : dimabresky
+*/
+
+.partners-manager {
+    width: 100%;
+    min-height: 300px;
+    position: relative;
+}
+
+.partners-manager-preloader {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 10;
+    top: 0;
+}
+
+.partners-manager-preloader img {
+    display: block;
+    margin: auto;
+}
+
+.partners-manager-breadcrumbs,
+.partners-manager-selection-provider,
+.partners-manager-data {
+     padding: 30px;
+}
+
+.spm-table {
+    margin: 15px 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.spm-table td {
+    padding: 10px;
+}
+
+.spm-filter__select {
+    min-width: 200px;
+}
+
+.spm-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.actions__action {
+    margin-bottom: 7px;
+    display: block;
+}

@@ -1,0 +1,15 @@
+/* 
+    Created on : 04.05.2017, 11:39:46
+    Author     : dimabresky
+*/
+
+.person {
+    margin-top: 30px;
+}
+
+.message {
+    font-style: italic;
+    padding: 10px;
+    border-left: 2px solid #000;
+}
+

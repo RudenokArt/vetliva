@@ -1,0 +1,57 @@
+.top-search-form-header-wrapper {
+  position: relative;
+}
+.top-search-form-header {
+  /*outline: 1px solid red;*/
+  position: absolute;
+  z-index: 1000;
+  width: 260px;
+  right: 15px;
+  top: 80px;
+  box-sizing: border-box;
+  z-index: 998;
+}
+.top-search-form-header form {
+  display: flex;
+}
+.top-search-form-header button {
+  width: 110px !important;
+  height: 35px;
+  background: #264b87;
+  border: none;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.top-search-form-header i {
+ line-height: 1.5em;
+}
+.top-search-form-header input {
+  border: none;
+  padding-left: 10px;
+}
+@media screen and (max-width: 980px) {
+  .top-search-form-header {
+    left: 25%;
+    top: 20px;
+    border: 1px solid #264b87;
+    z-index: 1000;
+  }
+}
+@media screen and (max-width: 650px) {
+  .top-search-form-header {
+    left: auto;
+    right: 0;
+    top: 65px;
+    z-index: 900;
+  }
+}
+
+.belavia-search-form-loading {
+  display: flex;
+}
+
+.belavia-search-form-loading .preloader {
+  color: grey;
+  margin: auto;
+}

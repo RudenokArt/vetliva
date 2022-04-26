@@ -1,0 +1,36 @@
+
+/* 
+    Created on : 21.08.2017, 11:24:24
+    Author     : dimabresky
+*/
+
+#prices-table td, #price-table th{
+    
+    height: 67px;
+}
+
+.rateblock-header .rate-title {cursor: pointer;}
+.rateblock-header.open .icon-arrow-down5, .rateblock-header .icon-arrow-up5, .rateblock-row {display:none}
+.rateblock-row.open {display: table-row;}
+.rateblock-header.open .icon-arrow-up5 {display: inline-block;}
+
+.ccode .scroll-right, .ccode .scroll-left  {opacity: 1;}
+.scroll-right, .scroll-left {opacity: 0;}
+
+.scroll-tr {position: absolute; visibility: hidden; display: none}
+
+#prices-table .scroll-tr td, #prices-table .scroll-tr { border: none; height: 0 !important; padding:0 !important; line-height: 0 !important; width: 0 !important;}
+
+.scroll-tr.ccode {visibility: visible; display: table-row;} 
+
+#prices-table #unvisible-thead td.main-td, #price-table #unvisible-thead #first-unvisible-th { width: 185px !important;}
+
+#prices-table #unvisible-thead td, #price-table #unvisible-thead th:not(.first-th) {width: 57.8px !important;}
+
+#price-table #unvisible-thead #first-unvisible-th.first-th { width: 185px !important;}
+
+.discount-row.hide {display: none;}
+
+.copy-column{
+    margin-top: 50px;
+}

@@ -1,0 +1,64 @@
+
+/* 
+    Created on : 21.08.2017, 11:24:24
+    Author     : dimabresky
+*/
+
+#prices-table td, #price-table th{
+    
+    height: 67px;
+}
+
+.daterange-single {
+    max-width: 492px;
+}
+
+.remove-daterange-single {
+    padding-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.form-group__daterage-single-block {
+    margin: 10px 0;
+}
+.rateblock-header .rate-title {cursor: pointer;}
+.rateblock-header.open .icon-arrow-down5, .rateblock-header .icon-arrow-up5, .rateblock-row {display:none}
+.rateblock-row.open {display: table-row;}
+.rateblock-header.open .icon-arrow-up5 {display: inline-block;}
+
+body .form-with-select .form-group label {width: 100%;text-align: left;}
+
+.ccode .scroll-right, .ccode .scroll-left  {opacity: 1;}
+.scroll-right, .scroll-left {opacity: 0;}
+
+.scroll-tr {position: absolute; visibility: hidden; display: none}
+
+#prices-table .scroll-tr td, #prices-table .scroll-tr { border: none; height: 0 !important; padding:0 !important; line-height: 0 !important; width: 0 !important;}
+
+.scroll-tr.ccode {visibility: visible; display: table-row;} 
+
+.discount-row.hide {display: none;}
+
+.copy-column{
+    margin-top: 50px;
+}
+
+.extend-price {
+    float: left;
+}
+
+.delete-extended {
+    position: relative;
+    top: 35px;
+}
+
+.info-extended {
+    cursor: pointer;
+    position: initial !important;
+}
+
+td.main-price{
+    vertical-align: top !important;
+}

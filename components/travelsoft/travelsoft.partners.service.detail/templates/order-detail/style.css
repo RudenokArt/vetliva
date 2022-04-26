@@ -1,0 +1,29 @@
+.list-feed,.list-icons li{list-style:none}
+.list-feed>li:before,.table .table{background-color:#fff}
+.list-feed{margin:0;padding:7px 0}
+.list-feed>li{position:relative;margin:0;padding-bottom:20px;padding-left:28px}
+.list-feed>li:before{content:'';position:absolute;left:0;top:5px;width:8px;height:8px;display:inline-block;border-radius:50%;border:2px solid #607D8B;z-index:3}
+.list-feed-rhombus>li:before,.list-feed-square>li:before{border-radius:0;content:''}
+.list-feed>li:after{content:'';position:absolute;top:5px;left:3px;bottom:-7px;width:0;border-left:1px solid #607D8B;border-right:1px solid #607D8B;z-index:2}
+.list-feed>li:first-child:after{top:8px}
+.list-feed>li:last-child{padding-bottom:0}
+.list-feed>li:last-child:after{content:none}
+.list-feed>li[class*=border-]:after,.list-feed>li[class*=border-]:before{border-color:inherit}
+.list-feed-solid>li:before{content:'';width:0;height:0;border-width:4px}
+.list-feed-rhombus>li:before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+.list-feed-time>li{margin-left:48px}
+.list-feed-time>li .feed-time{position:absolute;left:-48px;top:0;font-size:12px}
+.border-warning-400 {border-color: #4c6a9c !important;}
+.border-success-400 {border-color: #4c6a9c !important;}
+li span {color: #999999}
+
+.forspotpayment {
+    margin: 10px 3px;
+}
+
+.forspotpayment .btn{
+    margin-left: 20px;
+}
+.ts-float-right {
+    float: right;
+}

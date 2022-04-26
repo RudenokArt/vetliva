@@ -1,0 +1,50 @@
+div.news-list
+{
+	word-wrap: break-word;
+}
+div.news-list img.preview_picture
+{
+	float:left;
+	margin:0 4px 6px 0;
+}
+.news-date-time {
+	color:#486DAA;
+}
+.hotel-list-item {
+	overflow: hidden;
+	position: relative;
+	padding: 30px;
+}
+.hotel-list-item:after {
+	position: absolute;
+	height: 1px;
+	top: 0;
+	left: 0;
+	right: 0;
+	content: '';
+	background: url(/local/templates/travelsoft/images/bg-border-v.png) repeat-x top left;
+	z-index: 1;
+}
+.hl-features .hl-features-cn:last-child{
+	border-bottom: 0;
+}
+/*style from inline*/
+.selectdates{ cursor: pointer;}
+ .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today.light a {
+    /*background: #337ab7;
+    color: white;*/
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day.green-day:before, 
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day.green-day:after {
+    background: #679227 !important;  
+} 
+
+.ui-datepicker .ui-datepicker-calendar td.light-date-end.green-day:after {background: #679227 !important;}
+	
+	
+.ui-datepicker .ui-datepicker-calendar td.light-date-end.green-day a {
+    background: #679227 !important;
+    color: white;
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day.green-day:before {height: 25px;}

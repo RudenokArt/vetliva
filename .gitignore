@@ -1,0 +1,18 @@
+# /README.md
+# /newDemo
+# /online
+# /modules/travelsoft.history
+# /modules/travelsoft.currency
+# /modules/travelsoft.vetliva.history
+# /modules/travelsoft.favorites
+# /php_interface/include/rest_log.txt
+# /php_interface/include/rest_master_to_travelline.txt
+# /php_interface/include/classes/slim
+# /templates/partners/images
+# /templates/partners/js
+# /templates/travelsoft/images
+# /templates/travelsoft/js
+# /templates/travelsoft_new_year/images
+# /templates/travelsoft_new_year/js
+# /.idea
+*.txt

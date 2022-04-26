@@ -1,0 +1,26 @@
+<?php
+$MESS['exception_message'] = 'Доступ для редактирования закрыт.Редактирование доступно только пользователям, которые являются поставщиками.';
+$MESS['exception_db_message'] = "Ошибка запроса полей пользователя";
+$MESS['tab1_name'] = "Данные компании";
+$MESS['tab2_name'] = "Реквизиты";
+$MESS['WORK_COMPANY'] = "Название компании";
+$MESS["WORK_COUNTRY"] = "Страна";
+$MESS['WORK_CITY'] = "Город";
+$MESS['WORK_PHONE'] =  "Телефон";
+$MESS['WORK_MAILBOX'] = "Email";
+$MESS['UF_LEGAL_NAME'] = "Юр. название";
+$MESS['UF_LEGAL_ADDRESS'] = "Юр. адрес";
+$MESS['UF_BANK_NAME'] = "Название банка";
+$MESS['UF_BANK_ADDRESS'] = "Адрес банка";
+$MESS['UF_BANK_CODE'] = "Код банка";
+$MESS['UF_CHECKING_ACCOUNT'] = "Расчётный счёт";
+$MESS['UF_UNP'] = "УНП";
+$MESS['UF_OKPO'] = "ОКПО";
+$MESS['empty_field_error_text'] = "#messPart#Поле #fieldName# не должно быть пустым";
+$MESS['wrong_format_field_error_text'] = "#messPart#Поле #fieldName# не соответствует формату";
+$MESS['wrong_field_error_text'] = "#messPart#Поле #fieldName# указано неверно";
+$MESS['default_field_error_text'] = "#messPart#Поле #fieldName# неизвестно";
+$MESS['MESSOK'] = "Поля успешно обновлены";
+$MESS['CHOOSE_THE_COUNTRY'] = "Выберите страну";
+$MESS['tab3_name'] = "Описание компании";
+$MESS['WORK_NOTES'] = "Текстовое описание компании (до 2000 символов)";

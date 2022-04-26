@@ -1,0 +1,315 @@
+.date_from, .date_to{
+    /* line-height: 34px; */
+    width: 100% !important;
+    background: url(../images/icon-calendar.png) no-repeat right center;
+    padding-left: 24px;
+    /* margin: 5px 0 0 0; */
+}
+.form-search .form-field.field-date .field-input{
+    color:transparent;
+}
+.animate{
+
+}
+.field-date{
+    justify-content: space-between;
+    display: flex;
+}
+.ui-datepicker-month{
+    text-transform: capitalize;
+}
+.date_from{
+    display: block;
+}
+.box_date_from,.box_date_to{
+    width: calc(50% - 15px);
+    position: relative;
+    /* margin: 5px 0 0; */
+}
+#transfers-date-to, #transfers-date-from{
+    position: relative;
+}
+#transfers-date-from:before{
+
+    left: 15px;
+
+}
+#transfers-date-to:before{
+
+    left: 15px;
+
+}
+
+
+.form-field{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+    .box_date_to{
+        padding-top: 10px;
+    }
+    .date_from, .date_to {
+        width: 100% !important;
+
+        padding: 0;
+        padding-left: 35px;
+        width: 100%;
+    }
+    .box_date_to:before{
+        /* top: 14px; */
+    }
+    .field-date{
+        display: block;
+    }
+    .box_date_from, .box_date_to{
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .date_from, .date_to {
+        width: 100% !important;
+
+        padding: 0;
+        padding-left: 35px;
+    }
+    .field-date{
+        display: block;
+    }
+    .box_date_to:before{
+        /* top: 14px; */
+    }
+}
+
+.ui-state-default{
+    background: #264b87;
+    color:white;
+    position: relative;
+    border-radius:0 !important;
+}
+.rangeDay .ui-state-default{
+    position: relative;
+}
+.light-date a{
+    background: #337ab7 !important;
+    color: white !important;
+}
+.light-date-start a, .light-date-end a{
+    background: #264b87 !important;
+    color: white !important;
+}
+
+.ui-datepicker-today {
+
+}
+
+.ui-menu .ui-menu-item{
+    margin: 5px;
+}
+.header_calendar{
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background: #264b87;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+.footer_calendar{
+    padding: 0.5rem 1rem;
+    color: white;
+    display: flex;
+    background: #264b87;
+    justify-content: center;
+}
+@-webkit-keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.heartBeat {
+    -webkit-animation-name: heartBeat;
+    animation-name: heartBeat;
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day{
+    z-index: 100;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+
+    #ui-datepicker-div{
+        min-width: 40em;
+
+
+    }
+    .ui-datepicker-calendar{
+        border-collapse: separate;
+        border-spacing: 3px;
+    }
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day{
+    position: relative;
+}
+
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day:after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background: #264b87;
+    position: absolute;
+    top: 5px;
+    right: 4px;
+    z-index: -1;
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day:before{
+    content: '';
+    width: 25px;
+    height: 100%;
+    background: #264b87;
+    position: absolute;
+    top: 0;
+    right: 6px;
+    z-index: -1;
+}
+.ui-datepicker.date_to__calendar  .ui-datepicker-calendar td.ui-datepicker-current-day:after{z-index: -1;left: 4px;top: 5px;}
+
+.ui-datepicker.date_to__calendar  .ui-datepicker-calendar td.ui-datepicker-current-day:before{
+    content: '';
+    width: 25px;
+    height: 100%;
+    background: #264b87;
+    position: absolute;
+    top: 0;
+    right: 6px;
+    z-index: -1;
+}
+.light-date-end, .light-date-start{
+    position: relative;
+}
+.light-date-end:after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background: #264b87;
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    z-index: -1;
+}
+.light-date-start:after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background: #264b87;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    z-index: -1;
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day a{
+    width: 100%;
+    background: transparent;
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day a:hover{
+    background: transparent;
+}
+
+
+
+.tab-pane#form-transfer .field-from .select2-choice.select2-default .select2-chosen, 
+.tab-pane#form-transfer .field-to .select2-choice.select2-default .select2-chosen { padding-left: 29px; color: grey; font-size: 12px;}
+.tab-pane#form-transfer .roundtrip-container { padding-left: 10px;}
+
+.tab-pane#form-transfer .field-to .select2-choice.select2-default .select2-chosen {padding-left: 19px;}
+
+
+
+.tab-pane#form-transfer .form-search .form-field { padding-left:12px; padding-right: 12px}
+
+.body-en .tab-pane#form-transfer .date_to {padding-left: 42px;}
+
+.body-en .tab-pane#form-transfer .date_from {padding-left: 46px;}
+
+
+.body-en .tab-pane#form-transfer .field-to .select2-choice.select2-default .select2-chosen {
+    padding-left: 30px;
+}
+
+
+@media (max-width: 1199px) and (min-width: 991px) {
+	.tab-pane#form-transfer .form-search .form-field {padding: 0 7px;}
+	.tab-pane#form-transfer #transfers-date-to.withDate:before, .tab-pane#form-transfer #transfers-date-from:before  {left: 7px; font-size: 10px;}
+	.body-en .tab-pane#form-transfer #transfers-date-to.withDate:before, 
+	.body-en .tab-pane#form-transfer #transfers-date-from:before,
+	.body-by .tab-pane#form-transfer #transfers-date-to.withDate:before, 
+	.body-by .tab-pane#form-transfer #transfers-date-from:before {font-size: 13px;}
+	#form-transfer .form-search #transfers-date-from.form-field, #form-transfer .form-search #transfers-date-to.form-field {font-size: 13px;}
+	body .tab-pane#form-transfer .date_to {padding-left: 49px;}
+	.body-by .tab-pane#form-transfer .date_to {padding-left: 46px;} 
+	.body-by .tab-pane#form-transfer .date_from {padding-left: 40px;} 
+	.body-ru .tab-pane#form-transfer #transfers-date-to.withDate:before, .body-ru .tab-pane#form-transfer #transfers-date-from:before {font-size: 11px;} 
+    .form-search.wrap .input_cross {margin-top: 1.5% !important; }	
+}
+
+
+
+
+
+

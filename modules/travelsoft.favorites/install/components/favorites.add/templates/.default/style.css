@@ -1,0 +1,21 @@
+.bg-star {
+    height: 30px;
+    background: url(img/star.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bg-star_filled {
+    height: 30px;
+    background: url(img/star-filled.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.favorites__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-left: 35px;
+    padding-top: 5px;
+}

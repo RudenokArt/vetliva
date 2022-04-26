@@ -1,0 +1,95 @@
+/* @font-face {
+    font-family: 'HeliosCBold';
+    src: url('../fonts/HeliosCBold.eot');
+    src: local("☺"),
+         url('../fonts/HeliosCBold.eot') format('embedded-opentype'),
+         url('../fonts/HeliosCBold.woff2') format('woff2'),
+         url('../fonts/HeliosCBold.woff') format('woff'),
+         url('../fonts/HeliosCBold.ttf') format('truetype'),
+         url('../fonts/HeliosCBold.svg#HeliosCBold') format('svg');
+}
+@font-face {
+    font-family: 'HeliosCond Bold';
+    src: url('../fonts/file_265.eot');
+    src: local("☺"),
+         url('../fonts/file_265.eot') format('embedded-opentype'),
+         url('../fonts/file_265.woff2') format('woff2'),
+         url('../fonts/file_265.woff') format('woff'),
+         url('../fonts/file_265.ttf') format('truetype'),
+         url('../fonts/file_265.svg#file_265') format('svg');
+}
+@font-face {
+    font-family: 'HeliosC';
+    src: url('../fonts/HeliosC.eot');
+    src: local("☺"),
+         url('../fonts/HeliosC.eot') format('embedded-opentype'),
+         url('../fonts/HeliosC.woff2') format('woff2'),
+         url('../fonts/HeliosC.woff') format('woff'),
+         url('../fonts/HeliosC.ttf') format('truetype'),
+         url('../fonts/HeliosC.svg#HeliosC') format('svg');
+}
+@font-face {
+    font-family: 'HeliosCond';
+    src: url('../fonts/HeliosCond.eot');
+    src: local("☺"),
+         url('../fonts/HeliosCond.eot') format('embedded-opentype'),
+         url('../fonts/HeliosCond.woff2') format('woff2'),
+         url('../fonts/HeliosCond.woff') format('woff'),
+         url('../fonts/HeliosCond.ttf') format('truetype'),
+         url('../fonts/HeliosCond.svg#HeliosCond') format('svg');
+} */
+
+@font-face {
+    font-family: 'SolomonSansThin';
+    src: url('../fonts/solomon/SolomonSansThin.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansThin.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansThin.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansThin.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansThin.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansThin.svg#SolomonSansThin') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansLight';
+    src: url('../fonts/solomon/SolomonSansLight.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansLight.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansLight.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansLight.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansLight.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansLight.svg#SolomonSansLight') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansNormal';
+    src: url('../fonts/solomon/SolomonSansNormal.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansNormal.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansNormal.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansNormal.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansNormal.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansNormal.svg#SolomonSansNormal') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansSemiBold';
+    src: url('../fonts/solomon/SolomonSansSemiBold.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansSemiBold.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansSemiBold.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansSemiBold.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansSemiBold.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansSemiBold.svg#SolomonSansSemiBold') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansBlack';
+    src: url('../fonts/solomon/SolomonSansBlack.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansBlack.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansBlack.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansBlack.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansBlack.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansBlack.svg#SolomonSansBlack') format('svg');
+}

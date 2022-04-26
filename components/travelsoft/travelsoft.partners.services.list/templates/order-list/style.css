@@ -1,0 +1,29 @@
+.btn-primary {background-color: #4c6a9c !important; border-color: #4c6a9c !important;}
+table th {background-color: #4c6a9c !important;}
+.table-responsive .table td, .table-responsive .table th {padding:6px 3px}
+.tr-666 {background-color:#F3DDDD}
+.tr-0 {background-color:#D3ECD2}
+.thead-label {font-size:12px; color:#fff}
+@media (max-width: 1200px)
+{.thead-label {font-size:10px;}}
+
+.row--yellow {
+    background-color: #f7efc3;
+}
+
+.row--red {
+    background-color: #dd9999;
+    
+}
+
+.row--red td,
+.row--red td a {
+    color: white;
+}
+
+.row--green {
+    background-color: #bdedd3;
+}
+.row--white {
+    background-color: white;
+}

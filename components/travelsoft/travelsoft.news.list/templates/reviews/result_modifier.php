@@ -1,0 +1,71 @@
+<?
+
+
+/*function propRating ($code, $arProp, $arCode) {
+    if(!empty($arProp["VALUE"]) && $arProp["VALUE"] != 0) {
+        $arCode["COUNT"]++;
+        $arCode["SUMM"] += $arProp["VALUE"];
+    }
+    return $arCode;
+}*/
+
+$RATING = array();
+$PRICE_QUALITY = array();
+$LOCATION = array();
+$STAFF = array();
+$PURITY = array();
+$ROOMS = array();
+$FOOD = array();
+$RECOMMEND = '';
+
+//13 => "RECOMMEND",
+
+$prop_from_rating = array("PRICE_QUALITY", "LOCATION", "STAFF", "PURITY", "ROOMS", "FOOD");
+foreach ($prop_from_rating as $prop)
+{
+    //$arResult["RATING"][$prop] = array();
+    $arResult[$prop]["COUNT"] = 0;
+    $arResult[$prop]["SUMM"] = 0;
+}
+$arResult["RECOMMEND"] = 0;
+$arResult["RATING"] = 0;
+$arElements = array();
+foreach ($arResult["ITEMS"] as $key=>$item) {
+	$arElements[] = $item["PROPERTIES"]["ITEM"]["VALUE"];
+    $count = 0;
+    $summ = 0;
+    $arResult["ITEMS"][$key]["DISPLAY_DATE_CREATE"] = CIBlockFormatProperties::DateFormat($arParams["ACTIVE_DATE_FORMAT"], MakeTimeStamp($item["DATE_CREATE"], CSite::GetDateFormat()));
+    foreach ($prop_from_rating as $k=>$prop) {
+        if(strlen($arResult[$prop]["NAME"]) <= 0)
+            $arResult[$prop]["NAME"] = $item["PROPERTIES"][$prop]["NAME"];
+        if (!empty($item["PROPERTIES"][$prop]["VALUE"]) && $item["PROPERTIES"][$prop]["VALUE"] != 0) {
+            $count++;
+            $summ += $item["PROPERTIES"][$prop]["VALUE"];
+            $arResult[$prop]["COUNT"]++;
+            $arResult[$prop]["SUMM"] += $item["PROPERTIES"][$prop]["VALUE"];
+        }
+    }
+    $arResult["ITEMS"][$key]["ITEM_RATING"] = round($summ / $count, 1);
+    if(!empty($item["PROPERTIES"]["RECOMMEND"]["VALUE"]))
+        $arResult["RECOMMEND"]++;
+}
+$cnt = 0;
+foreach ($prop_from_rating as $prop)
+{
+    if(!empty($arResult[$prop]["SUMM"]) && !empty($arResult[$prop]["COUNT"])){
+        $arResult["RATING"] += $arResult[$prop]["SUMM"]/$arResult[$prop]["COUNT"];
+        $cnt++;
+    }
+}
+$arResult["ITEMS_NAME"] = array();
+if(!empty($arElements)){
+	$db_name = CIBlockElement::GetList(Array("SORT"=>"ASC"), Array("ACTIVE"=>"Y", "ID"=>$arElements), false, false, Array("IBLOCK_ID", "ID", "NAME"));
+	if($db_name->SelectedRowsCount() > 0) {
+		while ($ar_name = $db_name->GetNext()) {
+			$arResult["ITEMS_NAME"][$ar_name["ID"]] = $ar_name["NAME"];
+		}
+	}
+}
+
+$arResult["RATING"] = round($arResult["RATING"]/$cnt, 1);
+$arResult["RECOMMEND"] = !empty($arResult["RECOMMEND"]) ? round(($arResult["RECOMMEND"]/count($arResult["ITEMS"]))*100) : 0;

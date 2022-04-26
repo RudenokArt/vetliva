@@ -1,0 +1,61 @@
+.profile-block-hidden
+{
+	display: none;
+}
+
+.profile-block-shown
+{
+	display:block;
+}
+
+.profile-table
+{
+	width: 100%;
+}
+
+.profile-link
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.bx-input-file-desc {position: relative !important;}
+.profile-table td {
+	vertical-align: top;
+	width:50%;
+}
+
+div.bx-auth-profile input.bx-auth-input {vertical-align:middle;}
+div.bx-auth-profile span.bx-auth-secure {background-color:#FFFAE3; border:1px solid #DEDBC8; padding:2px; display:inline-block; vertical-align:middle;}
+div.bx-auth-profile div.bx-auth-secure-icon {background-image:url(images/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
+div.bx-auth-profile div.bx-auth-secure-unlock {background-image:url(images/sec-unlocked.png);}
+
+.twitter {
+	padding: 0 !important;
+	margin-top: 0 !important;
+}
+
+
+.passerror-container ul li {list-style-type: none;} 
+.passerror-container ul {margin-top: 10px; padding: 10px 15px; border-radius: 8px; border: 2px solid #EFEFEF; position: relative; }
+.passerror-container ul:after{
+	content: '';
+    position: absolute;
+    background: url(/local/templates/travelsoft/images/tail.png) no-repeat;
+    top: 0;
+    margin-top: -9px;
+    z-index: 99999;
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    width: 19px;
+    height: 15px;
+}
+.fa.fa-eye, .fa.fa-eye-slash {
+    cursor: pointer;
+    pointer-events: all;
+}
+/*style from inline*/
+.icon-eye.text-muted, .icon-eye-blocked.text-muted {cursor: pointer; pointer-events: all;}

@@ -1,0 +1,19 @@
+/*style from inline*/
+.btn_login{
+		display: block;
+		font-size: 14px;
+		line-height: 25px;
+		margin-top: 22px;
+		margin-left: 20px;
+		padding: 0 10px;
+		background: #264B87;
+		color: #fff !important;
+		border: 1px solid #264B87;
+		text-align: center;
+		text-transform: none;
+		text-overflow: ellipsis;
+		max-width: 50px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+.icon-eye.text-muted, .icon-eye-blocked.text-muted {cursor: pointer; pointer-events: all;}

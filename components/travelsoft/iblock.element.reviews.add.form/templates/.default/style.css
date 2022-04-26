@@ -1,0 +1,59 @@
+.row.form {
+	padding-bottom: 20px;
+	margin: 0;
+	/*padding-top: 20px;*/
+	/*margin-bottom: 20px;
+	margin-top: 20px;
+	margin-right: 0;
+	margin-left: 0;*/
+}
+.row.form h3 {
+	margin-left: 15px;
+}
+.row.form .container {
+	padding: 0;
+	width: auto;
+}
+.row.form .container select{
+	border: 1px solid #dedede;
+	padding: 8px 0px;
+	color: #333333;
+	width: 100%;
+	background-color: white;
+}
+.row.form .container .row{
+	margin-bottom: 5px;
+	margin-top: 8px;
+}
+p.rating {
+	margin-top: 20px;
+	font-size: 20px;
+	margin-bottom: 0;
+}
+hr {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+}
+.date {
+	margin-right: -28px;
+}
+.glyphicon {
+	top: 2px !important;
+}
+textarea {
+	width: 100%;
+}
+/*.row.form .col-lg-6:nth-child(2n+1), .row.form .col-md-6:nth-child(2n+1) {
+	padding-left: 0;
+}
+.row.form .col-lg-6:nth-child(2n+2), .row.form .col-md-6:nth-child(2n+2) {
+	padding-right: 0;
+}*/
+.form-field .field-input.review {
+	border: 1px solid #dedede;
+	padding: 8px 8px;
+	color: #333333;
+	width: 100%;
+	font-family: 'SolomonSansNormal', Arial, Verdana;
+	outline: none;
+}

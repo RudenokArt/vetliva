@@ -1,0 +1,15 @@
+#detail-statistic-info div {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: inline-block;
+    margin: 15px;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.arrow-block {
+    font-size: 50px !important;
+    padding: 5px !important;
+    box-shadow: none !important;
+}

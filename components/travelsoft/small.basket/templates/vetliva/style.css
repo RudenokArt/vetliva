@@ -1,0 +1,27 @@
+/* 
+    Created on : 22.08.2017, 11:35:53
+    Author     : dimabresky
+*/
+#basket-link {
+    position: relative;
+    color: #337ab7;
+	margin-right: -10px;
+    padding-right: 10px;
+}
+
+#basket-count-item {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 2px;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    background: linear-gradient(180deg, #F8AB17 0%, #E09A15 100%), #C4C4C4;
+    line-height: 16px;
+    text-align: center;
+	font-size: 9px;
+	color: #242424; 
+	font-weight: 600;
+	z-index:999;
+}

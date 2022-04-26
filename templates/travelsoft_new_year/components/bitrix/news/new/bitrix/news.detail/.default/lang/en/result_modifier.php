@@ -1,0 +1,21 @@
+<?php
+$MESS["PRICES"] = "Prices";
+$MESS["FEATURES"] = "Features";
+$MESS["SERVICES"] = "Services";
+$MESS["HD_DESCSERVICE"] = "Description of services";
+$MESS["HD_DESCCHILD"] = "Services for children";
+$MESS["LANG"] = "Colloquial";
+$MESS["HD_DESC"] = "Description";
+$MESS["HD_DESCROOM"] = "Rooms";
+$MESS["HD_DESCMEAL"] = "Food";
+$MESS["HD_DESCSPORT"] = "Sports and recreation";
+$MESS["RECOVERY"] = "Recovery";
+$MESS["MEDICAL_TREATMENT"] = "Medical treatment";
+$MESS["HD_ADDINFORMATION"] = "Additional Information";
+$MESS["YOUTUBE"] = "Video";
+$MESS["VIMEO"] = "Video";
+$MESS["MAP"] = "Road map";
+$MESS["PROEZD"] = "Getting there";
+$MESS["REVIEWS"] = "Reviews";
+$MESS["MED_SERVICES"] = "Medical services";
+$MESS["TREATMENT"] = "Medical treatment";

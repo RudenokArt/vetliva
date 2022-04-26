@@ -1,0 +1,133 @@
+/* Arrows */
+.slick-prev, .slick-next{
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: block;
+	width: 20px;
+	height: 30px;
+	margin: auto;
+	padding: 0;
+	cursor: pointer;
+	color: transparent;
+	border: none;
+	outline: none;
+	background: transparent;
+	z-index: 4;
+}
+
+.slick-prev:before, .slick-prev:after,.slick-next:before, .slick-next:after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background-color: #264B87;
+}
+.slick-next:before{
+	left: 30%;
+	top: 0;
+	-webkit-transform: skew(-145deg, 0deg);
+	-ms-transform: skew(-145deg, 0deg);
+	transform: skew(-145deg, 0deg);
+	border-bottom: none
+}
+.slick-next:after{
+	left: 30%;
+	top: 50%;
+	-webkit-transform: skew(145deg, 0deg);
+	-ms-transform: skew(145deg, 0deg);
+	transform: skew(145deg, 0deg);
+	border-top: none;
+}
+
+.slick-prev:before{
+	left: 30%;
+	top: 0;
+	-webkit-transform: skew(145deg, 0deg);
+	-ms-transform: skew(145deg, 0deg);
+	transform: skew(145deg, 0deg);
+	border-bottom: none
+}
+.slick-prev:after{
+	left: 30%;
+	top: 50%;
+	-webkit-transform: skew(-145deg, 0deg);
+	-ms-transform: skew(-145deg, 0deg);
+	transform: skew(-145deg, 0deg);
+	border-top: none
+}
+
+.slick-prev{
+	left: 20px;
+}
+
+.slick-next{
+	right: 20px;
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider{
+	margin-bottom: 30px;
+
+.slick-dots{
+	position: absolute;
+	bottom: -25px;
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+.slick-dots li{
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
+	padding: 0;
+	cursor: pointer;
+}
+.slick-dots li div{
+	font-size: 0;
+	line-height: 0;
+	display: block;
+	width: 20px;
+	height: 20px;
+	padding: 5px;
+	cursor: pointer;
+	color: transparent;
+	border: 0;
+	outline: none;
+	background: transparent;
+}
+.slick-dots li div:hover, .slick-dots li div:focus{
+	outline: none;
+}
+.slick-dots li div:hover:before, .slick-dots li div:focus:before{
+	opacity: 1;
+}
+.slick-dots li div:before{
+	font-family: 'slick';
+	font-size: 6px;
+	line-height: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	content: '•';
+	text-align: center;
+	opacity: .25;
+	color: black;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li .slick-active div:before{
+	opacity: .75;
+	color: black;
+}

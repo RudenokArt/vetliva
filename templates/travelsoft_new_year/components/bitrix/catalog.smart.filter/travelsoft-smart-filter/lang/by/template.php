@@ -1,0 +1,39 @@
+<?php
+$MESS['select2-placeholder'] = "Калі ласка, увядзіце назву";
+$MESS['choose'] = "Выберыце";
+
+// перевод названий свойств
+$MESS["REGION"] = "Вобласть";
+$MESS["TOWN"] = "Гарады";
+$MESS["CITY"] = "Горад адпраўлення";
+$MESS["CAT_ID"] = "Катэгорыя";
+$MESS["TYPE_ID"] = "Тып размяшчэння";
+$MESS["TYPE"] = "Тып або профіль";
+$MESS["SERVICES"] = "Паслугі";
+$MESS["MED_PROFILES"] = "Медыцынскія профілі";
+$MESS["MED_SERVICES"] = "Медыцынскія паслугі";
+$MESS["MED_CONSULT"] = "Медыцынскія кансультацыі";
+$MESS["DAYS"] = "Колькасць начэй";
+$MESS["FOOD"] = "Харчаванне";
+$MESS["TOURTYPE"] = "Тып экскурсійнага тура";
+$MESS["TRANSPORT"] = "Тып транспарту";
+$MESS["THEME_TOURS"] = "Тэма экскурсійнага тура";
+$MESS["DATE_FROM"] = "Даты правядзення";
+$MESS["LANG"] = "Мова экскурсii";
+$MESS["NEWYEAR"] = "Папулярна";
+$MESS["PROPERTY_LIST_VALUE_ID_152"] = "Новы Год";
+$MESS["PROPERTY_LIST_VALUE_ID_153"] = "Новы Год";
+$MESS["PROPERTY_LIST_VALUE_ID_154"] = "Новы Год";
+$MESS["PROPERTY_LIST_VALUE_ID_156"] = "Навінка";
+$MESS["PROPERTY_LIST_VALUE_ID_157"] = "Хіт продажаў";
+$MESS["PROPERTY_LIST_VALUE_ID_158"] = "Мы раім";
+$MESS["PROPERTY_LIST_VALUE_ID_160"] = "Басейн";
+$MESS["PROPERTY_LIST_VALUE_ID_161"] = "Мы раім";
+$MESS["PROPERTY_LIST_VALUE_ID_162"] = "Хіт продажаў";
+$MESS["PROPERTY_LIST_VALUE_ID_163"] = "Навінка";
+$MESS["PROPERTY_LIST_VALUE_ID_164"] = "Хіт продажаў";
+$MESS["PROPERTY_LIST_VALUE_ID_165"] = "Мы раім";
+$MESS["AVAIL"] = "Наяўнасць месцаў";
+$MESS["PROPERTY_LIST_VALUE_ID_159"] = "Выключыць варыянты, дзе ўсё прададзена";
+$MESS["SPOSOB_PROVEDENIA"] = "Спосаб правядзення";
+$MESS["AVAILABILITY"] = "Наяўнасць месцаў";

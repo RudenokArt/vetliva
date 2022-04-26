@@ -1,0 +1,58 @@
+.header-auth-form .bx-authform-social ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.header-auth-form .modal-seperator {
+	margin-bottom: 12px !important;
+}
+.header-auth-form .btn {
+	margin-top: 0;
+}
+.header-auth-form .bx-authform-link-container {
+	margin-bottom: 5px !important;
+}
+.header-auth-form .bx-authform {
+	margin-bottom: 0 !important;
+}
+.header-auth-form .bx-authform-formgroup-container {
+	margin-bottom: 15px !important;
+}
+.show-header-auth-popup.registration-link {float:left; padding-right: 15px;}
+
+.bx-authform .logotype {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bx-authform .logotype {
+    background-image: url(/local/templates/travelsoft/images/logo-auth-form.svg) !important;
+    height: 70px !important;
+    width: 110px !important;
+    position: relative !important;
+	margin-bottom: 15px;
+	background-size: contain;
+}
+.links-hidden {display: none;position: absolute; top: 70px; background: #fff; width: 165px; padding: 0;}
+.down-links {float:right}
+.links-hidden a {font-size: 13px; line-height: 35px; padding: 0px 17px; border-top: 1px solid #f1f1f1;}
+
+.mfp-content .bx-authform-label-container {display: none;}
+.bx-authform-input-container input[type="text"]::-webkit-input-placeholder{font-size:14px; color: #BBBBBB; } 
+.bx-authform-input-container input[type="password"]::-webkit-input-placeholder{font-size:14px; color: #BBBBBB;} 
+.bx-authform-input-container input[type="text"], .bx-authform-input-container input[type="password"] {
+	height: 45px;
+	padding: 0 15px;
+	border: 1px solid #E3E3E3;
+	line-height: 47px
+} 
+
+
+.header-auth-form .bx-authform-formgroup-container.formgroup-forgotpsw {float: left;}
+.auth-footer.auth {text-align: center;}
+.auth-footer > div {display: inline-block;}
+
+
+#header-auth-popup .bx-authform-link-container {
+    margin-bottom: 5px !important;
+    margin-top: 10px;
+    float: right;
+}

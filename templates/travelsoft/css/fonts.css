@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'SolomonSansThin';
+    src: url('../fonts/solomon/SolomonSansThin.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansThin.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansThin.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansThin.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansThin.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansThin.svg#SolomonSansThin') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansLight';
+    src: url('../fonts/solomon/SolomonSansLight.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansLight.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansLight.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansLight.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansLight.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansLight.svg#SolomonSansLight') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansNormal';
+    src: url('../fonts/solomon/SolomonSansNormal.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansNormal.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansNormal.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansNormal.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansNormal.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansNormal.svg#SolomonSansNormal') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansSemiBold';
+    src: url('../fonts/solomon/SolomonSansSemiBold.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansSemiBold.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansSemiBold.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansSemiBold.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansSemiBold.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansSemiBold.svg#SolomonSansSemiBold') format('svg');
+}
+
+@font-face {
+    font-family: 'SolomonSansBlack';
+    src: url('../fonts/solomon/SolomonSansBlack.eot');
+    src: local("☺"),
+         url('../fonts/solomon/SolomonSansBlack.eot') format('embedded-opentype'),
+         url('../fonts/solomon/SolomonSansBlack.woff2') format('woff2'),
+         url('../fonts/solomon/SolomonSansBlack.woff') format('woff'),
+         url('../fonts/solomon/SolomonSansBlack.ttf') format('truetype'),
+         url('../fonts/solomon/SolomonSansBlack.svg#SolomonSansBlack') format('svg');
+}

@@ -1,0 +1,109 @@
+.filter-container{
+    margin: 40px 0;
+}
+
+.loyality-programm__scale {
+    margin-top: 20px;
+}
+
+.loyality-programm__title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.loyality-programm_bottom10px {
+    margin-bottom: 10px;
+}
+
+.loyality-programm_bottom30px {
+    margin-bottom: 30px;
+}
+
+.scale__progress-bar{
+    width: 80%;
+    height: 10px;
+    background-color: #716c6c;
+    margin: 6px auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.scale-progress-bar__serif {
+    height: 21px;
+    width: 2px;
+    background-color: #716c6c;
+    border-radius: 50%;
+    top: -5px;
+    position: absolute;
+}
+
+.serif-L52 {
+    left: 52%;
+}
+
+.serif-L86 {
+    left: 86%;
+}
+
+.scale-progress-bar__filler{
+    height: 100%;
+    background-color: #fbbf01;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+}
+
+.scale__top-legend,
+.scale__bottom-legend{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.legend__element {
+    position: absolute;
+    display: block;
+    font-size: 12px;
+}
+
+.legend__element_top {
+    top: -20px;
+}
+
+.legend__element_bottom {
+    bottom: -20px;
+}
+
+.legend__element_L0 {
+    left: 0;
+}
+
+.legend__element_L25 {
+    left: 25%;
+}
+
+.legend__element_L48 {
+    left: 48%;
+}
+
+.legend__element_L50 {
+    left: 50%;
+}
+
+.legend__element_L65 {
+    left: 65%;
+}
+
+.legend__element_L80 {
+    left: 80%;
+}
+
+.legend__element_L85 {
+    left: 85%;
+}
+.order-item {cursor: pointer;}
+.order-item:hover{background-color: #f6f9fd;}
+
+.bookRoom .order-item td {text-align: center;}
+
+
