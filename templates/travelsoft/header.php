@@ -216,7 +216,7 @@ $id_goal = GOAL_ID;
             <!-- Header -->
 			<!--<div class="overlay"></div>-->
             <header id="header" class="header">
-              <div class="container top-search-form-header-wrapper">
+              <div class="container top-search-form-header-wrapper" id="top-search-form-header-wrapper">
                 <div class="top-search-form-header">
                   <form id="search__by__name_top" action="/search" method="get">
                     <input id="search_top" type="text" name="q" placeholder="<?= Loc::getMessage("WHAT_SEARCH") ?>?" autocomplete="off">
@@ -613,3 +613,14 @@ $id_goal = GOAL_ID;
 
                                     </script>
 									<? endif; ?>
+<script>
+  $(window).bind('scroll', function () {
+    if (pageYOffset > 120) {
+      $('#top-search-form-header-wrapper').slideUp();
+    } else {
+      $('#top-search-form-header-wrapper').slideDown();
+    }
+    
+  });
+  // 
+</script>
