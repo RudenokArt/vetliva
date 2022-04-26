@@ -205,14 +205,7 @@ $id_goal = GOAL_ID;
     window.Statistics = new Statistic(<?= $metric_lang?>,"<?=$id_goal?>","/","<?=$url_statistic?>");
     window.Statistics.cookieCheck();
 </script>
-<div class="container top-search-form-header-wrapper">
-  <div class="top-search-form-header">
-    <form id="search__by__name_top" action="/search" method="get">
-      <input id="search_top" type="text" name="q" placeholder="<?= Loc::getMessage("WHAT_SEARCH") ?>?" autocomplete="off">
-      <button><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
-  </div>
-</div>
+
 
         <!-- Wrap -->
       <div id="wrap" class="<?if((CSite::InDir('/belarus/shoping/')) 
@@ -223,6 +216,14 @@ $id_goal = GOAL_ID;
             <!-- Header -->
 			<!--<div class="overlay"></div>-->
             <header id="header" class="header">
+              <div class="container top-search-form-header-wrapper">
+                <div class="top-search-form-header">
+                  <form id="search__by__name_top" action="/search" method="get">
+                    <input id="search_top" type="text" name="q" placeholder="<?= Loc::getMessage("WHAT_SEARCH") ?>?" autocomplete="off">
+                    <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                  </form>
+                </div>
+              </div>
                 <div class="container">
                     <!-- Logo -->
                     <div class="logo float-left" style="opacity: 1; visibility: visible;">
