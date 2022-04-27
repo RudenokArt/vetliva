@@ -58,19 +58,22 @@ if($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'] && $_POST["TYPE"] == "A
 <?endif?>
 
 	<?if($arResult["AUTH_SERVICES"]):?>
+
+  <!-- ==================================== АВТОРИЗАЦИЯ ЧЕРЕЗ СОЦ. СЕТИ ========================= -->
 <?
-$APPLICATION->IncludeComponent("bitrix:socserv.auth.form",
-	"flat",
-	array(
-		"AUTH_SERVICES" => $arResult["AUTH_SERVICES"],
-		"AUTH_URL" => $arResult["AUTH_URL"],
-		"POST" => $arResult["POST"],
-	),
-	$component,
-	array("HIDE_ICONS"=>"Y")
-);
+// $APPLICATION->IncludeComponent("bitrix:socserv.auth.form",
+// 	"flat",
+// 	array(
+// 		"AUTH_SERVICES" => $arResult["AUTH_SERVICES"],
+// 		"AUTH_URL" => $arResult["AUTH_URL"],
+// 		"POST" => $arResult["POST"],
+// 	),
+// 	$component,
+// 	array("HIDE_ICONS"=>"Y")
+// );
 ?>
-        <div class="modal-seperator"><span><?=GetMessage('AUTH_SEPARATOR')?></span></div>
+        <div style="display:none;" class="modal-seperator"><span><?=GetMessage('AUTH_SEPARATOR')?></span></div>
+<!-- ===================================================================================================== -->
 
 	<?endif?>
 
