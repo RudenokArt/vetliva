@@ -59,6 +59,9 @@ define('USER_IS_PROVIDER', travelsoft\booking\Utils::checkUserIsProvider() || $G
         $oAsset->addJs(SITE_TEMPLATE_PATH . '/js/core/app.js');
         $oAsset->addJs(SITE_TEMPLATE_PATH . '/js/pages/layout_fixed_custom.js');
         $oAsset->addJs(SITE_TEMPLATE_PATH . '/js/pages/form_layouts.js');
+
+        // font-awesome
+        $APPLICATION->SetAdditionalCSS("/bitrix/css/main/font-awesome.css");
         ?>
 
     </head>

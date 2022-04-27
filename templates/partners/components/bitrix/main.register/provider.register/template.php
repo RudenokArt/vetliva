@@ -26,6 +26,15 @@ $APPLICATION->AddViewContent('htmlClass', 'login-container');
 </div>
 <?unset($_SESSION["JUST_REGISTER_PROVIDER"]); return; endif; ?>
 <!-- Registration form -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a href="/partners-information/" class="btn bg-teal-400 button-back">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
 <form method="post" action="<?= POST_FORM_ACTION_URI ?>" name="bform" id="reg_user_form">
 
   <input type="hidden" name="IS_PROVIDER" value="Y" />
@@ -499,7 +508,7 @@ $APPLICATION->AddViewContent('htmlClass', 'login-container');
               {WORK_COUNTRY:this[this.selectedIndex].text}, function (data) {
                 console.log(data);
               });
-           });
+          });
 
         </script>
         <!-- /registration form -->
