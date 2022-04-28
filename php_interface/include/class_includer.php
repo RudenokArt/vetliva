@@ -5,6 +5,7 @@ $interface_include_path = '/local/php_interface/include';
 \Bitrix\Main\Loader::registerAutoLoadClasses(
   null, 
   array(
+    'InfoBlock' => $interface_include_path .'/classes/InfoBlock.php',
     'Highload_Block' => $interface_include_path .'/classes/Highload_Block.php',
     'B24_Partners' => $interface_include_path .'/classes/B24_Partners.php',
     "travelsoft\Bx24" => $interface_include_path ."/classes/Bx24.php",
