@@ -18,12 +18,22 @@ class Highload_Block extends InfoBlock {
       'filter'=>['TABLE_NAME' => 'ts_rates_pluse_category',],
     ]);
     $ts_rates_pluse_category = $this->getHighloadBlockItems($highloadblock, ['ID' => $id]);
+
     $highloadblock = $this->getHighloadBlock([
       'filter'=>['TABLE_NAME' => 'ts_rates_category',],
     ]);
-    $ts_rates_category = $this->getHighloadBlockItems($highloadblock, [
-      'ID' => $ts_rates_pluse_category[0]['UF_RATE_CATEGORY_ID'],
+    $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($highloadblock);
+    $entity_data_class = $entity->getDataClass();
+    $rsData = $entity_data_class::getList([
+      'select' => ['ID', 'UF_NAME', 'UF_CURRENCY_ID'],
+      'filter' => [
+        'ID' => $ts_rates_pluse_category[0]['UF_RATE_CATEGORY_ID'],
+      ],
     ]);
+    $ts_rates_category = [];
+    foreach ($rsData as $key => $value) {
+      array_push($ts_rates_category, $value);
+    }
     return $ts_rates_category[0];
   }
   
@@ -45,9 +55,11 @@ class Highload_Block extends InfoBlock {
     foreach ($rsData as $key => $value) {
       if ($tooday <= $value['UF_DATE']) {
         $date = getdate($value['UF_DATE']);
-        $currency_id = $this->getRatesCategory($value['UF_PTPR_ID'])['UF_CURRENCY_ID'];
+        $rates_category = $this->getRatesCategory($value['UF_PTPR_ID']);
+        $currency_id = $rates_category['UF_CURRENCY_ID'];
         $value['currency'] = $this->getCurrencyByID($currency_id)['NAME'];
         $value['date'] = $date['mday'].'.'.$date['mon'].'.'.$date['year'];
+        $value['rates_category'] = $rates_category['UF_NAME'];
         array_push($arr, $value);
       }
     }
@@ -86,7 +98,6 @@ class Highload_Block extends InfoBlock {
     $highloadblock = $this->getHighloadBlock([
       'filter'=>['TABLE_NAME' => 'ts_quotas',],
     ]);
-    // $arr = $this->getHighloadBlockItems($highloadblock, ['UF_SERVICE_ID'=>$service_id]);
     $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($highloadblock);
     $entity_data_class = $entity->getDataClass();
     $rsData = $entity_data_class::getList(['filter' => ['UF_SERVICE_ID'=>$service_id]]);
