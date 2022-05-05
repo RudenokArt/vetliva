@@ -406,7 +406,6 @@ class BxEventsHandlers {
       $new_partner->companyAdd();
       $new_partner->dealAdd();
       file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logging.json', $new_partner->partner_data_json);
-      exit();
 
         if ($arFields['USER_ID'] > 0) {
 
