@@ -22,11 +22,6 @@ class Highload_Block extends InfoBlock {
     $highloadblock = $this->getHighloadBlock([
       'filter'=>['TABLE_NAME' => 'ts_rates_category',],
     ]);
-    // $ts_rates_category = $this->getHighloadBlockItems($highloadblock, [
-    //   'ID' => $ts_rates_pluse_category[0]['UF_RATE_CATEGORY_ID'],
-    // ]);
-    // return $ts_rates_category[0];
-
     $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($highloadblock);
     $entity_data_class = $entity->getDataClass();
     $rsData = $entity_data_class::getList([
