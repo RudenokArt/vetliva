@@ -8,6 +8,25 @@ class Highload_Block extends InfoBlock {
     // $this->ts_services_list = $this->getTsServicesList();
   }
 
+  function getCurrencyByID ($id) {
+    $arr = $this->getItemsList([], ['ID'=>$id], false, false, ['NAME', 'ID']);
+    return $arr[0];
+  }
+
+  function getRatesCategory ($id) {
+    $highloadblock = $this->getHighloadBlock([
+      'filter'=>['TABLE_NAME' => 'ts_rates_pluse_category',],
+    ]);
+    $ts_rates_pluse_category = $this->getHighloadBlockItems($highloadblock, ['ID' => $id]);
+    $highloadblock = $this->getHighloadBlock([
+      'filter'=>['TABLE_NAME' => 'ts_rates_category',],
+    ]);
+    $ts_rates_category = $this->getHighloadBlockItems($highloadblock, [
+      'ID' => $ts_rates_pluse_category[0]['UF_RATE_CATEGORY_ID'],
+    ]);
+    return $ts_rates_category[0];
+  }
+  
   function getPricesForService ($service_id, $unix_date) {
     $highloadblock = $this->getHighloadBlock([
       'filter'=>['TABLE_NAME' => 'ts_prices',],
@@ -26,6 +45,8 @@ class Highload_Block extends InfoBlock {
     foreach ($rsData as $key => $value) {
       if ($tooday <= $value['UF_DATE']) {
         $date = getdate($value['UF_DATE']);
+        $currency_id = $this->getRatesCategory($value['UF_PTPR_ID'])['UF_CURRENCY_ID'];
+        $value['currency'] = $this->getCurrencyByID($currency_id)['NAME'];
         $value['date'] = $date['mday'].'.'.$date['mon'].'.'.$date['year'];
         array_push($arr, $value);
       }
