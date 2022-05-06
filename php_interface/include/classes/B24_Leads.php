@@ -15,7 +15,7 @@ class B24_Leads extends B24_Partners {
     return $result;
   }
 
-  function getRequestFormData () {
+  function getRequestFormData () { // получение данных и  создание лида для формы заявки на экскурсию
     file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($_POST));
     $this->leadAdd('crm.lead.add', [
       'fields' =>[
