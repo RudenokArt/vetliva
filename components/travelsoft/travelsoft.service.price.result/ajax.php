@@ -198,6 +198,7 @@ try {
         ));
 
         if ($element_id > 0) {
+          $request_form_lead = new B24_Leads();
             CEvent::Send("FEEDBACK_FORM", SITE_ID, array(
                 "PAGE" => $_SERVER["HTTP_REFERER"],
                 "OBJECTNAME" => $request->getPost("object_name"),
