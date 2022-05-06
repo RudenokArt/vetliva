@@ -4,9 +4,9 @@
  */
 class B24_Leads extends B24_Partners {
   
-  function __construct()  {
-    $this->request_form_data = $this->getRequestFormData();
-  }
+  // function __construct()  {
+  //   $this->request_form_data = $this->getRequestFormData();
+  // }
 
   function leadAdd ($method, $query) { 
     $api_method = $method.'?'; 
