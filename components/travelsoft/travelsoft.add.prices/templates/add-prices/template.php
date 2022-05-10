@@ -137,18 +137,28 @@ if ($arService["UF_SERVICE_TYPE_NAME"] == 6) {
                 </div>
                 <?endif;?>
             </div>
+            <?
+            $uniquerates = []; foreach ($arResult['rates'] as $rateId => $arRate) { 
+              $arKeys = array_keys($arResult['ptRates'][2], $rateId);
+              if (empty($arKeys))
+                continue;
+
+              $cur = $arResult['currency'][$arResult['rates'][$rateId]['UF_CURRENCY_ID']]['name'];
+              $uniquerates[abs(crc32($arRate['UF_NAME'])) + $rateId] = $arRate['UF_NAME'] . "(". $cur . ")";
+            }
+            ?>
             <? if (@$_REQUEST['row_id'] > 0): ?>
                 <div class="col-md-4">
                     <form id="serviceSelectFormFiltr" name="serviceSelectFormFiltr" action="<?= POST_FORM_ACTION_URI ?>" method="get">
                         <div class="form-group">
                             <label><b>Выберите тариф:</b></label>
                             <?
-                               $uniquerates = []; foreach ($arResult['rates'] as $rateId => $arRate) { 
-                                $arKeys = array_keys($arResult['ptRates'][2], $rateId);
-                                if (empty($arKeys))
-                                    continue;
-                                    $uniquerates[abs(crc32($arRate['UF_NAME']))] = $arRate['UF_NAME'];
-                               }
+                               // $uniquerates = []; foreach ($arResult['rates'] as $rateId => $arRate) { 
+                               //  $arKeys = array_keys($arResult['ptRates'][2], $rateId);
+                               //  if (empty($arKeys))
+                               //      continue;
+                               //      $uniquerates[abs(crc32($arRate['UF_NAME']))] = $arRate['UF_NAME'];
+                               // }
                             ?>
                             <select data-placeholder="..." onchange="applyfiltr();" id="selectRate" class="select fx-min-width-300px" name="selectRate">
                                 <option></option>
@@ -211,14 +221,14 @@ if ($arService["UF_SERVICE_TYPE_NAME"] == 6) {
                         <div class="form-group">
                             <div class="input-group">                                    
                                 <?
-                                    $uniquerates = []; foreach ($arResult['rates'] as $rateId => $arRate) { 
-                                    $arKeys = array_keys($arResult['ptRates'][2], $rateId);
-                                    if (empty($arKeys))
-                                        continue;
+                                   //  $uniquerates = []; foreach ($arResult['rates'] as $rateId => $arRate) { 
+                                   //  $arKeys = array_keys($arResult['ptRates'][2], $rateId);
+                                   //  if (empty($arKeys))
+                                   //      continue;
 
-                                        $cur = $arResult['currency'][$arResult['rates'][$rateId]['UF_CURRENCY_ID']]['name'];
-                                        $uniquerates[abs(crc32($arRate['UF_NAME'])) + $rateId] = $arRate['UF_NAME'] . "(". $cur . ")";
-                                   }
+                                   //      $cur = $arResult['currency'][$arResult['rates'][$rateId]['UF_CURRENCY_ID']]['name'];
+                                   //      $uniquerates[abs(crc32($arRate['UF_NAME'])) + $rateId] = $arRate['UF_NAME'] . "(". $cur . ")";
+                                   // }
                                 ?>
                                 <select data-placeholder="..." id="selectCopyRate" class="select fx-min-width-300px">
                                     <option value="0">Все</option>
