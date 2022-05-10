@@ -9,6 +9,7 @@ $interface_include_path = '/local/php_interface/include';
     'Highload_Block' => $interface_include_path .'/classes/Highload_Block.php',
     'B24_Partners' => $interface_include_path .'/classes/B24_Partners.php',
     'B24_Leads' => $interface_include_path .'/classes/B24_Leads.php',
+    'B24_Deals' => $interface_include_path .'/classes/B24_Deals.php',
     "travelsoft\Bx24" => $interface_include_path ."/classes/Bx24.php",
     "travelsoft\BxEventsHandlers" => $interface_include_path ."/classes/bxeventshandlers.php",
     "travelsoft\Ajax" => $interface_include_path ."/classes/ajax.php",

@@ -178,6 +178,18 @@ $eventManager->addEventHandler(
     )
 );
 
+// события highload-блоков
+$highLoadEventManager = \Bitrix\Main\EventManager::getInstance();
+$highLoadEventManager->addEventHandler('', 'BookingsOnAfterAdd', function (\Bitrix\Main\Entity\Event $event) {
+  $id = $event->getParameter("id");
+  $arFields = $event->getParameter("fields");
+  $arFields['ID'] = $id;
+  $deal = new B24_Deals();
+  $deal->newBookingDealAdd($arFields);
+});
+ 
+
+
 # обработчики событий работы с хранилищами модуля бронирования
 Bitrix\Main\Loader::includeModule("travelsoft.booking.dev.tools");
 travelsoft\booking\Utils::setEventsHandlers();
