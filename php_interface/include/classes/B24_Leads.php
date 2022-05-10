@@ -31,7 +31,7 @@ class B24_Leads extends B24_Partners {
         'NAME' => $_POST['full_name'],
         'STATUS_ID' => 'NEW',
         'OPENED' => 'Y',
-        'ASSIGNED_BY_ID' => 287,
+        'ASSIGNED_BY_ID' => 27186,
         'SOURCE_ID' => 10,
         'COMMENTS'=> $_POST['comment'],
         'PHONE' => [['VALUE'=> $_POST['phone'], 'VALUE_TYPE'=>'WORK']],
