@@ -14,7 +14,11 @@ class BelaviaSearchForm {
   public $locations_list;
   public $availible_locations;
   function __construct()  {
-    $str = file_get_contents('https://ibe.belavia.by/api/locales/location/'.LANGUAGE_ID);
+    $lang = LANGUAGE_ID;
+    if ($lang == 'by') {
+      $lang = 'ru';
+    }
+    $str = file_get_contents('https://ibe.belavia.by/api/locales/location/'.$lang);
     $arr = json_decode($str,true)['city'];
     $this->locations_list = json_encode($arr, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     $str = file_get_contents('https://ibe.belavia.by/api/settings?jipcc=B2DC');
