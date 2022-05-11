@@ -172,7 +172,6 @@
 
 <script>
   var BelaviaSearchForm = {};
-  console.log('<?php echo $arResult["locations_list"]; ?>');
   BelaviaSearchForm.lang = '<?php echo LANGUAGE_ID; ?>';
   BelaviaSearchForm.locations_list = JSON.parse('<?php echo $arResult["locations_list"]; ?>');
   BelaviaSearchForm.availible_locations = JSON.parse('<?php echo $arResult["availible_locations"]; ?>');
