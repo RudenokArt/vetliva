@@ -169,6 +169,7 @@
     </div>
   </div>
 </div>
+
 <script>
   var BelaviaSearchForm = {};
   BelaviaSearchForm.lang = '<?php echo LANGUAGE_ID; ?>';
