@@ -338,6 +338,9 @@ function belaviaUrlCreate () {
     url = url + '&JourneySpan=' + BelaviaSearchForm.JourneySpan;
   }
   if (BelaviaSearchForm.lang) {
+    if (BelaviaSearchForm.lang == 'by') {
+      BelaviaSearchForm.lang = 'be';
+    }
     url = url + '&lang=' + BelaviaSearchForm.lang;
   }
   if (BelaviaSearchForm.Adults) {
