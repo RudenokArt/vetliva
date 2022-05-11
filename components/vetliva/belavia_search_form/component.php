@@ -10,14 +10,14 @@ $this->IncludeComponentTemplate();
  * 
  */
 class BelaviaSearchForm {
-  public $lang = LANGUAGE_ID;
   public $locations_list;
   public $availible_locations;
   function __construct()  {
-    if ($this->lang == 'by') {
-      $this->lang = 'be';
+    $lang = LANGUAGE_ID;
+    if ($lang == 'by') {
+      $lang = 'be';
     }
-    $str = file_get_contents('https://ibe.belavia.by/api/locales/location/'.$this->lang);
+    $str = file_get_contents('https://ibe.belavia.by/api/locales/location/'.$lang);
     $arr = json_decode($str,true)['city'];
     $this->locations_list = json_encode($arr, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     $str = file_get_contents('https://ibe.belavia.by/api/settings?jipcc=B2DC');
