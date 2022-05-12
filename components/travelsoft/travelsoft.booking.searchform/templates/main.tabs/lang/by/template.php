@@ -38,4 +38,4 @@ $MESS['T_SEARCHFORM_GIFTS'] = 'Падарункавы сертыфікат';
 $MESS["ROUNDTRIPNO"] = "У адзін бок";
 
 $MESS["CHOOSE_OPTIONS"] = "Падабраць варыянты";
-$MESS['belavia_booking'] = 'Авиапералёты';
+$MESS['belavia_booking'] = 'Авiапералёты';

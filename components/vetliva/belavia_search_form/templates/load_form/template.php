@@ -169,14 +169,12 @@
     </div>
   </div>
 </div>
+
 <script>
   var BelaviaSearchForm = {};
   BelaviaSearchForm.lang = '<?php echo LANGUAGE_ID; ?>';
   BelaviaSearchForm.locations_list = JSON.parse('<?php echo $arResult["locations_list"]; ?>');
   BelaviaSearchForm.availible_locations = JSON.parse('<?php echo $arResult["availible_locations"]; ?>');
-
-  $(function () {
-
   getAvailableLocations();
   setPassangersQuantity(getPassangersQuantity());
 
@@ -246,7 +244,6 @@
   $('body').delegate('.DestinationLocation-item','click', function () {
     $('input[name="DestinationLocation"]').prop('value', $(this).html());
     BelaviaSearchForm.DestinationLocation = $(this).attr('data-DestinationLocation');
-    console.log(BelaviaSearchForm.DestinationLocation);
   });
 
   $('button[name="adults_passanger_delete"]').click(function () {
@@ -319,7 +316,6 @@
     };
   });
 
-});
 
 // https://belavia.by/redirect.php?OriginLocation=MSQ&DestinationLocation=MOW&DepartureDate=2022-04-29&lang=ru&JourneySpan=Ow&Adults=1&Infants=1
 
@@ -341,6 +337,9 @@ function belaviaUrlCreate () {
     url = url + '&JourneySpan=' + BelaviaSearchForm.JourneySpan;
   }
   if (BelaviaSearchForm.lang) {
+    if (BelaviaSearchForm.lang == 'by') {
+      BelaviaSearchForm.lang = 'be';
+    }
     url = url + '&lang=' + BelaviaSearchForm.lang;
   }
   if (BelaviaSearchForm.Adults) {
