@@ -18,26 +18,29 @@ class B24_Deals extends B24_Leads {
   }
 
   function newBookingDealAdd ($arFields) {
-    $infoblock = new InfoBlock();
+    $hotel_src = new InfoBlock();
     $arFields['UF_SERVICE'] = json_decode($arFields['UF_SERVICE_JSON'],true);
     $arFields['UF_BUYER_INFO'] = json_decode($arFields['UF_BUYER_INFO_JSON'],true);
     $arFields['UF_TOURISTS'] = json_decode($arFields['UF_TOURISTS_JSON'],true);
     $rsUser = CUser::GetByID($arFields['UF_SERVICE']['partnerId']);
     $arFields['company'] = $rsUser->Fetch();
+    $city_src = new InfoBlock();
     $arFields['COMMENTS'] = '
     ID поставщика на vetliva.by: '.$arFields['UF_SERVICE']['partnerId'].'<br>
     Поставщик: '.$arFields['company']['NAME'].' '.$arFields['company']['LAST_NAME'].' '.$arFields['company']['EMAIL'].'<br>
     ID услуги на vetliva.by: '.$arFields['UF_SERVICE']['parts']['roomId'].'<br>
     Услуга: '.$arFields['UF_SERVICE_NAME'].'<br>
     ID отеля на vetliva.by: '.$arFields['UF_IBLOCK_ELEMENT_ID'].'<br>
-    Отель: '.$infoblock->getItemsList([],['ID'=>$arFields['UF_IBLOCK_ELEMENT_ID']],false, false ['NAME'])[0]['NAME'].'<br>
+    Отель: '.$hotel_src->getItemsList([],['ID'=>$arFields['UF_IBLOCK_ELEMENT_ID']],false, false ['NAME'])[0]['NAME'].'<br>
+    Договор: '.$arFields['UF_DOGOVOR_CODE'].'<br>
     Дата начала: '.$arFields['UF_SERVICE']['dateBegin'].'<br>
     Дата окончания: '.$arFields['UF_SERVICE']['dateEnd'].'<br>
     Количество: '.$arFields['UF_SERVICE']['nmen'].'<br>
     Стоимость: '.$arFields['UF_SERVICE']['brutto'].'<br>
     Валюта: '.$arFields['UF_SERVICE']['currency'].'<br>
     Страна: '.$arFields['UF_SERVICE']['cityId'].'<br>
-    Город: '.$arFields['UF_SERVICE']['cityId'].'<br>
+    ID города на vetliva.by: '.$arFields['UF_SERVICE']['cityId'].'<br>
+    Город: '.$city_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['cityId']], false, false, ['ID','NAME'])[0]['NAME'].'<br>
     Email: '.$arFields['UF_BUYER_INFO']['email'].'<br>
     Тел.: '.$arFields['UF_BUYER_INFO']['phone'].'<br>
     Язык: '.$arFields['UF_BUYER_INFO']['language'].'<br> Клиенты: ';
