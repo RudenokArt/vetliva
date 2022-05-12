@@ -25,13 +25,28 @@ class B24_Leads extends B24_Partners {
 
   function getRequestFormData () { // получение данных и  создание лида для формы заявки на экскурсию
     // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($_POST));
+    if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'health-tourism') {
+      $service = 'санаторий';
+    }
+    if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'cognitive-tourism') {
+      $service = 'экскурсию';
+    }
+    if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'tours-in-belarus') {
+      $service = 'тур';
+    }
+    if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'where-to-stay') {
+      $service = 'проживание';
+    }
+    if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'transfer') {
+      $service = 'трансфер';
+    }
     $this->restApiRequest('crm.lead.add', [
       'fields' =>[
-        'TITLE' => 'Заявка на экскурсию: '.$_POST['object_name'],
+        'TITLE' => 'Заявка на '.$service.': '.$_POST['object_name'],
         'NAME' => $_POST['full_name'],
         'STATUS_ID' => 'NEW',
         'OPENED' => 'Y',
-        'ASSIGNED_BY_ID' => 287,
+        'ASSIGNED_BY_ID' => 27186,
         'SOURCE_ID' => 10,
         'COMMENTS'=> $_POST['comment'],
         'PHONE' => [['VALUE'=> $_POST['phone'], 'VALUE_TYPE'=>'WORK']],
