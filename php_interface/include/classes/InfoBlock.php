@@ -5,13 +5,15 @@
 class InfoBlock {
 
   function getCitysListForSamoTour () { // получить список городов (областей)
-    return $this->getSectionsList([],['SECTION_ID'=>57], false, ['ID', 'NAME', 'CODE']);
+    $arr = $this->getSectionsList([],['SECTION_ID'=>57], false, ['ID', 'NAME', 'CODE']);
+    return $this->json_mb_encoder($arr);
   }
 
-  function getHotelsListForSamoTour () {
-    return $this->getItemsList([],[
-      'SECTION_ID'=>68,
-    ]);
+  function getHotelsListForSamoTour () { // получить список отелей в городе
+    $arr = $this->getItemsList([],[
+      'SECTION_ID'=>$_GET['getHotelsList'],
+    ], false, false, ['ID', 'NAME', 'CODE']);
+    return $this->json_mb_encoder($arr);
   }
 
   function getSectionsList ($order=[], $filter=[], $quantity=false, $select=[], $nav=false) {
@@ -30,6 +32,10 @@ class InfoBlock {
       array_push($arr, $item);
     }
     return $arr;
+  }
+
+  function json_mb_encoder ($arr) {
+    return json_encode($arr, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
   }
 
 }
