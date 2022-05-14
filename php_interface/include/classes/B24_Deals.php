@@ -86,7 +86,7 @@ class B24_Deals extends B24_Leads {
         'UF_CRM_610D4FF176FB9' => $arFields['UF_BUYER_INFO']['language'],
         'UF_CRM_1652427908902' => $country_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['countryId']],false, false, ['ID','NAME'])[0]['NAME'],
         'UF_CRM_1652429037694' => $arFields['UF_SERVICE_NAME'],
-        'UF_CRM_610D4FF1E1945' => json_encode($arFields['UF_SERVICE'],JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+        'UF_CRM_1652514403572' => $arFields['ID']
       ],
     ]);
   }
