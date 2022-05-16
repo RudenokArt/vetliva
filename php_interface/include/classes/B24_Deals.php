@@ -17,7 +17,7 @@ class B24_Deals extends B24_Leads {
     return $arr;
   }
 
-  function newBookingDealAdd ($arFields) {
+  function bookingFieldsNormalize ($arFields) {
     $hotel_src = new InfoBlock();
     $city_src = new InfoBlock();
     $country_src = new InfoBlock();
@@ -26,13 +26,16 @@ class B24_Deals extends B24_Leads {
     $arFields['UF_TOURISTS'] = json_decode($arFields['UF_TOURISTS_JSON'],true);
     $rsUser = CUser::GetByID($arFields['UF_SERVICE']['partnerId']);
     $arFields['company'] = $rsUser->Fetch();
+    $hotel = $hotel_src->getItemsList([],['ID'=>$arFields['UF_IBLOCK_ELEMENT_ID']],false, false, ['ID','NAME'])[0];
+    $city = $city_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['cityId']], false, false, ['ID','NAME'])[0];
+    $country = $country_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['countryId']],false, false, ['ID','NAME'])[0];
     $arFields['COMMENTS'] = '
     ID поставщика на vetliva.by: '.$arFields['UF_SERVICE']['partnerId'].'<br>
     Поставщик: '.$arFields['company']['NAME'].' '.$arFields['company']['LAST_NAME'].' '.$arFields['company']['EMAIL'].'<br>
     ID услуги на vetliva.by: '.$arFields['UF_SERVICE']['parts']['roomId'].'<br>
     Услуга: '.$arFields['UF_SERVICE_NAME'].'<br>
     ID отеля на vetliva.by: '.$arFields['UF_IBLOCK_ELEMENT_ID'].'<br>
-    Отель: '.$hotel_src->getItemsList([],['ID'=>$arFields['UF_IBLOCK_ELEMENT_ID']],false, false, ['ID','NAME'])[0]['NAME'].'<br>
+    Отель: '.$hotel['NAME'].'<br>
     Договор: '.$arFields['UF_DOGOVOR_CODE'].'<br>
     Дата начала: '.$arFields['UF_SERVICE']['dateBegin'].'<br>
     Дата окончания: '.$arFields['UF_SERVICE']['dateEnd'].'<br>
@@ -40,9 +43,9 @@ class B24_Deals extends B24_Leads {
     Стоимость: '.$arFields['UF_SERVICE']['brutto'].'<br>
     Валюта: '.$arFields['UF_SERVICE']['currency'].'<br>
     ID страны на vetliva.by: '.$arFields['UF_SERVICE']['countryId'].'<br>
-    Страна: '.$country_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['countryId']],false, false, ['ID','NAME'])[0]['NAME'].'<br>
+    Страна: '.$country['NAME'].'<br>
     ID города на vetliva.by: '.$arFields['UF_SERVICE']['cityId'].'<br>
-    Город: '.$city_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['cityId']], false, false, ['ID','NAME'])[0]['NAME'].'<br>
+    Город: '.$city['NAME'].'<br>
     Email: '.$arFields['UF_BUYER_INFO']['email'].'<br>
     Тел.: '.$arFields['UF_BUYER_INFO']['phone'].'<br>
     Язык: '.$arFields['UF_BUYER_INFO']['language'].'<br> Клиенты: ';
@@ -58,6 +61,11 @@ class B24_Deals extends B24_Leads {
         $value['first_name'].' '.$value['last_name'].', Пасспорт: '.$value['passport_num'].', 
         д.р.: '.$value['birth_date']. ', Гражданство: '.$value['citizenship'].', пол: '.$value['sex']);
     }
+    return $arFields;
+  }
+
+  function newBookingDealAdd ($arFields) {
+    $arFields = $this->bookingFieldsNormalize($arFields);
     file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
     $this->restApiRequest('crm.deal.add', [
       'fields' => [
@@ -79,14 +87,14 @@ class B24_Deals extends B24_Leads {
         'UF_CRM_1542117473'=> $arFields['UF_DOGOVOR_CODE'],
         'UF_CRM_5D36B393C64A2' => $arFields['UF_SERVICE']['nmen'],
         'UF_CRM_5D36B393D5BAB'=> $arFields['UF_BUYER_INFO']['phone'],
-        'UF_CRM_5F686CC47E58B'=> $hotel_src->getItemsList([],['ID'=>$arFields['UF_IBLOCK_ELEMENT_ID']],false, false, ['ID','NAME'])[0]['NAME'],
-        'UF_CRM_60C086FF07A2B' => $city_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['cityId']], false, false, ['ID','NAME'])[0]['NAME'],
+        'UF_CRM_5F686CC47E58B'=> $hotel['NAME'],
+        'UF_CRM_60C086FF07A2B' => $city['NAME'],
         'UF_CRM_60C086FF7B089' => $arFields['UF_BUYER_INFO']['email'],
         'UF_CRM_610D4FF12DEF5' => $arFields['tourists_arr'],
         'UF_CRM_610D4FF176FB9' => $arFields['UF_BUYER_INFO']['language'],
-        'UF_CRM_1652427908902' => $country_src->getItemsList([],['ID'=>$arFields['UF_SERVICE']['countryId']],false, false, ['ID','NAME'])[0]['NAME'],
+        'UF_CRM_1652427908902' => $country['NAME'],
         'UF_CRM_1652429037694' => $arFields['UF_SERVICE_NAME'],
-        'UF_CRM_1652514403572' => $arFields['ID']
+        'UF_CRM_1652514403572' => $arFields['ID'],
       ],
     ]);
   }
