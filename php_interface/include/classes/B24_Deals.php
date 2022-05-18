@@ -17,6 +17,13 @@ class B24_Deals extends B24_Leads {
     return $arr;
   }
 
+  function bookingDealDelete ($arFields=[]) {
+    $deal = $this->getCrmBookingDealList(['UF_CRM_1652514403572'=>$arFields['ID']['ID']]);
+    $this->restApiRequest('crm.deal.delete', [
+      'id' => $deal['result'][0]['ID'],
+    ]);
+  }
+
   function bookingDealUpdate ($arFields) {
     foreach ($arFields as $key => $value) {
       if ($key == 'ID') {
@@ -27,14 +34,10 @@ class B24_Deals extends B24_Leads {
     }
     $deal_id = $this->getCrmBookingDealList(['UF_CRM_1652514403572'=>$arFields['ID']])['result'][0]['ID'];
     $arFields = $this->bookingFieldsConstruct($arFields);
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
+    // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
     $this->restApiRequest('crm.deal.update', [
       'id' => $deal_id,
-      // 'fields' => ['TITLE' => 'Бронирование на VETLIVA - test332',],
       'fields' => $arFields,
-      
-      // 'UF_CRM_1542117473'=> $arFields['UF_DOGOVOR_CODE'].'22222222222',
-
     ]);
   }
 
@@ -114,7 +117,7 @@ class B24_Deals extends B24_Leads {
   }
 
   function newBookingDealAdd ($arFields) {
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
+    // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
     $arFields = $this->bookingFieldsConstruct($arFields);
     $this->restApiRequest('crm.deal.add', [
       'fields' => $arFields,

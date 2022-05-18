@@ -194,6 +194,13 @@ $highLoadEventManager->addEventHandler('', 'BookingsOnAfterUpdate', function (\B
   $deal = new B24_Deals();
   $deal->bookingDealUpdate($arFields);
 });
+$highLoadEventManager->addEventHandler('', 'BookingsOnAfterDelete', function (\Bitrix\Main\Entity\Event $event) {
+  $id = $event->getParameter("id");
+  $arFields = $event->getParameter("fields");
+  $arFields['ID'] = $id;
+  $deal = new B24_Deals();
+  $deal->bookingDealDelete($arFields);
+});
  
 
 
