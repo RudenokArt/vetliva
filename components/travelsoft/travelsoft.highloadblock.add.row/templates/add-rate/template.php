@@ -1216,3 +1216,17 @@ if (!empty($arResult['HL_ELEMENTS']['rows'])) {
 <? } ?>
 
 
+<script>
+  $('button[name="save"]').click(function (e) {
+        e.preventDefault();
+        var field = document.querySelector('ul[class="select2-choices"]');
+        if ($('ul[class="select2-choices"]').children('li').length < 3) {
+          field.scrollIntoView(top);
+          window.scrollBy(0,-100);
+          $(field).css({'outline':'1px solid red'});
+        } else {
+          $('button[name="save"]').unbind();
+          document.querySelector('button[name="save"]').click();
+        }
+      });
+</script>

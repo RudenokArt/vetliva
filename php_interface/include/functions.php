@@ -525,3 +525,20 @@ function getSearchFilter() {
 
     return $arFilterSearch;
 }
+
+function sidebarMenuLinkFilter ($arResult) { // фильтр пунктов меню для разделов школьный и эксклюзивный туризм
+  $arr = [];
+  $url = explode('/', $_SERVER['REQUEST_URI'])[2];
+  if ($url == 'shkolnyy-i-inklyuzivnyy-turizm') {
+    foreach ($arResult as $key => $value) {
+      $arResult[$key]['link_filter'] = explode('/', $value['LINK'])[2];
+      $link = explode('/', $value['LINK'])[2];
+      if ($link == 'shkolnyy-i-inklyuzivnyy-turizm') {
+        array_push($arr, $value);
+      }
+    }
+  } else {
+    $arr = $arResult;
+  }
+  return $arr;
+}
