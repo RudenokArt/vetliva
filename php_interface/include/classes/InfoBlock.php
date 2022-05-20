@@ -4,6 +4,11 @@
  */
 class InfoBlock {
 
+  function getInfoBlockPropertyes ($iblock_id, $item_id, $order=[], $filter=[]) {
+    $res = CIBlockElement::GetProperty($iblock_id, $item_id, $order, $filter);
+    return $this->getList_fetch($res);
+  }
+
   function getCitysListForSamoTour () { // получить список городов (областей)
     $arr = $this->getSectionsList([],['SECTION_ID'=>57], false, ['ID', 'NAME', 'CODE']);
     return $this->json_mb_encoder($arr);
