@@ -1,6 +1,7 @@
 <? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $search_filter = new InfoBlock();
-$arResult = $search_filter->getItemsList([], [
+$arrResultFiltered = [];
+$arResult = $search_filter->getItemsList(['ID'=>'ASC'], [
   'IBLOCK_CODE'=>[
     'accomodation', 'sanatorium', 'tours'],
 ], false, false,[
@@ -37,19 +38,58 @@ foreach ($arResult as $key => $value) {
   if ($search_filter_region) {
     $arResult[$key]['region'] = $search_filter->getItemsList([],['ID'=>$search_filter_region],false,false,['NAME'])[0]['NAME'];
   }
-  // if (!empty($value['PROPERTY_TOWN_VALUE'])) {
-  //   $arResult[$key]['city'] = $search_filter->getItemsList([],['ID'=>$value['PROPERTY_TOWN_VALUE']],false,false,['NAME'])[0]['NAME'];
-  // }
-  // if (!empty($value['PROPERTY_REGION_VALUE'])) {
-  //   $arResult[$key]['region'] = $search_filter->getItemsList([],['ID'=>$value['PROPERTY_REGION_VALUE']],false,false,['NAME'])[0]['NAME'];
-  // }
-}
+  $search_filter_adress = $search_filter->getInfoBlockPropertyes($value['IBLOCK_ID'], $value['ID'], [],[
+    'CODE'=>'ADDRESS'
+  ])[0]['VALUE'];
+  if ($search_filter_adress) {
+    $arResult[$key]['adress'] = $search_filter_adress;
+  }
+  $search_filter_pictures = $search_filter->getInfoBlockPropertyes($value['IBLOCK_ID'], $value['ID'], [],[
+    'CODE'=>'PICTURES'
+  ]);
+  if ($search_filter_pictures) {
+    $arResult[$key]['pictures']=[];
+    for ($i=0; $i < 3; $i++) { 
+      if ($search_filter_pictures[$i]['VALUE']) {
+        $picture_url = CFile::GetFileArray($search_filter_pictures[$i]['VALUE'])['SRC'];
+        array_push($arResult[$key]['pictures'], $picture_url);
+      }
+    }
+  }
 
+  $search_filter_adress = $search_filter->getInfoBlockPropertyes($value['IBLOCK_ID'], $value['ID'], [],[
+    'CODE'=>'DISTANCE_CENTER'
+  ])[0]['VALUE'];
+  if ($search_filter_adress) {
+    $arResult[$key]['DISTANCE_CENTER'] = $search_filter_adress;
+  }
+  $search_filter_adress = $search_filter->getInfoBlockPropertyes($value['IBLOCK_ID'], $value['ID'], [],[
+    'CODE'=>'DISTANCE_AIRPORT'
+  ])[0]['VALUE'];
+  if ($search_filter_adress) {
+    $arResult[$key]['DISTANCE_AIRPORT'] = $search_filter_adress;
+  }
+
+  $flag = false;
+  if (
+    preg_match('#'.mb_strtolower(trim($_GET['search'])).'#', mb_strtolower($arResult[$key]['city']))
+    or
+    preg_match('#'.mb_strtolower(trim($_GET['search'])).'#', mb_strtolower($arResult[$key]['region']))
+    or
+    preg_match('#'.mb_strtolower(trim($_GET['search'])).'#', mb_strtolower($arResult[$key]['NAME']))
+    or
+    preg_match('#'.mb_strtolower(trim($_GET['search'])).'#', mb_strtolower($arResult[$key]['adress']))
+  ) {
+    $arResult[$key]['flag'] = 'Y';
+    $flag = true;
+  }
+  if ($flag) {
+    array_push($arrResultFiltered, $arResult[$key]);
+  }
+}
+$arResult = $arrResultFiltered;
 
 $this->IncludeComponentTemplate();
 ?>
-
-REGION
-NEAREST_TOWN
-search_filter_properties
-REGIONS
+PICTURES
+upload/adwex.minified/webp/5c7/

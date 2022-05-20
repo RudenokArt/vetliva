@@ -526,7 +526,7 @@ function getSearchFilter() {
     return $arFilterSearch;
 }
 
-function sidebarMenuLinkFilter ($arResult) { // фильтр пунктов меню для разделов школьный и эксклюзивный туризм
+function sidebarMenuLinkFilter ($arResult) { // обрезка пунктов меню для разделов школьный и эксклюзивный туризм
   $arr = [];
   $url = explode('/', $_SERVER['REQUEST_URI'])[2];
   if ($url == 'shkolnyy-i-inklyuzivnyy-turizm') {
@@ -541,4 +541,27 @@ function sidebarMenuLinkFilter ($arResult) { // фильтр пунктов ме
     $arr = $arResult;
   }
   return $arr;
+}
+
+// Простая пагинация: на входе массив статей и количетво на странице
+// на выходе - массив статей на странице и постраничное меню
+function pagination_php ($arr, $page_size) {
+ $current_page = 1;
+ if (isset($_GET['page'])) {
+  $current_page = $_GET['page'];
+}
+$last_item = $current_page*$page_size-1;
+$first_item = $last_item - $page_size+1;
+$page = [];
+for ($i=$first_item; $i <= $last_item ; $i++) { 
+  array_push($page, $arr[$i]);
+}
+$nav = [];
+for ($i=0; $i < count($arr)/$page_size; $i++) { 
+  $n = $i+1;
+  $page_nuber = $n;
+  $page_link = 'page='.$n;
+  array_push($nav, ['page_nuber' => $page_nuber, 'page_link' => $page_link]);
+}
+return ['page'=>$page, 'nav'=>$nav];
 }

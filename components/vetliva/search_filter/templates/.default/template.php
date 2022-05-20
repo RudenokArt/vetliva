@@ -1,31 +1,45 @@
 <?php
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-$APPLICATION->SetAdditionalCSS("/bitrix/css/main/font-awesome.css");
+// $APPLICATION->SetAdditionalCSS("/bitrix/css/main/font-awesome.css");
 ?>
-<pre><?php print_r($_SERVER); ?></pre><hr>
-<pre><?php print_r($_GET); ?></pre>
-<input type="text" id="search_filter_input">
-<a href="<?php echo $_SERVER['SCRIPT_URI']; ?>" id="search_filter_link">search</a>
-<pre><?php print_r($arResult); ?></pre>
+
+<div class="container">
+  <div class="search_filter">
+    <form action="" method="get">
+      <input type="text" name="search">
+      <button class="search_filter-search_button">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+  <div class="search_filter-list">
+    <?php foreach (pagination_php($arResult,10)['page'] as $key => $value): ?>
+      <?php if ($value): ?>
+        <div class="search_filter-list_item">
+          <div class="search_filter-list_item-slider">
+            <?php foreach ($value['pictures'] as $subkey => $subvalue): ?>
+              <div style="background-image: url(<?php echo $subvalue; ?>);" class="search_filter-list_item-slider_image"></div>
+            <?php endforeach ?>
+          </div>
+          <div class="search_filter-list_item-text">
+            <a href="#"  class="search_filter-list_item-title">
+              <?php echo $value['NAME'] ?>
+            </a>
+            <?php if ( $value['adress']): ?>
+              <div class="search_filter-list_item-adress">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <?php echo $value['adress'] ?>
+              </div>
+            <?php endif ?>
+          </div>
+        </div>
+        <pre><?php print_r($value); ?></pre>
+      <?php endif ?>
+    <?php endforeach ?>
+  </div>
+</div>
+
 
 <script>
-  BX.ready(function(){
-  BX.showWait = function() {
-    console.log('start');
-  };
-  BX.closeWait = function() {
-    console.log('finish');
-  };
-});
-
-$(function () {
-  $('#search_filter_input').bind('input', function () {
-    $('#search_filter_link').attr('href', "<?php echo $_SERVER['SCRIPT_URL'];?>?search="+this.value);
-    setCurrentUrl();
-  });
-});
-
-function setCurrentUrl () {
-  history.pushState(null, 'search', $('#search_filter_link').attr('href'));
-}
+  $('.search_filter-list_item-slider').slick();
 </script>
