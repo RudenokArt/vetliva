@@ -19,7 +19,7 @@ $MESS["AUTH_IS_AGENT"] = "Я агент";
 $MESS["AUTH_SUCCESS_MESSAGE"] = "Вы былi паспяхова зарэгiстраваны.";
 $MESS["AUTH_LOGIN_LABEL"] = "Уваход";
 $MESS["AUTH_LOGIN_LABEL_NOTE"] = "Ужо зарэгiстраваныя?";
-$MESS["AUTH_CONF_LABEL"] = "Уваходзячы ў акаўнт або ствараючы новы, вы згаджаецеся з нашай <b><a target=\"_blank\" href=\"https://vetliva.ru/tourist/privacy_policy/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf\">Палітыкай прыватнасці</a></b>";
+$MESS["AUTH_CONF_LABEL"] = "Уваходзячы ў акаўнт або ствараючы новы, вы згаджаецеся з нашай <b><a target=\"_blank\" href=\"https://vetliva.ru/tourist/privacy_policy/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf\">Палітыкай прыватнасці i з палітыкай апрацоўкі персанальных дадзеных</a></b>";
 $MESS['THANK_1'] = 'Дзякуем Вам за рэгістрацыю!';
 $MESS['THANK_2'] = 'Пасля праверкі рэгістрацыйных дадзеных, Ваш асабісты кабінет будзе актываваны на працягу 24 гадзін, а на паказаную пры рэгістрацыі пошту будзе адпраўлена адпаведнае апавяшчэнне.';
 ?>
