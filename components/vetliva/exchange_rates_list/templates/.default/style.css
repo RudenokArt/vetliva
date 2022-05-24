@@ -1,7 +1,3 @@
-.exchange_rates table{
-  margin: auto;
-}
-
 .exchange_rates tr {
   border-top: 2px solid rgba(0, 0, 0, 0.2);
 }
