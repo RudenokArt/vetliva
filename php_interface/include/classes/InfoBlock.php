@@ -30,6 +30,15 @@ class InfoBlock {
     $res = CIBlockElement::GetList($order, $filter, $group, $nav, $select);
     return $this->getList_fetch($res);
   }
+
+  function getItemsListPage ($order=[], $filter=[], $group=false, $nav=false, $select=[]) {
+    $res = CIBlockElement::GetList($order, $filter, $group, $nav, $select);
+    return ['items'=>$this->getList_fetch($res),
+    'pagination'=>[
+      'page_count' => $res->NavPageCount, 
+      'page_number' => $res->NavPageNomer,
+    ]];
+  }
   
   function getList_fetch ($res) {
     $arr = [];

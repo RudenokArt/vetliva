@@ -1,0 +1,29 @@
+.exchange_rates {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.exchange_rates table{
+  margin: auto;
+}
+
+.exchange_rates tr {
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.exchange_rates td, th {
+  padding: 10px !important;
+  text-align: center !important;
+}
+
+.exchange_rates th {
+  color: #264b87;
+}
+
+.pagination_wrapper {
+  display: flex;
+}
+
+.pagination_inner {
+  margin: auto;
+}
