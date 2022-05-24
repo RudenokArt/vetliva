@@ -39,8 +39,4 @@
     </a>
   </div>  
 </div>
-
 </div>
-
-
-<pre><?php print_r($arResult); ?></pre>
