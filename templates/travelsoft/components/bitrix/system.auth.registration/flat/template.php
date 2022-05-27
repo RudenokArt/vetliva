@@ -346,14 +346,14 @@ $APPLICATION->IncludeComponent(
                                              <? echo $text['TEXT']; ?> </div>
                                            </div>
                                         <?
-                                        print_r('text init');
+                                        // print_r('text init');
                                         ?> 
                                              <a href="#" onclick="popupShow()" class="text_content_link"><?echo getTextLanguage ($rule['PROPERTY_SIGNATURE_RU_VALUE'], $rule['PROPERTY_SIGNATURE_BY_VALUE'], $rule['PROPERTY_SIGNATURE_EN_VALUE']);?></a></br></br>
 
                                         <?
                                     }else{
                                         // print_r($text);
-                                        print_r('text not init');
+                                        // print_r('text not init');
                                         ?> 
                                              <a class="document_content_link" href="<? echo $rule['FILE'];?>"><?echo getTextLanguage ($rule['PROPERTY_SIGNATURE_RU_VALUE'], $rule['PROPERTY_SIGNATURE_BY_VALUE'], $rule['PROPERTY_SIGNATURE_EN_VALUE']);?></a></br></br>
                                         <?
