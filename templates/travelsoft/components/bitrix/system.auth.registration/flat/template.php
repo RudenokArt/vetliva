@@ -258,7 +258,8 @@ $APPLICATION->IncludeComponent(
 );
 ?>
 			</div>
-		</div>
+            
+        </div>
 
 	<?endforeach;?>
 <?endif;?>
@@ -276,18 +277,142 @@ $APPLICATION->IncludeComponent(
 		</div>
 
 <?endif?>
+        <? 
+        ///////////////////////////
+        // Get rules list
+        ///////////////////////////
+         function getRules(){
+            \Bitrix\Main\Loader::includeModule('iblock');
+
+            $res = CIBlockElement::GetList(
+                ['ID' => 'ASC'],
+                ['IBLOCK_ID' => 96], false, false,
+                ['PROPERTY_NAME_RU','PROPERTY_NAME_BY', 'PROPERTY_NAME_EN', 'PROPERTY_SIGNATURE_RU', 'PROPERTY_SIGNATURE_BY', 'PROPERTY_SIGNATURE_EN', 
+                 'PROPERTY_FILE_RU', 'PROPERTY_FILE_BY', 'PROPERTY_FILE_EN', 'PROPERTY_TEXT_RU', 'PROPERTY_TEXT_BY', 'PROPERTY_TEXT_EN'],
+            );
+            // row['ID']-> id элемента
+            $rulesList = [];
+            while ($row = $res->Fetch())
+            {
+                 $fileID = getTextLanguage ($row['PROPERTY_FILE_RU_VALUE'], $row['PROPERTY_FILE_BY_VALUE'], $row['PROPERTY_FILE_EN_VALUE']);
+                 $arFile = CFile::GetFileArray($fileID)['SRC'];
+                   if(isset($arFile)){
+                    $row['FILE'] = $arFile;
+                 }
+                 $textContent =  getTextLanguage ($row['PROPERTY_TEXT_RU'], $row['PROPERTY_TEXT_BY'], $row['PROPERTY_TEXT_EN']);
+                 if(isset($textContent)){
+                     $row['TEXT'] = $textContent;
+                 }
+                 $rulesList[] = $row;
+             }
+            //  print_r($rulesList);
+             return $rulesList;
+           }
+        ?>
+
 
 		<div class="bx-authform-formgroup-container">
-			<input type="submit" class="btn btn-primary" name="Register" value="<?=GetMessage("AUTH_REGISTER")?>" />
+			<input onclick='check()' type="submit" class="btn btn-primary" name="Register" value="<?=GetMessage("AUTH_REGISTER")?> " />
 		</div>
 
 		<div class="bx-authform-formgroup-container" >
 			<center>
-				<span class="bx-authform-label-container"><?=GetMessage("AUTH_CONF_LABEL") ?></span>
+				<!-- <span class="bx-authform-label-container"><?=GetMessage("AUTH_CONF_LABEL") ?></span> -->
+                <div class="rules">
+                       <?
+                            // echo $rule['FILE'];
+                            // echo $rule['PROPERTY_NAME_RU_VALUE'];
+                            // echo $rule['PROPERTY_SIGNATURE_RU_VALUE'];
+                            
+                            echo "<div class='rule_item'>";
+                            $rules = getRules();
+                            foreach($rules as &$rule){
+                                // print_r($rule['PROPERTY_TEXT_RU_VALUE']);
+
+                                echo '<input type="checkbox"  required name="rules-confirm" class="rules_checkbox">';                        
+                                echo getTextLanguage ($rule['PROPERTY_NAME_RU_VALUE'], $rule['PROPERTY_NAME_BY_VALUE'], $rule['PROPERTY_NAME_EN_VALUE']);
+                                echo "</br>";
+                                ?>
+                                <? 
+                                    $text = getTextLanguage ($rule['PROPERTY_TEXT_RU_VALUE'], $rule['PROPERTY_TEXT_BY_VALUE'], $rule['PROPERTY_TEXT_EN_VALUE']);
+                                    if($text){
+                                        // print_r($text);
+                                        // $text = json_encode($text, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+                                        // echo $text;
+                                        ?>
+                                           <div class="popup_wrapper">
+                                             <div class="popup"> 
+                                                   <button title='Close' type='button' onclick='popupHide()' class='mfp-close close'>×</button>
+                                             <? echo $text['TEXT']; ?> </div>
+                                           </div>
+                                        <?
+                                        print_r('text init');
+                                        ?> 
+                                             <a href="#" onclick="popupShow()" class="text_content_link"><?echo getTextLanguage ($rule['PROPERTY_SIGNATURE_RU_VALUE'], $rule['PROPERTY_SIGNATURE_BY_VALUE'], $rule['PROPERTY_SIGNATURE_EN_VALUE']);?></a></br></br>
+
+                                        <?
+                                    }else{
+                                        // print_r($text);
+                                        print_r('text not init');
+                                        ?> 
+                                             <a class="document_content_link" href="<? echo $rule['FILE'];?>"><?echo getTextLanguage ($rule['PROPERTY_SIGNATURE_RU_VALUE'], $rule['PROPERTY_SIGNATURE_BY_VALUE'], $rule['PROPERTY_SIGNATURE_EN_VALUE']);?></a></br></br>
+                                        <?
+                                    }
+                                ?>
+                                <? 
+                                
+                            }
+                            echo "</div>";
+                       ?>
+                </div> 
+             
 			</center>
 		</div>
 
+        <script>
+            function check(){
+                 var element = document.querySelectorAll('.rules_checkbox');         
+                 if (element.checked) {
+                    console.log('checks pressed')
+                 } else{
+                    console.log('not all checks') 
+                 } 
+             }
+             function popupShow(){
+                console.log('popupShow')
+                popup = document.querySelector('.popup');
+                popupWrapper = document.querySelector('.popup_wrapper')
+                popup.style.display = 'block'
+                popupWrapper.style.display = 'block'
+            }
+
+            $(document).keydown(function(e) {
+             if (e.keyCode == 27) {
+                  popupHide()
+               }
+            });     
+            
+            popup = $('.popup');
+            popupWrapper = $('.popup_wrapper');
+            popupWrapper.on('click', function(e){
+                 if ( $(e.target).closest('.popup').length ) {
+                    return;
+                 }
+                    popupHide()
+                });
+
+
+             function popupHide(){
+                popup = document.querySelector('.popup');
+                popupWrapper = document.querySelector('.popup_wrapper')
+                popup.style.display = 'none'
+                popupWrapper.style.display = 'none'
+            }
+
+        </script>
+                            
 		<hr class="bxe-light">
+
 
 		<?/*<div class="bx-authform-description-container">
                     <?if (SITE_ID === "by"):
@@ -370,7 +495,7 @@ if (!empty($arUserFields)):
                                      + input_container.replace("#INPUT#", text_input_not_required.replace("#NAME#", "UF_UNP")));
 
              html += component_container.replace("#COMPONENT#", label_container_not_required.replace("#LABEL#", "<?= $arUserFields["UF_OKPO"]["EDIT_FORM_LABEL"]?>")
-                                     + input_container.replace("#INPUT#", text_input_not_required.replace("#NAME#", "UF_OKPO")));
+                                     + input_container.replace("#INPUT#", text_input_not_required.replace("#NAME#", "UF_OKPO"))) ";
 
         html += "</div>";
 
@@ -380,7 +505,6 @@ if (!empty($arUserFields)):
     }
 
     function destroy () {
-
         $("#additional_fields__container").remove();
 
     }
