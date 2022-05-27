@@ -1,0 +1,14 @@
+<?php $MESS['DISTANCE_AIRPORT'] = 'Расстояние до аэропорта';?>
+<?php $MESS['DISTANCE_CENTER'] = 'Расстояние до центра';?>
+<?php $MESS['DEPARTURE_TIME'] = 'Время начала';?>
+<?php $MESS['DURATION_TIME'] = 'Продолжительность';?>
+<?php $MESS['HOURS'] = 'час.';?>
+<?php $MESS['FOOD'] = 'Питание';?>
+<?php $MESS['DISTANCE_MINSK'] = 'Расстояние до Минска';?>
+<?php $MESS['NEAREST_TOWN'] = 'Ближайший город';?>
+<?php $MESS['MAP'] = 'На карте';?>
+<?php $MESS['DETAIL_PAGE_URL'] = 'Подробнее';?>
+<?php $MESS['accomodation'] = 'Проживание';?>
+<?php $MESS['sanatorium'] = 'Отдых и лечение';?>
+<?php $MESS['tours'] = 'Экскурсии и туры';?>
+<?php $MESS['search_placeholder'] = 'Город, отель или санаторий...' ?>

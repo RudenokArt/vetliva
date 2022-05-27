@@ -1,0 +1,14 @@
+<?php $MESS['DISTANCE_AIRPORT'] = 'Адлегласць да аэрапорта';?>
+<?php $MESS['DISTANCE_CENTER'] = 'Адлегласць да цэнтра';?>
+<?php $MESS['DEPARTURE_TIME'] = 'Час пачатку';?>
+<?php $MESS['DURATION_TIME'] = 'Працягласць';?>
+<?php $MESS['HOURS'] = 'гадз.';?>
+<?php $MESS['FOOD'] = 'Харчаванне';?>
+<?php $MESS['DISTANCE_MINSK'] = 'Адлегласць да Мінска';?>
+<?php $MESS['NEAREST_TOWN'] = 'Бліжэйшы горад';?>
+<?php $MESS['MAP'] = 'На карце';?>
+<?php $MESS['DETAIL_PAGE_URL'] = 'Падрабязна';?>
+<?php $MESS['accomodation'] = 'Пражыванне';?>
+<?php $MESS['sanatorium'] = 'Адпачынак і лячэнне';?>
+<?php $MESS['tours'] = 'Экскурсіі і туры';?>
+<?php $MESS['search_placeholder'] = 'Горад, гатэль або санаторый...' ?>
