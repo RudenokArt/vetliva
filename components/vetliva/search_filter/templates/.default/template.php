@@ -3,7 +3,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 // $APPLICATION->SetAdditionalCSS("/bitrix/css/main/font-awesome.css");
 ?>
 
-<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=fef1e22c-2d6e-4fbb-9eac-c5a1ab864609&lang=ru_RU" type="text/javascript"></script> -->
+<script src="https://api-maps.yandex.ru/2.1/?apikey=fef1e22c-2d6e-4fbb-9eac-c5a1ab864609&lang=ru_RU" type="text/javascript"></script>
 <!-- <div id="yandex_map" class="yandex_map"></div> -->
 
 <div class="container">
