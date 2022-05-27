@@ -565,3 +565,18 @@ for ($i=0; $i < count($arr)/$page_size; $i++) {
 }
 return ['page'=>$page, 'nav'=>$nav];
 }
+
+// вывод текста на разных языках, где не возможности пользоваться 
+// стандартным bitrix функциями мультиязычности.
+function getTextLanguage ($ru, $by, $en) {
+  $laguage = LANGUAGE_ID;
+  if ($laguage == 'ru'){
+    return $ru;
+  }
+  if ($laguage == 'by'){
+    return $by;
+  }
+  if ($laguage == 'en'){
+    return $en;
+  }
+}
