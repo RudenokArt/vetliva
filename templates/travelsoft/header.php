@@ -120,7 +120,7 @@ if(CSite::InDir(SITE_DIR.'partners/')) {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PF8HX23');</script>
+})(window,document,'script','dataLayer','GTM-PJTKD39');</script>
 <!-- End Google Tag Manager -->
 <?elseif($_SERVER['SERVER_NAME'] == 'vetliva.by'):?>
 <!-- Google Tag Manager -->
@@ -128,7 +128,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K9FRPDM');</script>
+})(window,document,'script','dataLayer','GTM-PJTKD39');</script>
 <!-- End Google Tag Manager -->
 <?elseif($_SERVER['SERVER_NAME'] == 'vetliva.com'):?>
 <!-- Google Tag Manager -->
@@ -156,12 +156,12 @@ if (!empty($ARJSMESS)) {
 		<? //include_once ($_SERVER['DOCUMENT_ROOT'] . "/metrics.php"); ?>
 <?if($_SERVER['SERVER_NAME'] == 'vetliva.ru'):?>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PF8HX23"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJTKD39"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?elseif($_SERVER['SERVER_NAME'] == 'vetliva.by'):?>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9FRPDM"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJTKD39"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <?elseif($_SERVER['SERVER_NAME'] == 'vetliva.com'):?>
