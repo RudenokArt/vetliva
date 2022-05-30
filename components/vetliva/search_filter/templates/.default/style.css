@@ -123,6 +123,8 @@
   background-color: #f2be06;
   transition-duration: 1s;
 }
+
+
 .search_filter-pagination {
   padding: 10px;
   display: flex;
@@ -144,9 +146,6 @@
   background: rgba(250, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 500px) {
-  .search_filter-yandex_map-popup-inner {
-    height: 90vh;
-    width: 90vw;
-  }
+.search_filter select {
+  width: auto;
 }

@@ -11,4 +11,6 @@
 <?php $MESS['accomodation'] = 'Проживание';?>
 <?php $MESS['sanatorium'] = 'Отдых и лечение';?>
 <?php $MESS['tours'] = 'Экскурсии и туры';?>
-<?php $MESS['search_placeholder'] = 'Город, отель или санаторий...' ?>
+<?php $MESS['search_placeholder'] = 'Отель или санаторий...' ?>
+<?php $MESS['REGION'] = 'Область/регион' ?>
+<?php $MESS['CITY'] = 'Город/населенный пункт' ?>

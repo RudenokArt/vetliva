@@ -4,7 +4,7 @@
  */
 class InfoBlock {
 
-  function getInfoBlockPropertyes ($iblock_id, $item_id, $order=[], $filter=[]) {
+  function getProperties ($iblock_id, $item_id, $order=[], $filter=[]) {
     $res = CIBlockElement::GetProperty($iblock_id, $item_id, $order, $filter);
     return $this->getList_fetch($res);
   }
