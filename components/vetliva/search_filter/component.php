@@ -16,9 +16,14 @@ class SearchFilter extends InfoBlock {
     $this->search_filter_by_name = $this->getItemsIdArr('NAME');
     $this->search_filter_by_name_by = $this->getItemsIdArr('PROPERTY_NAME_BY');
     $this->search_filter_by_name_en = $this->getItemsIdArr('PROPERTY_NAME_EN');
-    $this->search_filter_by_adress = $this->getItemsIdArr('PROPERTY_ADDRESS');
-    $this->search_filter_by_adress_by = $this->getItemsIdArr('PROPERTY_ADDRESS_BY');
-    $this->search_filter_by_adress_en = $this->getItemsIdArr('PROPERTY_ADDRESS_EN');
+    $this->search_filter_by_adress = [];
+    $this->search_filter_by_adress_by = [];
+    $this->search_filter_by_adress_en = [];
+    if ($this->searchFilterFormSettings()!='tours') {
+      $this->search_filter_by_adress = $this->getItemsIdArr('PROPERTY_ADDRESS');
+      $this->search_filter_by_adress_by = $this->getItemsIdArr('PROPERTY_ADDRESS_BY');
+      $this->search_filter_by_adress_en = $this->getItemsIdArr('PROPERTY_ADDRESS_EN');
+    }    
     $this->search_filter_whole_id_arr = array_merge(
       $this->search_filter_by_name,
       $this->search_filter_by_name_by,
@@ -27,19 +32,26 @@ class SearchFilter extends InfoBlock {
       $this->search_filter_by_adress_by,
       $this->search_filter_by_adress_en
     );
-    $this->items_list = $this->getItemsListPage([],[
-      'ID'=>$this->search_filter_whole_id_arr,
-    ],false, [
-      'iNumPage' => $this->current_page_number,
-      'nPageSize' => 5,
-    ],[
-      'ID',
-      'CODE',
-      'IBLOCK_CODE',
-      'IBLOCK_ID',
-      'NAME',
-    ]);
+    if ($this->search_filter_whole_id_arr) {
+      $filter = [
+        'ACTIVE' => 'Y',
+        'IBLOCK_CODE'=> $this->searchFilterFormSettings(),
+        'ID'=>$this->search_filter_whole_id_arr,
+      ];
+      $filter = $this->checkFilterData($filter);
+      $this->items_list = $this->getItemsListPage([], $filter, false, [
+        'iNumPage' => $this->current_page_number,
+        'nPageSize' => 5,
+      ],[
+        'ID',
+        'CODE',
+        'IBLOCK_CODE',
+        'IBLOCK_ID',
+        'NAME',
+      ]);
+    }
   }
+
 
   function getCurrentPageNumber () {
     if (isset($_GET['page_number'])) {
@@ -49,12 +61,7 @@ class SearchFilter extends InfoBlock {
     }
   }
 
-  function getItemsIdArr ($property) {
-    $filter = [
-      'ACTIVE' => 'Y',
-      'IBLOCK_CODE'=> $this->searchFilterFormSettings(),
-      '%'.$property=>trim($_GET['search']),
-    ];
+  function checkFilterData ($filter) {
     if (isset($_GET['region'])) {
       $filter['PROPERTY_REGION'] = $_GET['region'];
       $filter['PROPERTY_REGIONS'] = $_GET['region'];
@@ -62,8 +69,18 @@ class SearchFilter extends InfoBlock {
     if (isset($_GET['city']) and $_GET['city']!='N') {
       $filter['PROPERTY_TOWN'] = $_GET['city'];
     }
+    return $filter;
+  }
+
+  function getItemsIdArr ($property) {
+    $filter = [
+      'ACTIVE' => 'Y',
+      'IBLOCK_CODE'=> $this->searchFilterFormSettings(),
+      '%'.$property => trim($_GET['search']),
+    ];
+    $filter = $this->checkFilterData($filter);
     $arr = $this->getItemsList(['ID'=>'asc'], $filter, false, false, [
-      'ID', 
+      'ID',
       'IBLOCK_ID',
       'NAME',
       'PROPERTY_NAME_BY', 
@@ -73,27 +90,30 @@ class SearchFilter extends InfoBlock {
       'PROPERTY_TOWN',
       'PROPERTY_ADDRESS',
     ]);
+    $list = [];
     foreach ($arr as $key => $value) {
-      $arr[$key] = $value['ID'];
+      array_push($list, $value['ID']);
     }
-    return $arr;
+    return $list;
   }
 
   function searchFilterFormSettings () {
-    $arr = [];
-    if (isset($_GET['accomodation']) and $_GET['accomodation']=='on') {
-      array_push($arr, 'accomodation');
+    if (isset($_GET['filter']) and $_GET['filter']=='accomodation') {
+      $settings = 'accomodation';
     }
-    if (isset($_GET['sanatorium']) and $_GET['sanatorium']=='on') {
-      array_push($arr, 'sanatorium');
+    if (isset($_GET['filter']) and $_GET['filter']=='sanatorium') {
+      $settings = 'sanatorium';
     }
-    if (isset($_GET['tours']) and $_GET['tours']=='on') {
-      array_push($arr, 'tours');
+    if (isset($_GET['filter']) and $_GET['filter']=='tours') {
+      $settings ='tours';
     }
-    if (sizeof($arr) < 1) {
-      $arr = ['accomodation', 'sanatorium', 'tours'];
-    }
-    return $arr;
+    return $settings;
+  }
+
+  public static function getItemById($item_id) {
+    $food = new InfoBlock();
+    $arr = $food->getItemsList([],['ID'=>$item_id], false, false, ['ID','NAME']);
+    return $arr[0];
   }
 
   public static function getDetailPageUrl ($iblock_code, $item_code, $item_id) {
@@ -111,17 +131,17 @@ class SearchFilter extends InfoBlock {
 
   public static function getPaginationUrlData () {
     $url = '';
-    if (isset($_GET['accomodation']) and $_GET['accomodation']=='on') {
-      $url = $url.'&accomodation='.$_GET['accomodation'];
-    }
-    if (isset($_GET['sanatorium']) and $_GET['sanatorium']=='on') {
-      $url = $url.'&sanatorium='.$_GET['sanatorium'];
-    }
-    if (isset($_GET['tours']) and $_GET['tours']=='on') {
-      $url = $url.'&tours='.$_GET['tours'];
+    if (isset($_GET['filter'])) {
+      $url = $url.'&filter='.$_GET['filter'];
     }
     if (isset($_GET['search'])) {
       $url = $url.'&search='.$_GET['search'];
+    }
+    if (isset($_GET['region'])) {
+      $url = $url.'&region='.$_GET['region'];
+    }
+    if (isset($_GET['city'])) {
+      $url = $url.'&city='.$_GET['city'];
     }
     return $url;
   }
@@ -133,6 +153,26 @@ class SearchFilter extends InfoBlock {
       array_push($arr, $item);
     }
     return $arr;
+  }
+
+  public static function getServicesList ($arr) {
+    foreach ($arr as $key => $value) {
+      $arr[$key] = $value['VALUE'];
+    }
+    $services = new InfoBlock();
+    $list = $services->getItemsList([],[
+      'IBLOCK_CODE'=>'hotel_services',
+      'PROPERTY_IN_FILTER_VALUE'=>'Y',
+      'ID' => $arr,
+    ], false, false,[
+      'ID',
+      'IBLOCK_ID',
+      'NAME',
+      'PROPERTY_NAME_BY',
+      'PROPERTY_NAME_EN',
+      'PROPERTY_IN_FILTER',
+    ]);
+    return $list;
   }
 
   public static function getItemPictures ($iblock_id, $item_id, $order=[], $filter=[]) {
