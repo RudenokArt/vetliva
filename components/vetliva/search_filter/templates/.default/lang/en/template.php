@@ -11,4 +11,7 @@
 <?php $MESS['accomodation'] = 'Accommodation';?>
 <?php $MESS['sanatorium'] = 'Rest and treatment';?>
 <?php $MESS['tours'] = 'Excursions and tours';?>
-<?php $MESS['search_placeholder'] = 'City, hotel or sanatorium...' ?>
+<?php $MESS['search_placeholder'] = 'Hotel sanatorium or tour...' ?>
+<?php $MESS['REGION'] = 'Region' ?>
+<?php $MESS['CITY'] = 'City/locality' ?>
+<?php $MESS['no_results'] = 'Nothing was found for your query. Refine the search parameters.' ?>

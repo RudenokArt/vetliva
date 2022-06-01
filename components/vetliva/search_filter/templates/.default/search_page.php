@@ -23,13 +23,26 @@
                 'CODE'=>'TOWN'
               ])[0]['VALUE'];  ?>
               <?php if ($arResult['TOWN']): ?>
-                <i><?php echo SearchFilter::getItemById($arResult['TOWN'])['NAME']; ?></i>
+                <i>
+                  <?php echo getTextLanguage(
+                    SearchFilter::getItemProperties(5, $arResult['TOWN'], [], ['CODE'=>'NAME'])[0]['VALUE'],
+                    SearchFilter::getItemProperties(5, $arResult['TOWN'], [], ['CODE'=>'NAME_BY'])[0]['VALUE'],
+                    SearchFilter::getItemProperties(5, $arResult['TOWN'], [], ['CODE'=>'NAME_EN'])[0]['VALUE'],
+                  );?>
+                </i>
+                
               <?php endif ?>
               <?php $arResult['REGION'] = SearchFilter::getItemProperties($value['IBLOCK_ID'], $value['ID'], [], [
                 'CODE'=>'REGION'
               ])[0]['VALUE'];  ?>
               <?php if ($arResult['REGION']): ?>
-                <i>, <?php echo SearchFilter::getItemById($arResult['REGION'])['NAME']; ?></i>
+                 <i>
+                  <?php echo getTextLanguage(
+                    SearchFilter::getItemProperties(4, $arResult['REGION'], [], ['CODE'=>'NAME'])[0]['VALUE'],
+                    SearchFilter::getItemProperties(4, $arResult['REGION'], [], ['CODE'=>'NAME_BY'])[0]['VALUE'],
+                    SearchFilter::getItemProperties(4, $arResult['REGION'], [], ['CODE'=>'NAME_EN'])[0]['VALUE'],
+                  );?>
+                </i>
               <?php endif ?>
             </div>
             <div>
@@ -111,8 +124,7 @@
             <?php if ($arResult['MAP']): ?>
               <a data-search_filter_map="<?php echo $arResult['MAP'];?>" href="#" class="search_filter-map_show_button">
                 <i class="fa fa-map-o" aria-hidden="true"></i>
-                <?php echo GetMessage('MAP'); ?>:
-                <?php echo $arResult['MAP']; ?>
+                <?php echo GetMessage('MAP'); ?>
               </a>
             <?php endif ?>
           </div>
@@ -126,28 +138,28 @@
               <?php $current_item_sevices_list = SearchFilter::getServicesList($arResult['SERVICES']); ?>
               <?php foreach ($current_item_sevices_list as $key2 => $value2): ?>
                 <?php echo getTextLanguage(
-                $value2['NAME'], 
-                $value2['PROPERTY_NAME_BY_VALUE'], 
-                $value2['PROPERTY_NAME_EN_VALUE']
-              );?> |
-              <?php endforeach ?>
-            <?php endif ?>
+                  $value2['NAME'], 
+                  $value2['PROPERTY_NAME_BY_VALUE'], 
+                  $value2['PROPERTY_NAME_EN_VALUE']
+                  );?> |
+                <?php endforeach ?>
+              <?php endif ?>
+            </div>
+
           </div>
-
-        </div>
-        <div class="search_filter_detail_page_url">
-          <a href="<?php echo $detail_page_url; ?>">
-           <?php echo GetMessage('DETAIL_PAGE_URL'); ?>
-           <i class="fa fa-chevron-right" aria-hidden="true"></i>
-         </a>
+          <div class="search_filter_detail_page_url">
+            <a href="<?php echo $detail_page_url; ?>">
+             <?php echo GetMessage('DETAIL_PAGE_URL'); ?>
+             <i class="fa fa-chevron-right" aria-hidden="true"></i>
+           </a>
+         </div>
        </div>
-     </div>
-     <hr>
-   <?php endforeach ?>
- </div>
+       <hr>
+     <?php endforeach ?>
+   </div>
 
-</div>
-<div class="search_filter-yandex_map-popup-wrapper">
+ </div>
+ <div class="search_filter-yandex_map-popup-wrapper">
   <div class="search_filter-yandex_map-popup-inner">
     <div class="search_filter-yandex_map-popup-close_button">
       <i class="fa fa-times" aria-hidden="true"></i>

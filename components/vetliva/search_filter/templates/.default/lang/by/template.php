@@ -11,4 +11,7 @@
 <?php $MESS['accomodation'] = 'Пражыванне';?>
 <?php $MESS['sanatorium'] = 'Адпачынак і лячэнне';?>
 <?php $MESS['tours'] = 'Экскурсіі і туры';?>
-<?php $MESS['search_placeholder'] = 'Горад, гатэль або санаторый...' ?>
+<?php $MESS['search_placeholder'] = 'Гатэль санаторый ці тур...' ?>
+<?php $MESS['REGION'] = 'Вобласць / Рэгіён' ?>
+<?php $MESS['CITY'] = 'Горад / населены пункт' ?>
+<?php $MESS['no_results'] = 'Па вашым запыце нічога не знойдзена. Удакладніце параметры пошуку.' ?>
