@@ -402,10 +402,22 @@ class BxEventsHandlers {
      */
     public static function bxOnAfterUserRegister($arFields) {
       $new_partner = new \B24_Partners($arFields);
-      $new_partner->contactAdd();
+      if (isset($new_partner->post_data['user_type']) and $new_partner->post_data['user_type']=='agent') {
+        $new_partner->contactAdd();
+        $new_partner->dealAdd();
+        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', $new_partner->partner_data_json);
+      }
+      if (isset($new_partner->post_data['user_type']) and $new_partner->post_data['user_type']=='partner') {
+        $new_partner->contactAdd();
       $new_partner->companyAdd();
-      $new_partner->dealAdd();
-      file_put_contents($_SERVER['DOCUMENT_ROOT'].'/logging.json', $new_partner->partner_data_json);
+        $new_partner->dealAdd();
+        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', $new_partner->partner_data_json);
+      }
+      // $new_partner->contactAdd();
+      // $new_partner->companyAdd();
+      // $new_partner->dealAdd();
+      // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', $new_partner->partner_data_json);
+      // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', $new_partner->post_data);
 
         if ($arFields['USER_ID'] > 0) {
 

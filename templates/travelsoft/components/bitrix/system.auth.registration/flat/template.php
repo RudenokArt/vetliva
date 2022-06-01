@@ -112,6 +112,7 @@ if ($is_agent_ihwc) {
 <div class="dynamic_reg_form"></div>
 <?ob_start();?>
 	<form method="post" id="reg_user_form" action="<?=$arResult["AUTH_URL"]?>" name="bform">
+    <input type="hidden" name="user_type" value="agent">
     
     <input type="hidden" name="passwordcorret" value="N">
     

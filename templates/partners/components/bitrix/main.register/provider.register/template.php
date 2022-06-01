@@ -36,7 +36,7 @@ $APPLICATION->AddViewContent('htmlClass', 'login-container');
   </div>
 </div>
 <form method="post" action="<?= POST_FORM_ACTION_URI ?>" name="bform" id="reg_user_form">
-
+<input type="hidden" name="user_type" value="partner">
   <input type="hidden" name="IS_PROVIDER" value="Y" />
   <input type="hidden" name="backurl" value="/partners/">
   <input type="hidden" name="passwordcorret" value="N">

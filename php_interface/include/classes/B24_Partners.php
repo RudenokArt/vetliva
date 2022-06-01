@@ -11,12 +11,14 @@ class B24_Partners {
   $partner_data_json, 
   $contact_id,
   $company_id,
-  $test;
+  $post_data_json,
+  $post_data;
 
   function __construct($partner_data=[]) {
     $this->partner_data = $partner_data;
     $this->partner_data_json = json_encode($partner_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    $this->test = $_POST;
+    $this->post_data = $_POST;
+    $this->post_data_json = json_encode($_POST, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
   }
 
   function companyList () { 
@@ -35,10 +37,10 @@ class B24_Partners {
     $api_method = 'crm.deal.list?'; 
     $api_query = http_build_query([
       'filter' =>[
-        // 'ID' => 2371,
-        'STAGE_ID' => 'C4:NEW',
+        'ID' => 2716,
+        // 'STAGE_ID' => 'C4:NEW',
       ],
-      'select' => ['ID', 'UF_CRM_1650892238173', ]
+      // 'select' => ['ID', 'UF_CRM_1650892238173', ]
     ]); 
     $result = file_get_contents(self::WEB_HOOK.$api_method.$api_query); 
     return json_decode($result);
@@ -74,15 +76,23 @@ class B24_Partners {
   function dealAdd () { 
     $session = \Bitrix\Main\Application::getInstance()->getSession();
     $api_method = 'crm.deal.add?'; 
+    if (isset($this->post_data['user_type']) and $this->post_data['user_type'] == 'partner') {
+      $title = 'Регистрация партнёра - '.$this->partner_data['UF_LEGAL_NAME'];
+      $tunnel = 4;
+    }
+    if (isset($this->post_data['user_type']) and $this->post_data['user_type'] == 'agent') {
+      $title = 'Регистрация агента '.$this->partner_data['NAME'].' '.$partner_data['LAST_NAME'];
+      $tunnel = 5;
+    }
     $api_query = http_build_query([
       'fields' =>[
-        'TITLE' => 'Сделка - '.$this->partner_data['UF_LEGAL_NAME'],
-        'STAGE_ID' => 'C4:NEW',
+        'TITLE' => $title,
+        'STAGE_ID' => 'C5:1',
         'TYPE_ID' => 'SERVICES',
         'ASSIGNED_BY_ID' => 27530,
         'CREATED_BY_ID' => 27530,
         'MODIFY_BY_ID' => 27530,
-        'CATEGORY_ID' => 4,
+        'CATEGORY_ID' => $tunnel,
         'IS_NEW' => 'Y',
         'STAGE_SEMANTIC_ID' => 'P',
         'COMPANY_ID' => $this->company_id,
