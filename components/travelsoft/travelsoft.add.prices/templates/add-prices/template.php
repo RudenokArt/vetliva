@@ -577,8 +577,9 @@ endif
                     <?// редактирование скидок?>
                     <?if ($mainptrid):?>
 <!--Редактирование скидок-->
+                        <!-- <tr class="rateblock-row absolute-discount-<?=abs(crc32($arRate['UF_NAME'])) + $rateId ?> discount-row hide"  data-ratesign="<?=abs(crc32($arRate['UF_NAME'])) + $rateId ?>" data-currency="<?=$currency?>"> -->
                         <tr class="rateblock-row absolute-discount-<?=abs(crc32($arRate['UF_NAME'])) + $rateId ?> discount-row hide"  data-ratesign="<?=abs(crc32($arRate['UF_NAME'])) + $rateId ?>" data-currency="<?=$currency?>">
-                            <td style="height: 100px" class="main-td lightblue-color">
+                        <td style="height: 100px" class="main-td lightblue-color">
                                 <b>
                                 Скидка в абсолютных единицах</b> <br> <? if (!$isCutUser): ?>[<a
                                         data-toggle="modal" class="setModalBody"
@@ -587,7 +588,7 @@ endif
                                         data-modal-title="Форма массового редактирования <b>Скидка в абсолютных единицах</b>"
                                         data-modal-body="fixWithOneHiddenInput"
                                         href="#modal_form_vertical">изменить</a>] <? endif ?>
-                                        <input type="checkbox" value="" onchange="$('.percent-discount-<?=abs(crc32($arRate['UF_NAME']))?>').removeClass('hide'); $('.absolute-discount-<?=abs(crc32($arRate['UF_NAME']))?>').addClass('hide'); $( this ).prop( 'checked', false );" id="check-percent-<?=abs(crc32($arRate['UF_NAME']))?>"/>
+                                        <input type="checkbox" value="" onchange="$('.percent-discount-<?=abs(crc32($arRate['UF_NAME']))?>').removeClass('hide'); $('.absolute-discount-<?=abs(crc32($arRate['UF_NAME'])) + $rateId ?>').addClass('hide'); $( this ).prop( 'checked', false );" id="check-percent-<?=abs(crc32($arRate['UF_NAME']))?>"/>
                                         <label for="check-percent-<?=abs(crc32($arRate['UF_NAME']))?>">В процентах</label>
                                         </td>
                             <td style="display: none" class="unvisible-td lightblue-color">
@@ -597,7 +598,8 @@ endif
                                         data-hvalue="<?= $mainptrid ?>"
                                         data-modal-title="Форма массового редактирования <b>Скидка в абсолютных единицах</b>"
                                         data-modal-body="fixWithOneHiddenInput"
-                                        href="#modal_form_vertical">изменить</a>] <? endif ?></td>
+                                        href="#modal_form_vertical">изменить</a>] <? endif ?>
+                                    </td>
                                 <?
                                 $i = 0;
                                 while ($i < $daysNumber):
@@ -628,9 +630,8 @@ endif
                                         data-modal-title="Форма массового редактирования <b>Скидка в %</b>"
                                         data-modal-body="fixWithOneHiddenInput"
                                         href="#modal_form_vertical">изменить</a>] <? endif ?>
-                                        <input type="checkbox" value="" onchange="$('.percent-discount-<?=abs(crc32($arRate['UF_NAME']))?>').addClass('hide'); $('.absolute-discount-<?=abs(crc32($arRate['UF_NAME']))?>').removeClass('hide'); $( this ).prop( 'checked', false );" id="check-abs-<?=abs(crc32($arRate['UF_NAME']))?>"/>
+                                        <input type="checkbox" value="" onchange="$('.percent-discount-<?=abs(crc32($arRate['UF_NAME']))?>').addClass('hide'); $('.absolute-discount-<?=abs(crc32($arRate['UF_NAME'])) + $rateId ?>').removeClass('hide'); $( this ).prop( 'checked', false );" id="check-abs-<?=abs(crc32($arRate['UF_NAME']))?>"/>
                                         <label for="check-abs-<?=abs(crc32($arRate['UF_NAME']))?>">В абослютных</label>
-                                        
                                         </td>
                             <td style="display: none" class="unvisible-td lightblue-color">
                                 <b>Скидка в %</b> <br> <? if (!$isCutUser): ?>[<a
