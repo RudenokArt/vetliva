@@ -430,6 +430,12 @@ $id_goal = GOAL_ID;
                                             ?>
                                         </li>
                                     </ul>
+                                    <?$APPLICATION->IncludeComponent(
+                                      "vetliva:exchange_rates_list",
+                                      "vidget",
+                                    );?>
+                                    
+                                    
                                 </div>
                                 <!-- End switches -->
                             </div>
