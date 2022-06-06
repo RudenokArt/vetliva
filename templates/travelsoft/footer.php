@@ -191,6 +191,16 @@ Loc::loadMessages(__FILE__);?>
         </div>
         <!-- end Back To Top -->
 
+
+		<!-- B24 Widget -->
+		<script>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://bitrix.vetliva.by/upload/crm/site_button/loader_13_6l9tse.js');
+		</script>
+
+
 <!-- Код для отображения сообщения о куках -->
   <script src="<?=SITE_TEMPLATE_PATH?>/js/babel.min.js"></script>
   <script src="<?=SITE_TEMPLATE_PATH?>/js/custom_footer.js"></script>
