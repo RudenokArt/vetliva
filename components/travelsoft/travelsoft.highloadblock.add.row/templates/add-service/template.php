@@ -349,6 +349,12 @@ foreach ($arTabsPropertiesId[$tab] as $field_name) {
         $this->addExternalJs(SITE_TEMPLATE_PATH . '/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js');
     ?>
     <script>
+      $('input[name="UF_NAME"]').bind('input',function () {
+        var str = this.value;
+        str = str.replace(/["'`]/g, '');
+        this.value = str;
+        console.log(this.value);
+      });
     (function ($) {
         // Substring matches
         var substringMatcher = function(strs) {

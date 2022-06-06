@@ -13,8 +13,8 @@
               <?php echo getTextLanguage($value['NAME'], $value['PROPERTY_NAME_BY_VALUE'], $value['PROPERTY_NAME_EN_VALUE']); ?>
             </a>
             <div>
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <?php echo getTextLanguage(
+              <i class="fa fa-map-marker" aria-hidden="true"></i
+>              <?php echo getTextLanguage(
                 SearchFilter::getItemProperties($value['IBLOCK_ID'], $value['ID'], [], ['CODE'=>'ADDRESS'])[0]['VALUE'],
                 SearchFilter::getItemProperties($value['IBLOCK_ID'], $value['ID'], [], ['CODE'=>'ADDRESS_BY'])[0]['VALUE'],
                 SearchFilter::getItemProperties($value['IBLOCK_ID'], $value['ID'], [], ['CODE'=>'ADDRESS_EN'])[0]['VALUE']
@@ -23,9 +23,9 @@
                 'CODE'=>'TOWN'
               ])[0]['VALUE'];  ?>
               <?php if ($arResult['TOWN']): ?>
-                <i>
+                <i>,
                   <?php echo getTextLanguage(
-                    SearchFilter::getItemProperties(5, $arResult['TOWN'], [], ['CODE'=>'NAME'])[0]['VALUE'],
+                    SearchFilter::getItemById($arResult['TOWN'])['NAME'],
                     SearchFilter::getItemProperties(5, $arResult['TOWN'], [], ['CODE'=>'NAME_BY'])[0]['VALUE'],
                     SearchFilter::getItemProperties(5, $arResult['TOWN'], [], ['CODE'=>'NAME_EN'])[0]['VALUE'],
                   );?>
@@ -36,9 +36,9 @@
                 'CODE'=>'REGION'
               ])[0]['VALUE'];  ?>
               <?php if ($arResult['REGION']): ?>
-                 <i>
+                 <i>,
                   <?php echo getTextLanguage(
-                    SearchFilter::getItemProperties(4, $arResult['REGION'], [], ['CODE'=>'NAME'])[0]['VALUE'],
+                    SearchFilter::getItemById($arResult['REGION'])['NAME'],
                     SearchFilter::getItemProperties(4, $arResult['REGION'], [], ['CODE'=>'NAME_BY'])[0]['VALUE'],
                     SearchFilter::getItemProperties(4, $arResult['REGION'], [], ['CODE'=>'NAME_EN'])[0]['VALUE'],
                   );?>
