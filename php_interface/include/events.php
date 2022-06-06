@@ -5,177 +5,177 @@
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 
 $eventManager->addEventHandler(
-    "main",
-    "OnBeforeUserRegister",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnBeforeUserRegister"
-    )
+  "main",
+  "OnBeforeUserRegister",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnBeforeUserRegister"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnAfterUserRegister",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterUserRegister"
-    )
+  "main",
+  "OnAfterUserRegister",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterUserRegister"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnAfterUserLogin",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterUserLogin"
-    )
+  "main",
+  "OnAfterUserLogin",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterUserLogin"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnBeforeUserChangePassword",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnBeforeUserChangePassword"
-    )
+  "main",
+  "OnBeforeUserChangePassword",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnBeforeUserChangePassword"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnSendUserInfo",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnSendUserInfo"
-    )
+  "main",
+  "OnSendUserInfo",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnSendUserInfo"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnAfterUserLogout",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterUserLogout"
-    )
+  "main",
+  "OnAfterUserLogout",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterUserLogout"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnAfterUserUpdate",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterUserUpdate"
-    )
+  "main",
+  "OnAfterUserUpdate",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterUserUpdate"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnBeforeUserUpdate",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnBeforeUserUpdate"
-    )
+  "main",
+  "OnBeforeUserUpdate",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnBeforeUserUpdate"
+  )
 );
 
 
 
 
 $eventManager->addEventHandler(
-    "main",
-    "OnAfterUserSimpleRegister",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterUserSimpleRegister"
-    )
+  "main",
+  "OnAfterUserSimpleRegister",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterUserSimpleRegister"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnBeforeUserSimpleRegister",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnBeforeUserSimpleRegister"
-    )
+  "main",
+  "OnBeforeUserSimpleRegister",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnBeforeUserSimpleRegister"
+  )
 );
 
 $eventManager->addEventHandler(
-    "main",
-    "OnBeforeUserAdd",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnBeforeUserAdd"
-    )
+  "main",
+  "OnBeforeUserAdd",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnBeforeUserAdd"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnAfterIBlockElementAdd",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterIBlockElementAdd"
-    )
+  "iblock",
+  "OnAfterIBlockElementAdd",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterIBlockElementAdd"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnAfterIBlockElementAdd",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "setNewCurrencyCourse"
-    )
+  "iblock",
+  "OnAfterIBlockElementAdd",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "setNewCurrencyCourse"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnAfterIBlockElementAdd",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "createLeadBx24AfterFeedbackAdd"
-    )
+  "iblock",
+  "OnAfterIBlockElementAdd",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "createLeadBx24AfterFeedbackAdd"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnAfterIBlockElementUpdate",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnAfterIBlockElementUpdate"
-    )
+  "iblock",
+  "OnAfterIBlockElementUpdate",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnAfterIBlockElementUpdate"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnAfterIBlockElementUpdate",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "setNewRaiting"
-    )
+  "iblock",
+  "OnAfterIBlockElementUpdate",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "setNewRaiting"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnStartIBlockElementAdd",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxOnStartIBlockElementAdd"
-    )
+  "iblock",
+  "OnStartIBlockElementAdd",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxOnStartIBlockElementAdd"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnBeforeIBlockElementUpdate",
-    array(
-        "travelsoft\\BxEventsHandlers",
-        "bxCheckAndSendAcivity"
-    )
+  "iblock",
+  "OnBeforeIBlockElementUpdate",
+  array(
+    "travelsoft\\BxEventsHandlers",
+    "bxCheckAndSendAcivity"
+  )
 );
 
 $eventManager->addEventHandler(
-    "iblock",
-    "OnIBlockPropertyBuildList",
-    array(
-        "CIBlockPropertyTinyMCE",
-        "GetUserTypeDescription"
-    )
+  "iblock",
+  "OnIBlockPropertyBuildList",
+  array(
+    "CIBlockPropertyTinyMCE",
+    "GetUserTypeDescription"
+  )
 );
 
 // неудачная попытка синхронизации заказов
@@ -201,7 +201,7 @@ $eventManager->addEventHandler(
 //   $deal = new B24_Deals();
 //   $deal->bookingDealDelete($arFields);
 // });
- 
+
 
 
 # обработчики событий работы с хранилищами модуля бронирования
@@ -225,34 +225,57 @@ $eventManager->addEventHandler('iblock', 'OnAfterIBlockElementUpdate', ['Kosmos\
 //вырезаем type="text/javascript" 
 AddEventHandler("main", "OnEndBufferContent", "removeType");
 
-	function removeType(&$content){
-	   $content = replace_output($content);
-	}
+function removeType(&$content){
+  $content = replace_output($content);
+}
 
-	function replace_output($d){
-	   return str_replace(' type="text/javascript"', "", $d);
-	}
-    
+function replace_output($d){
+  return str_replace(' type="text/javascript"', "", $d);
+}
+
 AddEventHandler("main", "OnEndBufferContent", "Sanitize_Output");
 function Sanitize_Output(&$buffer) {
 	global $USER, $APPLICATION;
 	if((is_object($USER) && $USER->IsAuthorized()) || strpos($APPLICATION->GetCurDir(), "/bitrix/")!==false) return;
 
-    $search = array(
-        '/\>[^\S ]+/s',
-        '/[^\S ]+\</s',
-        '~>\s*\n\s*<~',
-        '/<!--(?!noindex)(.*?)-->/'
-    );
+  $search = array(
+    '/\>[^\S ]+/s',
+    '/[^\S ]+\</s',
+    '~>\s*\n\s*<~',
+    '/<!--(?!noindex)(.*?)-->/'
+  );
 
-    $replace = array(
-        '>',
-        '<',
-        '><',
-        ''
-    );
+  $replace = array(
+    '>',
+    '<',
+    '><',
+    ''
+  );
 
-    $buffer = preg_replace($search, $replace, $buffer);
+  $buffer = preg_replace($search, $replace, $buffer);
 
-    return $buffer;
+  return $buffer;
 }
+
+AddEventHandler("iblock", "OnBeforeIBlockElementAdd", function ($arFields) {
+  if ($arFields['IBLOCK_ID']==2) {
+    $check_date=(new InfoBlock())->getItemsList([],[
+      'NAME'=> $arFields['NAME'],
+      'IBLOCK_ID'=>2,
+    ],false,false, [
+      'ID',
+      'IBLOCK_ID',
+      'CODE',
+      'CREATED_DATE',
+      'PROPERTY_USD',
+      'PROPERTY_EUR',
+      'PROPERTY_RUB',
+      'NAME',
+    ]);
+    global $APPLICATION;
+    if(count($check_date) > 0) {
+      $APPLICATION->ThrowException('Запись на указанную дату уже существует!'); 
+      return false;
+    }
+  }
+});
