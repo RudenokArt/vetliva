@@ -433,6 +433,7 @@ $id_goal = GOAL_ID;
                                     <?$APPLICATION->IncludeComponent(
                                       "vetliva:exchange_rates_list",
                                       "vidget",
+                                      Array('VIDGET'=>'Y')
                                     );?>
                                     
                                     

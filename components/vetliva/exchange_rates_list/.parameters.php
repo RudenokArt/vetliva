@@ -2,12 +2,12 @@
 $arComponentParameters = array(
   "GROUPS" => array(),
   "PARAMETERS" => array(
-    "DATA_1" => array(
+    "VIDGET" => array(
       "PARENT" => "BASE",
-      "NAME" => "data",
+      "NAME" => "VIDGET",
       "TYPE" => "STRING",
       "MULTIPLE" => "N",
-      "DEFAULT" => "data",
+      "DEFAULT" => "",
     ),
   ),
 );
