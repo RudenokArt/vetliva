@@ -2,9 +2,8 @@
 /**
  * 
  */
-class B24_Partners {
+class B24_Partners extends B24_class {
 
-  const WEB_HOOK = 'https://bitrix.vetliva.by/rest/1/1hfn9tdkh923zrq6/';
 
   public 
   $partner_data, 

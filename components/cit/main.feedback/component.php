@@ -71,6 +71,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_P
 				foreach($arParams["EVENT_MESSAGE_ID"] as $v)
 					if(intval($v) > 0)
 						CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields, "N", intval($v));
+          (new B24_TechnicalSupport([
+            'user_id' => $USER->GetID(),
+            'user_data' => $arFields,
+          ]))->userMail();
 			}
 			else
 				CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields);
