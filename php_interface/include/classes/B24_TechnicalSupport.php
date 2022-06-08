@@ -20,23 +20,11 @@ class B24_TechnicalSupport extends B24_class {
   }
 
   function checkContact () {
-    $arr1 = json_decode($this->RestApiRequest('crm.contact.list',[
-      'filter'=>['PHONE' => $this->user_data['WORK_PHONE']],
-      'select' => ['PHONE', 'EMAIL']
-    ]), true)['result'];
-    $arr2 = json_decode($this->RestApiRequest('crm.contact.list',[
-      'filter'=>['PHONE' => $this->user_data['PERSONAL_PHONE']],
-      'select' => ['PHONE', 'EMAIL']
-    ]), true)['result'];
-    $arr3 = json_decode($this->RestApiRequest('crm.contact.list',[
-      'filter'=>['PHONE' => $this->user_data['PERSONAL_MOBILE']],
-      'select' => ['PHONE', 'EMAIL']
-    ]), true)['result'];
-    $arr4 = json_decode($this->RestApiRequest('crm.contact.list',[
+     $arr = json_decode($this->RestApiRequest('crm.contact.list',[
       'filter'=>['EMAIL' => $this->user_data['EMAIL']],
       'select' => ['PHONE', 'EMAIL']
     ]), true)['result'];
-    return array_merge($arr1, $arr2, $arr3, $arr4);
+    return $arr;
   }
 
   function getAssigned () {
@@ -75,6 +63,7 @@ class B24_TechnicalSupport extends B24_class {
         'ASSIGNED_BY_ID'=>$this->b24_assigned,
       ]
     ]);
+    // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($this->b24_contact));
   }
 
 }
