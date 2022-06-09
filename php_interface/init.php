@@ -41,4 +41,7 @@ if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/events.
 if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/functions.php'))
     require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/functions.php';
 
-
+//создание задачи на активацию объекта
+if (isset($_GET['activation_request'])) {
+  (new B24_AcceptItem($_GET['element_id']))->acceptItem();
+}

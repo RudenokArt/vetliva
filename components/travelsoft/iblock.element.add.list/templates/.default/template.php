@@ -157,7 +157,8 @@ if ($arResult["CAN_DELETE"] == "Y")
                                         (<?= is_array($arResult["WF_STATUS"]) ? $arResult["WF_STATUS"][$arElement["WF_STATUS_ID"]] : $arResult["ACTIVE_STATUS"][$arElement["ACTIVE"]] ?>)
                                     </small>
                                     <? if ($arElement["ACTIVE"] === "N" && !in_array($arElement["ID"], $_SESSION["ACTIVATION_REQUEST_ALREADY_DONE"])): ?>
-                                        <a onclick="return confirm('Данным действием вы подтверждаете, что услуга готова к активации - заполнено описание, номерной фонд, тарифы и цены.')" rel="nofollow"
+                                        <a onclick="return confirm('Данным действием вы подтверждаете, что услуга готова к активации - заполнено описание, номерной фонд, тарифы и цены.')"
+                                        
                                            href="<?= $APPLICATION->GetCurPageParam("sessid=" . bitrix_sessid() . "&element_id=" . $arElement["ID"] . "&activation_request", array("sessid", "element_id", "activation_request", "activation_request_ok")) ?>"
                                            class="activation-request-btn btn-xs btn-primary" style="float:right">
                                             Запросить активацию
@@ -205,7 +206,9 @@ if (count($arResult["ELEMENTS"]) > 0):
 //Bitrix\Main\Page\Asset::getInstance()->addJs($templateFolder . '/jquery-ui.min.js', true);
     ?>
 
+
     <script>
+
 
         $(document).ready(function () {
 

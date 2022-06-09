@@ -18,26 +18,12 @@ class B24_AcceptItem extends B24_class {
 
         $accomplices = [];
 
-          // if(count($users['result']) >= 1){
-          //   $users = json_decode($users, true);
-          //   $creatorID = $users['result'][0]['ID'];
-          //   foreach($users['result'] as $user){
-          //     $accomplices[] = $user['ID'];
-          //   }
-          // }else{
-          //   $creatorID = 25299;
-          //   $accomplices[] = 25299;
-          // }
-
-
-
-
           $users = json_decode($users, true);
           $creatorID = $users['result'][0]['ID'];
           foreach($users['result'] as $user){
             $accomplices[] = $user['ID'];
           }
-          
+
           $desc = "Активировать объект: id $this->elementID";
 
            $this->RestApiRequest('tasks.task.add', [
