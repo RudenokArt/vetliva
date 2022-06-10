@@ -216,14 +216,16 @@ $id_goal = GOAL_ID;
             <!-- Header -->
 			<!--<div class="overlay"></div>-->
             <header id="header" class="header">
-              <div class="container top-search-form-header-wrapper" id="top-search-form-header-wrapper">
+
+              <!-- <div class="container top-search-form-header-wrapper" id="top-search-form-header-wrapper">
                 <div class="top-search-form-header">
                   <form id="search__by__name_top" action="/search" method="get">
                     <input id="search_top" type="text" name="q" placeholder="<?= Loc::getMessage("WHAT_SEARCH") ?>?" autocomplete="off">
                     <button><i class="fa fa-search" aria-hidden="true"></i></button>
                   </form>
                 </div>
-              </div>
+              </div> -->
+              
                 <div class="container">
                     <!-- Logo -->
                     <div class="logo float-left" style="opacity: 1; visibility: visible;">
@@ -503,6 +505,10 @@ $id_goal = GOAL_ID;
                                 );
                                 ?>
                             </section>
+                                <?php 
+                                $show_search_filter = 'Y';
+                                $APPLICATION->IncludeComponent("vetliva:search_filter", "",);
+                                ?>
                             <!--End Breakcrumb-->
 							<h1 class="mobile-h1"><?= $APPLICATION->ShowTitle(false) ?><?= $APPLICATION->ShowViewContent('cnt__elements_header') ?></h1>
 								<? if ($APPLICATION->GetDirProperty("NOT_SHOW_SIDEBAR") != "Y"): ?>
@@ -631,3 +637,8 @@ $id_goal = GOAL_ID;
   });
   // 
 </script>
+<?php if ($show_search_filter != 'Y'): ?>
+  <div class="container">
+    <?php $APPLICATION->IncludeComponent("vetliva:search_filter", "",);?>
+  </div>
+<?php endif ?>

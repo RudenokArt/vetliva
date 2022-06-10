@@ -3,16 +3,22 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $search_filter = new SearchFilter();
 ?>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=fef1e22c-2d6e-4fbb-9eac-c5a1ab864609&lang=ru_RU" type="text/javascript"></script>
-<?php include_once 'filter.php'; ?>
-<?php if (!empty($_GET['search']) and $search_filter->items_list['items']): ?>
-<?php include 'pagination.php'; ?>
-  <?php include_once 'search_page.php'; ?>
- <?php include 'pagination.php'; ?>
-<?php else: ?>
-  <div class="search_filter-info">
-    <?php echo getMessage('no_results'); ?>
-  </div>
-<?php endif ?>
+<div class="search_filter-wrapper">
+   <?php include_once 'filter.php'; ?>
+    <?php if ($_SERVER['SCRIPT_URL'] == '/search/'): ?>
+      <?php if (!empty($_GET['search']) and $search_filter->items_list['items']): ?>
+    <?php include 'pagination.php'; ?>
+    <?php include_once 'search_page.php'; ?>
+    <?php include 'pagination.php'; ?>
+  <?php else: ?>
+    <div class="search_filter-info">
+      <?php echo getMessage('no_results'); ?>
+    </div>
+  <?php endif ?>
+    <?php endif ?>
+</div>
+   
+
 <script>
 
   if ($('select[name="region"]').prop('value')) {

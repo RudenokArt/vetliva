@@ -1,6 +1,5 @@
-<div class="container">
   <div class="search_filter">
-    <form action="" method="get" id="search_filter-form">
+    <form action="/search/" method="get" id="search_filter-form">
       <div class="search_filter-search">
         <input placeholder="<?php echo GetMessage('search_placeholder');?>"
         <?php if (isset($_GET['search'])): ?>

@@ -18,8 +18,11 @@
   animation-direction:reverse;
   animation-iteration-count:10; 
 }
+.search_filter-wrapper {
+  padding-top: 10px;
+}
 .search_filter {
-  margin-top: 50px;
+
 }
 .search_filter button {
   background: #264b87;
@@ -37,6 +40,7 @@
 
 .search_filter-search {
   display: flex;
+  width: 100%;
 }
 .search_filter-filter label {
   padding: 5px;

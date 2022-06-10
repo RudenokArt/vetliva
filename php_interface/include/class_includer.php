@@ -9,6 +9,7 @@ $interface_include_path = '/local/php_interface/include';
     'Highload_Block' => $interface_include_path .'/classes/Highload_Block.php',
     'B24_class' => $interface_include_path .'/classes/B24_class.php',
     'B24_TechnicalSupport' => $interface_include_path .'/classes/B24_TechnicalSupport.php',
+    'B24_PartnersSupport' => $interface_include_path .'/classes/B24_PartnersSupport.php',
     'B24_Partners' => $interface_include_path .'/classes/B24_Partners.php',
     'B24_Leads' => $interface_include_path .'/classes/B24_Leads.php',
     'B24_Deals' => $interface_include_path .'/classes/B24_Deals.php',

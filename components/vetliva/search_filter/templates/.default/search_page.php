@@ -167,4 +167,3 @@
     <div id="yandex_map" class="yandex_map"></div>
   </div>
 </div>
-</div>
