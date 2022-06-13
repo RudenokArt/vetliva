@@ -505,10 +505,7 @@ $id_goal = GOAL_ID;
                                 );
                                 ?>
                             </section>
-                                <?php 
-                                $show_search_filter = 'Y';
-                                $APPLICATION->IncludeComponent("vetliva:search_filter", "",);
-                                ?>
+                                <?php include_once $_SERVER['DOCUMENT_ROOT'].'/include/search_filter.php' ?>
                             <!--End Breakcrumb-->
 							<h1 class="mobile-h1"><?= $APPLICATION->ShowTitle(false) ?><?= $APPLICATION->ShowViewContent('cnt__elements_header') ?></h1>
 								<? if ($APPLICATION->GetDirProperty("NOT_SHOW_SIDEBAR") != "Y"): ?>
@@ -637,8 +634,6 @@ $id_goal = GOAL_ID;
   });
   // 
 </script>
-<?php if ($show_search_filter != 'Y'): ?>
   <div class="container">
-    <?php $APPLICATION->IncludeComponent("vetliva:search_filter", "",);?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/include/search_filter.php' ?>
   </div>
-<?php endif ?>

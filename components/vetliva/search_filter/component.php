@@ -72,11 +72,11 @@ class SearchFilter extends InfoBlock {
     return $filter;
   }
 
-  function getItemsIdArr ($property) {
+  function itemsIdArrListMaker ($property, $search) {
     $filter = [
       'ACTIVE' => 'Y',
       'IBLOCK_CODE'=> $this->searchFilterFormSettings(),
-      '%'.$property => trim($_GET['search']),
+      '%'.$property => $search,
     ];
     $filter = $this->checkFilterData($filter);
     $arr = $this->getItemsList(['ID'=>'asc'], $filter, false, false, [
@@ -93,6 +93,16 @@ class SearchFilter extends InfoBlock {
     $list = [];
     foreach ($arr as $key => $value) {
       array_push($list, $value['ID']);
+    }
+    return $list;
+  }
+
+  function getItemsIdArr ($property) {
+    $search = trim($_GET['search']);
+    $list = $this->itemsIdArrListMaker($property, $search);
+    if (sizeof($list) < 1) {
+      $search = explode(' ', $_GET['search']);
+      $list = $this->itemsIdArrListMaker($property, $search);
     }
     return $list;
   }
