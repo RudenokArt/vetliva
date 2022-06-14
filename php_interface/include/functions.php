@@ -580,3 +580,18 @@ function getTextLanguage ($ru, $by, $en) {
     return $en;
   }
 }
+
+
+
+
+
+//чистка файлов логов
+function clearLogs(){
+//  /local/php_interface/include/rest_master_to_travelline_log.txt
+//  /local/php_interface/include/rest_log.txt
+   ;
+
+    unlink($_SERVER['DOCUMENT_ROOT']."/local/php_interface/include/rest_master_to_travelline_log.txt");
+    unlink($_SERVER['DOCUMENT_ROOT']."/local/php_interface/include/rest_log.txt");
+    return "clearLogs();";
+}
