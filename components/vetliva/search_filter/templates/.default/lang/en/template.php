@@ -15,3 +15,5 @@
 <?php $MESS['REGION'] = 'Region' ?>
 <?php $MESS['CITY'] = 'City/locality' ?>
 <?php $MESS['no_results'] = 'Nothing was found for your query. Refine the search parameters.' ?>
+<?php $MESS['med_profiles'] = 'Medical profiles' ?>
+<?php $MESS['med_services'] = 'Medical services' ?>

@@ -4,9 +4,9 @@ $search_filter = new SearchFilter();
 ?>
 <script src="https://api-maps.yandex.ru/2.1/?apikey=fef1e22c-2d6e-4fbb-9eac-c5a1ab864609&lang=ru_RU" type="text/javascript"></script>
 <div class="search_filter-wrapper">
-   <?php include_once 'filter.php'; ?>
-    <?php if ($_SERVER['SCRIPT_URL'] == '/search/'): ?>
-      <?php if (!empty($_GET['search']) and $search_filter->items_list['items']): ?>
+ <?php include_once 'filter.php'; ?>
+ <?php if ($_SERVER['SCRIPT_URL'] == '/search/'): ?>
+  <?php if (!empty($_GET['search']) and $search_filter->items_list['items']): ?>
     <?php include 'pagination.php'; ?>
     <?php include_once 'search_page.php'; ?>
     <?php include 'pagination.php'; ?>
@@ -15,11 +15,17 @@ $search_filter = new SearchFilter();
       <?php echo getMessage('no_results'); ?>
     </div>
   <?php endif ?>
-    <?php endif ?>
+<?php endif ?>
 </div>
-   
+
 
 <script>
+  radioLabel();
+  $('.search_filter-label input[type="radio"]').change(function () {
+    $('.search_filter-label').removeClass('active');
+    radioLabel();
+    ressetFilterData();
+  });
 
   if ($('select[name="region"]').prop('value')) {
     search_filter_city_select(document.querySelector('select[name="region"]'));
@@ -63,6 +69,29 @@ $search_filter = new SearchFilter();
   $('.search_filter-yandex_map-popup-close_button').click(function(){
     $('.search_filter-yandex_map-popup-wrapper').css({'display':'none'});
   });
+
+  function ressetFilterData () {
+    $('select[name="med_profiles"]').prop('value','N');
+    $('select[name="med_services"]').prop('value','N');
+  }
+
+  function radioLabel () {
+    var arr = $('.search_filter-label');
+    var flag = false;
+    for (var i = 0; i < arr.length; i++) {
+      if ($(arr[i]).children('input[type="radio"]')[0].checked) {
+        $(arr[i]).addClass('active');
+        if ($(arr[i]).children('input[type="radio"]')[0].value == 'sanatorium') {
+          flag = true;
+        }
+      }
+    }
+    if (flag) {
+      $('#med_services, #med_profiles').show();
+    } else {
+      $('#med_services, #med_profiles').hide();
+    }
+  }
   
   function init(){
     var search_filter_map = new ymaps.Map("yandex_map", {
@@ -79,7 +108,7 @@ $search_filter = new SearchFilter();
   }
 
   function search_filter_city_select (node) {
-    $('#search_filter-city').css({'display':'inline'});
+    $('#search_filter-city').css({'display':'block'});
     var arr = $('select[name="city"]').children('option');
     $(arr).css({'display':'none'});
     for (var i = 0; i < arr.length; i++) {
