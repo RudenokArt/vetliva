@@ -38,6 +38,7 @@ class CalculationWidgets {
         );
 
         if ($parameters['calc_by_arrival']) {
+            // print_r((float) $parameters['prices'][$parameters['id']][0]);
             $price = (float) $parameters['prices'][$parameters['id']][0] * count($parameters['prices'][$parameters['id']]);
         } else {
             $price = (float) array_sum($parameters['prices'][$parameters['id']]);
@@ -48,6 +49,10 @@ class CalculationWidgets {
                 $pricesdiscount+=$val-$parameters['pricesdiscount'][$parameters['id']][$key]['abs'];
             elseif ($parameters['pricesdiscount'][$parameters['id']][$key]['percent']>0) 
                 $pricesdiscount+=$val*(100-$parameters['pricesdiscount'][$parameters['id']][$key]['percent'])/100;
+            //Фикс расчета цены по дате заезда
+            elseif($parameters['calc_by_arrival']){
+                $pricesdiscount = 0;
+            }
             else
                 $pricesdiscount+=$val;
         }
@@ -131,6 +136,7 @@ class CalculationWidgets {
         ) {
 
             if ($parameters['calc_by_arrival']) {
+                // print_r((float) $parameters['prices'][$parameters['id']][0] * count($parameters['prices'][$parameters['id']]));
                 $result['price'] = (float) $parameters['prices'][$parameters['id']][0] * count($parameters['prices'][$parameters['id']]);
                } else {
                     $result['price'] = (float) array_sum($parameters['prices'][$parameters['id']]);
@@ -141,14 +147,17 @@ class CalculationWidgets {
                     $pricesdiscount+=$val-$parameters['pricesdiscount'][$parameters['id']][$key]['abs'];
                 elseif ($parameters['pricesdiscount'][$parameters['id']][$key]['percent']>0) 
                     $pricesdiscount+=$val*(100-$parameters['pricesdiscount'][$parameters['id']][$key]['percent'])/100;
+                //Фикс расчета цены по дате заезда
+                elseif($parameters['calc_by_arrival']){
+                    $pricesdiscount = 0;
+                }
                 else
-                    $pricesdiscount+=$val;
+                    $pricesdiscount+=$val;  
             }
             $result['pricesdiscount'] = $pricesdiscount;
             
             $result['allocate']['main']['adults'] = 0;
         }
-
         return $result;
     }
 
@@ -182,7 +191,6 @@ class CalculationWidgets {
         );
 
         if ($parameters['calc_by_arrival']) {
-
             $result['price'] += count($parameters['prices'][$parameters['id']]) * $parameters['prices'][$parameters['id']][0] * $parameters['allocate']['main']['adults'];
         } else {
 
@@ -191,12 +199,15 @@ class CalculationWidgets {
             }
         }
         foreach ($parameters['prices'][$parameters['id']] as $key=>$price) {
-
             $pricesdiscount = $price;
             if ($parameters['pricesdiscount'][$parameters['id']][$key]['abs']>0) 
                 $pricesdiscount=$pricesdiscount-$parameters['pricesdiscount'][$parameters['id']][$key]['abs'];
             elseif ($parameters['pricesdiscount'][$parameters['id']][$key]['percent']>0) 
                 $pricesdiscount=$pricesdiscount*(100-$parameters['pricesdiscount'][$parameters['id']][$key]['percent'])/100;
+            //Фикс расчета цены по дате заезда
+            elseif($parameters['calc_by_arrival']){
+                $pricesdiscount = 0;
+            }
             $result['pricesdiscount'] += ($pricesdiscount * $parameters['allocate']['main']['adults']);
                
         }
@@ -305,9 +316,6 @@ class CalculationWidgets {
                     $pricesdiscount=$pricesdiscount*(100-$parameters['pricesdiscount'][$parameters['id']][$key]['percent'])/100;
                 $result['pricesdiscount'] += ($pricesdiscount * $parameters['allocate']['additional']['adults']);
             }
-            
-        
-
             $result['allocate']['additional']['adults'] = 0;
         }
 
