@@ -348,7 +348,7 @@ if (!empty($arResult["TICKET"])):
 			</table>
 			<br />
 			<input type="submit" name="save" value="<?=GetMessage("SUP_SAVE")?>"  class="btn btn-primary"/>&nbsp;
-			<input type="submit" name="apply" value="<?=GetMessage("SUP_APPLY")?>" class="btn btn-primary"/>&nbsp;
+			<!-- <input type="submit" name="apply" value="<?=GetMessage("SUP_APPLY")?>" class="btn btn-primary"/>&nbsp; -->
 			<input type="reset" value="<?=GetMessage("SUP_RESET")?>" class="btn btn-danger"/>
 			<input type="hidden" value="Y" name="apply" />
 			
