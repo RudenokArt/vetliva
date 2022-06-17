@@ -109,4 +109,6 @@ $MESS["interface_grid_name_btn_title"] = "Переименовать колон�
 $MESS["interface_grid_name_def"] = "Название по умолчанию:";
 $MESS["interface_grid_name_new"] = "Новое название:";
 $MESS["interface_grid_name_title"] = "Название колонки";
+$MESS["interface_grid_btn_details"] = "Подробнее";
+
 ?>

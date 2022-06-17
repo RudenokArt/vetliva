@@ -109,4 +109,6 @@ $MESS["interface_grid_name_btn_title"] = "Rename column";
 $MESS["interface_grid_name_def"] = "Default title:";
 $MESS["interface_grid_name_new"] = "New title:";
 $MESS["interface_grid_name_title"] = "Column title";
+$MESS["interface_grid_btn_details"] = "Details";
+
 ?>

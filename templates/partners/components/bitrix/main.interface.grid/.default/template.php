@@ -48,8 +48,10 @@ else
 <?if($arParams["SHOW_FORM_TAG"]):?>
 <form name="form_<?=$arParams["GRID_ID"]?>" action="<?=POST_FORM_ACTION_URI?>" method="POST">
 
+
 <?=bitrix_sessid_post();?>
 <?endif?>
+
 <table cellspacing="0" class="table" id="<?=$arParams["GRID_ID"]?>">
 	<tr class="bx-grid-gutter" oncontextmenu="return bxGrid_<?=$arParams["GRID_ID"]?>.settingsMenu">
 <?if($arResult["ALLOW_EDIT"]):?>
@@ -71,6 +73,7 @@ else
 $colspan = count($arResult["HEADERS"])+($arResult["ALLOW_EDIT"]? 2:1);
 foreach($arResult["HEADERS"] as $id=>$header):
 ?>
+
 <?
 if($header["sort"] <> ''):
 	$order_title = GetMessage("interface_grid_sort").' '.$header["name"];
@@ -86,6 +89,8 @@ if($header["sort"] <> ''):
 		$order_title .= " ".GetMessage("interface_grid_sort_up");
 	}
 ?>
+
+
 		<td class="bx-sortable<?=($header["sort_state"] <> ''? ' bx-sorted':'')?>"
 			onclick="bxGrid_<?=$arParams["GRID_ID"]?>.Sort('<?=CUtil::addslashes($header["sort_url"])?>', '<?=$header["sort"]?>', '<?=$header["sort_state"]?>', '<?=$header["order"]?>', arguments);"
 			oncontextmenu="return [
@@ -105,9 +110,12 @@ if($header["sort"] <> ''):
 					'DISABLED':<?=($USER->IsAuthorized()? 'false':'true')?>
 				}
 			]"
-			title="<?=$order_title?>"
+			title="<?=$order_title?> "
 		>
+				
+		
 			<table cellspacing="0" class="bx-grid-sorting">
+				
 				<tr>
 					<td><?=$header["name"]?></td>
 					<td class="bx-sort-sign<?=$order_class?>"><div class="empty"></div></td>
@@ -123,6 +131,7 @@ if($header["sort"] <> ''):
 			}
 		]">
 			<?=$header["name"]?>
+			
 		</td>
 <?endif?>
 <?endforeach?>
@@ -153,6 +162,7 @@ foreach($arParams["ROWS"] as $index=>$aRow):
 		}
 	}
 ?>
+
 	<tr oncontextmenu="return bxGrid_<?=$arParams["GRID_ID"]?>.oActions[<?=$index?>]"<?if($sDefAction <> ''):?> ondblclick="<?=htmlspecialcharsbx($sDefAction)?>" title="<?=GetMessage("interface_grid_dblclick")?><?=$sDefTitle?>"<?endif?>>
 <?if($arResult["ALLOW_EDIT"]):?>
 	<?
@@ -200,11 +210,16 @@ else: //!empty($arParams["ROWS"])
 	<tr><td colspan="<?=$colspan?>"><?echo GetMessage("interface_grid_no_data")?></td></tr>
 <?endif?>
 
+
+<h4 style="margin-top:70px;">Двойное нажатие на обращение для просмотра подробностей</h4>
+
 <?if($arResult["ALLOW_EDIT"] || is_array($arParams["FOOTER"]) && count($arParams["FOOTER"]) > 0 || $arResult["NAV_STRING"] <> ''):?>
 	<tr class="bx-grid-footer">
 		<td colspan="<?=$colspan?>">
+		
 			<table cellpadding="0" cellspacing="0" border="0" class="bx-grid-footer">
 				<tr>
+					
 			<?if($arResult["ALLOW_EDIT"]):?>
 					<td><?echo GetMessage("interface_grid_checked")?> <span id="<?=$arParams["GRID_ID"]?>_selected_span">0</span></td>
 			<?endif?>
@@ -225,6 +240,7 @@ else: //!empty($arParams["ROWS"])
 <table cellpadding="0" cellspacing="0" border="0" class="table">
 	<tr class="bx-top"><td class="bx-left"><div class="empty"></div></td><td><div class="empty"></div></td><td class="bx-right"><div class="empty"></div></td></tr>
 	<tr>
+		
 		<td class="bx-left"><div class="empty"></div></td>
 		<td class="bx-content">
 			<table cellpadding="0" cellspacing="0" border="0">
@@ -734,4 +750,35 @@ BX.ready(function(){bxGrid_<?=$arParams["GRID_ID"]?>.InitFilter()});
 <?endif?>
 
 phpVars.messLoading = '<?=GetMessageJS("interface_grid_loading")?>';
+</script>
+
+
+<!-- Кнопка "Подробнее" для обращения в техподдержку -->
+<script>
+	function appendBtn(item){
+		ansId = item.childNodes[5].innerHTML;
+		var btn = document.createElement('button')
+		btn.className = 'btn btn-primary'
+		btn.setAttribute('type', 'button')
+		btn.innerHTML = '<?echo GetMessage("interface_grid_btn_details")?>'
+		res = '.php'	
+		btn.link = '/partners/support/' + ansId + res
+
+		btn.onclick = () => {
+			location.assign(btn.link);
+		}
+
+		item.appendChild(btn)
+	}
+
+	function setBtn(){
+		const answersOdd = document.querySelectorAll('.bx-odd')
+		const answersEven = document.querySelectorAll('.bx-even')
+		let answers = [];
+		answers.push.apply(answers, answersOdd);
+		answers.push.apply(answers, answersEven);
+		answers.map((item) => {appendBtn(item)})
+	}
+	document.addEventListener("DOMContentLoaded", setBtn);
+
 </script>
