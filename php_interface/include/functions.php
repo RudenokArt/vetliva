@@ -587,11 +587,15 @@ function getTextLanguage ($ru, $by, $en) {
 
 //чистка файлов логов
 function clearLogs(){
-//  /local/php_interface/include/rest_master_to_travelline_log.txt
-//  /local/php_interface/include/rest_log.txt
-   ;
-
     unlink($_SERVER['DOCUMENT_ROOT']."/local/php_interface/include/rest_master_to_travelline_log.txt");
     unlink($_SERVER['DOCUMENT_ROOT']."/local/php_interface/include/rest_log.txt");
     return "clearLogs();";
+}
+
+
+function travelLineActivateAgent () {
+  $travel_line_activate = new SmtpImap('{imap.yandex.ru:993/imap/ssl}', 'hotel@vetliva.com', 'eoe()^72ghc');
+  $messages = $travel_line_activate->travelLineActivateDealAdd();
+  $travel_line_activate->closeConnection();
+  return 'travelLineActivateAgent();';
 }

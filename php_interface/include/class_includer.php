@@ -22,6 +22,7 @@ $interface_include_path = '/local/php_interface/include';
     "travelsoft\rest\Logger" => $interface_include_path."/classes/Logger.php",
     "CIBlockPropertyTinyMCE" => $interface_include_path."/classes/CIBlockPropertyTinyMCE.php",
     "ReviewMail" => $interface_include_path."/classes/ReviewMail.php",
-    "ReportMail" => $interface_include_path."/classes/ReportMail.php"
+    "ReportMail" => $interface_include_path."/classes/ReportMail.php",
+    'SmtpImap' => $interface_include_path .'/classes/SmtpImap.php',
   )
 );
