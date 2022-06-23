@@ -20,7 +20,7 @@ class B24_TechnicalSupport extends B24_class {
   }
 
   function checkContact () {
-     $arr = json_decode($this->RestApiRequest('crm.contact.list',[
+    $arr = json_decode($this->RestApiRequest('crm.contact.list',[
       'filter'=>['EMAIL' => $this->user_data['EMAIL']],
       'select' => ['PHONE', 'EMAIL']
     ]), true)['result'];
@@ -28,12 +28,12 @@ class B24_TechnicalSupport extends B24_class {
   }
 
   function getAssigned () {
-     return json_decode($this->RestApiRequest('user.get', [
-        'filter'=>[
-          'ACTIVE' => true,
-          'UF_DEPARTMENT' => 48,
-        ]
-      ]), true)['result'][0]['ID'];
+    return json_decode($this->RestApiRequest('user.get', [
+      'filter'=>[
+        'ACTIVE' => true,
+        'UF_DEPARTMENT' => 48,
+      ]
+    ]), true)['result'][0]['ID'];
   }
 
   function userMail () {
@@ -59,14 +59,24 @@ class B24_TechnicalSupport extends B24_class {
         'TITLE'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
         'CATEGORY_ID' => 10,
         'CONTACT_ID' => $contact,
-        'COMMENTS' => $this->user_mail_data['user_data']['TEXT'],
+        'COMMENTS' => $this->user_mail_data['user_data']['TEXT'].
+        '<hr>'.json_encode($this->user_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES).
+        '<hr>'.json_encode($this->user_mail_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
         'ASSIGNED_BY_ID'=>$this->b24_assigned,
       ]
     ]);
-    // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($this->b24_contact));
+    $this->RestApiRequest('tasks.task.add', [
+      'fields'=>[
+        'TITLE'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
+        'DESCRIPTION'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
+        'CREATED_BY'=> 27427,
+        'RESPONSIBLE_ID'=> 27427,
+        'PARENT_ID'=>1909,
+      ]
+    ]);
   }
 
 }
 
-
+// test message don't pay attention
 ?>
