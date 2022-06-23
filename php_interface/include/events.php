@@ -258,5 +258,12 @@ AddEventHandler("iblock", "OnBeforeIBlockElementAdd", function ($arFields) {
 
 // Интеграция с CRM обращений в техподдержку OnAfterTicketAdd
 AddEventHandler("support", "OnAfterTicketAdd", function ($arFields) {
-  $partner = new B24_PartnersSupport($arFields);
+  // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
+  (new B24_PartnersSupport($arFields))->sendPartnerRequest();
+});
+
+AddEventHandler("support", "OnAfterTicketUpdate", function ($arFields) {
+  if ($arFields) {
+    B24_PartnersSupport::partnerTicketMessage($arFields);
+  }
 });
