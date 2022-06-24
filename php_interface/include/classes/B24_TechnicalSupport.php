@@ -65,15 +65,19 @@ class B24_TechnicalSupport extends B24_class {
         'ASSIGNED_BY_ID'=>$this->b24_assigned,
       ]
     ]);
-    $this->RestApiRequest('tasks.task.add', [
-      'fields'=>[
-        'TITLE'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
-        'DESCRIPTION'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
-        'CREATED_BY'=> 27427,
-        'RESPONSIBLE_ID'=> 27427,
-        'PARENT_ID'=>1909,
-      ]
+     $this->RestApiRequest('im.message.add.json', [
+      'DIALOG_ID'=>27427,
+      'MESSAGE' => 'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
     ]);
+    // $this->RestApiRequest('tasks.task.add', [
+    //   'fields'=>[
+    //     'TITLE'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
+    //     'DESCRIPTION'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
+    //     'CREATED_BY'=> 27427,
+    //     'RESPONSIBLE_ID'=> 27427,
+    //     'PARENT_ID'=>1909,
+    //   ]
+    // ]);
   }
 
 }

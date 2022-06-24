@@ -17,7 +17,7 @@ class B24_PartnersSupport extends B24_class {
         $arFields['ID'].'&lang=ru">Ответить...</a>',
       ]
     ]);
-    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
+    // file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.json', json_encode($arFields));
   }
 
   public static function searchTicketDeal ($ticket_id) {
