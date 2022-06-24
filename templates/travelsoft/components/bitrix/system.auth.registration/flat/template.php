@@ -195,7 +195,7 @@ if ($is_agent_ihwc) {
 document.getElementById('bx_auth_secure').style.display = '';
 </script>
 <?endif?>
-				<input id="pass" onchange="check_pass()" onkeyup="check_pass()"required type="password" name="USER_PASSWORD" maxlength="255" value="<?=$arResult["USER_PASSWORD"]?>" autocomplete="off" />
+				<input id="pass" onchange="check_pass()" required type="password" name="USER_PASSWORD" maxlength="255" value="<?=$arResult["USER_PASSWORD"]?>" autocomplete="off" />
                 
                 <div class="form-control-feedback">
                     <i class="icon-eye-blocked text-muted" aria-hidden="true" onClick="viewPassword($(this))"></i>

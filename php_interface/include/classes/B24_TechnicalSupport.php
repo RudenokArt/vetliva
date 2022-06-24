@@ -69,18 +69,8 @@ class B24_TechnicalSupport extends B24_class {
       'DIALOG_ID'=>27427,
       'MESSAGE' => 'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
     ]);
-    // $this->RestApiRequest('tasks.task.add', [
-    //   'fields'=>[
-    //     'TITLE'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
-    //     'DESCRIPTION'=>'Обращение в техподдержку(1-я линия) с формы обратной связи vetliva',
-    //     'CREATED_BY'=> 27427,
-    //     'RESPONSIBLE_ID'=> 27427,
-    //     'PARENT_ID'=>1909,
-    //   ]
-    // ]);
   }
 
 }
 
-// test message don't pay attention
 ?>

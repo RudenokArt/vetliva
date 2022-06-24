@@ -130,7 +130,7 @@ $APPLICATION->AddViewContent('htmlClass', 'login-container');
               }
               ?>
               <div class="form-group has-feedback">
-                <input id="pass" onchange="check_pass()" onkeyup="check_pass()" required pattern="^(.{6,})$" type="password" autocomplete="off" placeholder="<?= GetMessage("AUTH_PASSWORD_REQ", Array ("#LENGTH#" => $security['PASSWORD_LENGTH'])) ?>" name="REGISTER[PASSWORD]" maxlength="50" value="" class="form-control" />
+                <input id="pass" onchange="check_pass()" required pattern="^(.{6,})$" type="password" autocomplete="off" placeholder="<?= GetMessage("AUTH_PASSWORD_REQ", Array ("#LENGTH#" => $security['PASSWORD_LENGTH'])) ?>" name="REGISTER[PASSWORD]" maxlength="50" value="" class="form-control" />
                 <div class="form-control-feedback form-control-psw">
                   <i class="icon-eye-blocked text-muted" aria-hidden="true" onClick="viewPassword($(this))"></i>
                   <i class="icon-user-lock text-muted"></i>
