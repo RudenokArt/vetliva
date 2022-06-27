@@ -47,6 +47,9 @@
     color: #ffffff;
     position: relative;
 }
+.link a:visited{
+    color: #ffffff;
+}
 
 .link a:hover span{
     background: #F7C517;
