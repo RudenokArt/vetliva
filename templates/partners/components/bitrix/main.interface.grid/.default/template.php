@@ -754,21 +754,18 @@ phpVars.messLoading = '<?=GetMessageJS("interface_grid_loading")?>';
 
 
 <!-- Кнопка "Подробнее" для обращения в техподдержку -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <script>
+
 	function appendBtn(item){
 		ansId = item.childNodes[5].innerHTML;
-		var btn = document.createElement('button')
-		btn.className = 'btn btn-primary'
-		btn.setAttribute('type', 'button')
-		btn.innerHTML = '<?echo GetMessage("interface_grid_btn_details")?>'
 		res = '.php'	
-		btn.link = '/partners/support/' + ansId + res
-
+		link = '/partners/support/' + ansId + res
+		btn = `<a href="${link}"><i class="fa fa-weixin" aria-hidden="true" style="font-size: x-large; cursor: pointer; color: #264b87"></i></a>`
 		btn.onclick = () => {
 			location.assign(btn.link);
 		}
-
-		item.appendChild(btn)
+		item.childNodes[15].innerHTML = btn
 	}
 
 	function setBtn(){
@@ -780,5 +777,6 @@ phpVars.messLoading = '<?=GetMessageJS("interface_grid_loading")?>';
 		answers.map((item) => {appendBtn(item)})
 	}
 	document.addEventListener("DOMContentLoaded", setBtn);
+
 
 </script>

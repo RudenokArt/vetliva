@@ -28,7 +28,8 @@ $APPLICATION->IncludeComponent(
 			array("id"=>"TIMESTAMP_X", "name"=>GetMessage('SUP_TIMESTAMP'), "sort"=>"s_timestamp_x", "default"=>true),
 			array("id"=>"MODIFIED_BY", "name"=>GetMessage('SUP_MODIFIED_BY'), "default"=>true),
 			array("id"=>"MESSAGES", "name"=>GetMessage('SUP_MESSAGES'),  "default"=>true),
-			array("id"=>"STATUS_NAME", "name"=>GetMessage('SUP_STATUS'), "default"=>true)
+			array("id"=>"STATUS_NAME", "name"=>GetMessage('SUP_STATUS'), "default"=>true),
+			
 		),
 		"SORT"=>$arResult["SORT"],
 		"SORT_VARS"=>$arResult["SORT_VARS"],
@@ -55,6 +56,7 @@ $APPLICATION->IncludeComponent(
 		<td><div class="support-lamp-red"></div></td>
 		<td> - <?=$bADS ? GetMessage("SUP_RED_ALT_SUP") : GetMessage("SUP_RED_ALT_2")?></td>
 	</tr>
+	
 	<?if ($bADS):?>
 	<tr>
 		<td><div class="support-lamp-yellow"></div></td>
