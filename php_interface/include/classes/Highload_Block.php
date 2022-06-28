@@ -25,7 +25,14 @@ class Highload_Block extends InfoBlock {
     $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($highloadblock);
     $entity_data_class = $entity->getDataClass();
     $rsData = $entity_data_class::getList([
-      'select' => ['ID', 'UF_NAME', 'UF_CURRENCY_ID'],
+      'select' => [
+        'ID',
+        'UF_NAME',
+        'UF_CURRENCY_ID',
+        'UF_DISCOUNT',
+        'UF_DISCOUNT_BY_DAYS',
+        'UF_SERVICES_ID',
+      ],
       'filter' => [
         'ID' => $ts_rates_pluse_category[0]['UF_RATE_CATEGORY_ID'],
       ],
@@ -59,7 +66,7 @@ class Highload_Block extends InfoBlock {
         $currency_id = $rates_category['UF_CURRENCY_ID'];
         $value['currency'] = $this->getCurrencyByID($currency_id)['NAME'];
         $value['date'] = $date['mday'].'.'.$date['mon'].'.'.$date['year'];
-        $value['rates_category'] = $rates_category['UF_NAME'];
+        $value['rates_category'] = $rates_category;
         array_push($arr, $value);
       }
     }
@@ -113,6 +120,22 @@ class Highload_Block extends InfoBlock {
     return $arr;
   }
 
+  function getTsQuotas ($filter=[]) { // Получить квоты, бронирования, свободные номера
+    $highloadblock = $this->getHighloadBlock([
+      'filter'=>['TABLE_NAME' => 'ts_quotas',],
+    ]);
+    $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($highloadblock);
+    $entity_data_class = $entity->getDataClass();
+    $rsData = $entity_data_class::getList(['filter' => $filter]);
+    $arr = [];
+    foreach ($rsData as $key => $value) {
+      $value['date'] = ConvertTimeStamp($value['UF_DATE']);
+      $value['available_numbers'] = $value['UF_QUOTE'] - $value['UF_SOLD_NUMBER'];
+      array_push($arr, $value);
+    }
+    return $arr;
+  }
+
   function getTsServicesList () { // Получить номерной фонд
     $highloadblock = $this->getHighloadBlock([
       'filter'=>['TABLE_NAME' => 'ts_services',],
@@ -144,10 +167,10 @@ class Highload_Block extends InfoBlock {
     return $arr;
   }
 
-  function getHighloadBlockItems ($highloadblock, $filter=[]) {
+  function getHighloadBlockItems ($highloadblock, $filter=[], $select=['*','UF_*']) {
     $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($highloadblock);
     $entity_data_class = $entity->getDataClass();
-    $rsData = $entity_data_class::getList(['filter' => $filter]);
+    $rsData = $entity_data_class::getList(['select'=>$select,'filter' => $filter]);
     $arr = [];
     foreach ($rsData as $key => $value) {
       array_push($arr, $value);

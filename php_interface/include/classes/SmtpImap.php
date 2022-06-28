@@ -10,8 +10,9 @@ class SmtpImap {
   }
 
   function travelLineActivateDealAdd () {
+    $message = $this->getTravelLineMessages();
     $assigned = $this->getTravelLineAssignedUser();
-    foreach ($this->getTravelLineMessages() as $key => $value) {
+    foreach ($message as $key => $value) {
       $result = (new B24_class)->RestApiRequest('crm.deal.add', [
         'fields'=>[
           'TITLE'=>$value['subject'],
@@ -21,6 +22,8 @@ class SmtpImap {
         ],
       ]);
     }
+    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.html',
+      json_encode($message, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES).'<br>', FILE_APPEND);
   }
 
   function getTravelLineAssignedUser () {
