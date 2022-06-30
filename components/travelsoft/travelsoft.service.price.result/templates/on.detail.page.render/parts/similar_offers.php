@@ -343,6 +343,7 @@ if (!strlen($similarOffersHtml)):
                             $("#callback-modal .modal-footer").remove();
                             if (resp.callback_ok) {
                                 $("#callback-modal .modal-body").html(`<?= GetMessage("CALLBACK_OK_MESSAGE") ?>`);
+                                window.location.replace("/success");
                             } else {
                                 $("#callback-modal .modal-body").html(`<?= GetMessage("CALLBACK_FAIL_MESSAGE") ?>`);
                             }
