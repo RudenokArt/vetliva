@@ -3,6 +3,7 @@ $APPLICATION->AddViewContent('htmlClass', 'login-container');
 ?>
 
 <!-- Password recovery -->
+
 <form name="bform" method="post" target="_top" action="<?=$arResult["AUTH_URL"]?>">
 <?
 if (strlen($arResult["BACKURL"]) > 0)
@@ -17,7 +18,8 @@ if (strlen($arResult["BACKURL"]) > 0)
         
     <div class="panel panel-body login-form">
         <div class="text-center">
-            <div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
+
+        <div class="icon-object border-warning text-warning"><i class="icon-spinner11"></i></div>
             <h5 class="content-group"><?= GetMessage("AUTH_REQUEST_FOR_CHANGE_PASS")?>
                 <?if (!$arParams["~AUTH_RESULT"]):?>
                     <small class="display-block"><?=GetMessage("AUTH_FORGOT_PASSWORD_1")?></small>
@@ -38,6 +40,7 @@ if (strlen($arResult["BACKURL"]) > 0)
             <div class="text-center">
                     <a href="<?=$arResult["AUTH_AUTH_URL"]?>" rel="nofollow"><?=GetMessage("AUTH_AUTH")?></a>
             </div>
+
         </div>
         <button type="submit" name="send_account_info" value="<?=GetMessage("AUTH_SEND")?>" class="btn bg-blue btn-block"><?=GetMessage("AUTH_SEND")?> <i class="icon-arrow-right14 position-right"></i></button>
     </div>
