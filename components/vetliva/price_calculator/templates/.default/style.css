@@ -1,0 +1,16 @@
+.children_age,
+.price_calculator_form_inner {
+  display: flex;
+}
+.price_calc_form_item {
+  padding: 5px;
+}
+
+.price_calc_form_item input {
+  border:  1px solid grey;
+}
+
+.agesSelect {
+  width: 50px;
+  margin: 10px;
+}
