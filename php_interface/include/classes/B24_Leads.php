@@ -45,9 +45,10 @@ class B24_Leads extends B24_Partners {
       $service = 'трансфер';
       $assigned = 27186;
     }
+    $title = 'Заявка на '.$service.': '.$_POST['object_name'];
     $this->restApiRequest('crm.lead.add', [
       'fields' =>[
-        'TITLE' => 'Заявка на '.$service.': '.$_POST['object_name'],
+        'TITLE' => $title,
         'NAME' => $_POST['full_name'],
         'STATUS_ID' => 'NEW',
         'OPENED' => 'Y',
@@ -58,7 +59,15 @@ class B24_Leads extends B24_Partners {
         'EMAIL' => [['VALUE'=> $_POST['email'], 'VALUE_TYPE'=>'WORK'],],
       ],
     ]);
+    $this->sendSupportMail($title, $_POST['comment'],$_POST['full_name'], $_POST['phone'], $_POST['email']);
     return ($_POST);
+  }
+
+  function sendSupportMail ($title, $message, $full_name, $phone, $email) {
+    $_POST['receiver'] = 'ra@ck.by';
+    $_POST['subject'] = $title;
+    $_POST['text'] = $message.'<br>'.$full_name.'<br>'.$phone.'<br>'.$email;
+    include_once($_SERVER['DOCUMENT_ROOT'].'/local/php_interface/php-mail/post.php');
   }
 
 

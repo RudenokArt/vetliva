@@ -1,5 +1,4 @@
-<?php
-  require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+<?php 
 
 /**
  * Отправка почты через PHP (SMTP)
@@ -49,11 +48,7 @@ if($mail->isLogin) {
     $mail->clearBCC();
     $mail->clearAttachments();
 
-
-
-    echo "success";
 }
- else {
-    echo "error";
- }
+ 
+
 ?>
