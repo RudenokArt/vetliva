@@ -64,7 +64,7 @@ class B24_Leads extends B24_Partners {
   }
 
   function sendSupportMail ($title, $message, $full_name, $phone, $email) {
-    $_POST['receiver'] = 'ra@ck.by';
+    $_POST['receiver'] = 'hotel@vetliva.com';
     $_POST['subject'] = $title;
     $_POST['text'] = $message.'<br>'.$full_name.'<br>'.$phone.'<br>'.$email;
     include_once($_SERVER['DOCUMENT_ROOT'].'/local/php_interface/php-mail/post.php');
