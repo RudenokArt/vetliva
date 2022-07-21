@@ -55,9 +55,22 @@
 						); ?>
   				</div>
 
-  				<p class="pay">
+  				<!-- <p class="pay">
   					<img loading="lazy" src="/local/templates/travelsoft/images/paying.png" title="Payment systems of online booking service in Belarus">
-  				</p>
+  				</p> -->
+
+  				<div class="paying" style="max-height: 50px; display: flex; gap: 10px;">
+  					<a href="#" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/asist.png" title="Payment systems of online booking service in Belarus"></a>
+  					<a href="#" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/belbank.png" title="Payment systems of online booking service in Belarus"></a>
+  					<a href="#" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/belcard.png" title="Payment systems of online booking service in Belarus"></a>
+  					<a href="https://belkart.by/press-center/" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/belcardpass.png" title="Belcart pass"></a>
+  					<a href="#" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/erip.png" title="Payment systems of online booking service in Belarus"></a>
+  					<a href="https://brand.mastercard.com/brandcenter/mastercard-brand-mark/downloads.html" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/master_chk.png" title="Mastercard"></a>
+  					<a href="https://docs.assist.ru/ " target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/mir.png" title="Mir"></a>
+  					<a href="https://merchantsignage.visa.com/productlist.aspx?did=30437" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/visa.png" title="Visa"></a>
+  					<a href="https://merchantsignage.visa.com/productlist.aspx?did=30437" target="_blank"><img loading="lazy" src="/local/templates/travelsoft/images/paying/visa_sec.png" title="Visa secure"></a>
+  				</div>
+
 
   			</div>
   			<!-- End Logo -->
