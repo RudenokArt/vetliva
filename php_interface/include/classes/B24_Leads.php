@@ -31,11 +31,11 @@ class B24_Leads extends B24_Partners {
     }
     if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'cognitive-tourism') {
       $service = 'экскурсию';
-      $assigned = 27186;
+      $assigned = 25623;
     }
     if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'tours-in-belarus') {
       $service = 'тур';
-      $assigned = 27186;
+      $assigned = 25623;
     }
     if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'where-to-stay') {
       $service = 'проживание';
@@ -43,7 +43,7 @@ class B24_Leads extends B24_Partners {
     }
     if (explode('/',$_SERVER['HTTP_REFERER'])[4] == 'transfer') {
       $service = 'трансфер';
-      $assigned = 27186;
+      $assigned = 25623;
     }
     $title = 'Заявка на '.$service.': '.$_POST['object_name'];
     $this->restApiRequest('crm.lead.add', [

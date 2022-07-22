@@ -63,6 +63,7 @@ $search_filter = new SearchFilter();
 
   $('#search_input').focus(function(){
     $('#search_filter-live_search-wrapper').show();
+    $('#search_filter-live_search').html('');
   });
 
   $('#search_input').blur(function(){
