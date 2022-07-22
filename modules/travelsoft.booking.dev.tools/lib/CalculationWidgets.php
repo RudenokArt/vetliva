@@ -80,7 +80,7 @@ class CalculationWidgets
         }
 
         // var_dump((float) $parameters['prices'][$parameters['id']][0]);
-        var_dump($pricesdiscount);
+        // var_dump($pricesdiscount);
         // var_dump(count($parameters['prices'][$parameters['id']]) - 1);
         print_r('');
 
